@@ -13,12 +13,9 @@ frontend/web/images/brands/
 frontend/web/images/banners/
 frontend/web/images/uploads/
 
-frontend/config/main.php
 frontend/config/params-local.php
 files/
-backend/config/main.php
 backend/config/params-local.php
-common/config/main.php
 common/config/params-local.php
 tmp/
 .idea/
