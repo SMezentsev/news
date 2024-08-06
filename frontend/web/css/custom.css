@@ -1,0 +1,31 @@
+.header-logo {
+    font-weight: bold;
+  font-size: 26px;
+}
+
+.widget-weather p {
+
+  font-size: 10px;
+}
+
+.widget-weather .weather {
+
+  margin-top: -5px;
+}
+
+.widget-weather p {
+
+  margin-top: 5px;
+  width: 60px !important;
+}
+
+h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a.nav-link {
+
+  font-family: 'Nunito', sans-serif;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: normal;
+}
+
+.main-menu > li{padding:0 5px;}
