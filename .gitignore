@@ -18,7 +18,8 @@ frontend/config/params-local.php
 files/
 backend/config/main.php
 backend/config/params-local.php
-common/config/
+common/config/main.php
+common/config/params-local.php
 tmp/
 .idea/
 
