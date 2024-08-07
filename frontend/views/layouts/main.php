@@ -37,10 +37,9 @@ Yii::$app->metaTags->register('main');
       visibility: inherit
     }</style>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>NewsViral - NewsViral HTML Template</title>
+  <title>MOSOVKA.RU - Новостной портал</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="https://newsviral-html.vercel.app/site.webmanifest">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
   <title><?= Yii::$app->metaTags->title(); ?></title>
 
@@ -67,12 +66,13 @@ Yii::$app->metaTags->register('main');
 <!-- site -->
 <div class="main-wrap" style="transform: none;">
 
+  <?php if(0) { ?>
   <aside id="sidebar-wrapper" class="custom-scrollbar offcanvas-sidebar position-right ps ps--active-x ps--active-y">
     <button class="off-canvas-close"><i class="ti-close"></i></button>
     <div class="sidebar-inner">
       <!--Search-->
       <div class="siderbar-widget mb-50 mt-30">
-        <form action="https://newsviral-html.vercel.app/index.html#" method="get" class="search-form position-relative">
+        <form action="/news/search" method="get" class="search-form position-relative">
           <input type="text" class="search_field" placeholder="Search" value="" name="s">
           <span class="search-icon"><i class="ti-search mr-5"></i></span>
         </form>
@@ -83,7 +83,7 @@ Yii::$app->metaTags->register('main');
           <h5 class="widget-title">Top <span>Trending</span></h5>
         </div>
         <div class="post-aside-style-2">
-          <ul class="list-post">
+          <ul class="list-post">ыв авы авыа
             <li class="mb-30 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
@@ -224,6 +224,7 @@ Yii::$app->metaTags->register('main');
       </div>
     </div>
   </div>
+  <?php } ?>
 
   <?= $this->render('@frontend/views/site/_header.php') ?>
   <!--  --><? //= $this->render('@frontend/views/site/_carausel.php') ?>

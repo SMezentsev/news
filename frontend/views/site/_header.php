@@ -16,6 +16,8 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
 <header class="main-header header-style-2 mb-40">
   <div class="header-bottom header-sticky background-white text-center">
     <div class="scroll-progress gradient-bg-1" style="width: 0%;"></div>
+
+    <?php if(0) { ?>
     <div class="mobile_menu d-lg-none d-block">
       <div class="slicknav_menu">
         <div class="container"><a href="https://newsviral-html.vercel.app/index.html#" aria-haspopup="true"
@@ -59,6 +61,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
         </ul>
       </div>
     </div>
+    <?php } ?>
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-3">
@@ -68,17 +71,18 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
             </a>
           </div>
           <div class="logo-tablet d-md-inline d-lg-none d-none">
-            <a href="https://newsviral-html.vercel.app/index.html">
+            <a href="/">
               MOSOVKA.RU
             </a>
           </div>
           <div class="logo-mobile d-block d-md-none">
-            <a href="https://newsviral-html.vercel.app/index.html">
+            <a href="/">
               MOSOVKA.RU
             </a>
           </div>
         </div>
         <div class="col-lg-10 col-md-9 main-header-navigation">
+          <?php if(0) { ?>
           <!-- Main-menu -->
           <div class="main-nav text-left float-lg-left float-md-right">
             <ul class="mobi-menu d-none menu-3-columns" id="navigation">
@@ -572,7 +576,6 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
             </nav>
           </div>
           <!-- Search -->
-          <?php if(0) { ?>
           <form action="https://newsviral-html.vercel.app/index.html#" method="get"
                 class="search-form d-lg-inline float-right position-relative mr-30 d-none">
             <input type="text" class="search_field" placeholder="Search" value="" name="s">

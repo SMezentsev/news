@@ -21,6 +21,7 @@ use kartik\date\DatePicker;
 use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use kartik\file\FileInput;
+use kartik\datetime\DateTimePicker;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 ?>
@@ -63,11 +64,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
   </div>
   <div class="col-md-6">
-    <?= $form->field($model, 'date')->widget(DatePicker::classname(), [
+    <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
       'options' => [],
       'pluginOptions' => [
         'autoclose' => true,
-        'format' => 'dd-M-yyyy'
+        'format' => 'dd-M-yyyy H:i:s'
       ]
     ]); ?>
   </div>
