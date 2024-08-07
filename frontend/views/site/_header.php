@@ -16,6 +16,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
 <header class="main-header header-style-2 mb-40">
   <div class="header-bottom header-sticky background-white text-center">
     <div class="scroll-progress gradient-bg-1" style="width: 0%;"></div>
+    <?php if(0) { ?>
     <div class="mobile_menu d-lg-none d-block">
       <div class="slicknav_menu">
         <div class="container"><a href="https://newsviral-html.vercel.app/index.html#" aria-haspopup="true"
@@ -59,6 +60,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
         </ul>
       </div>
     </div>
+    <?php } ?>
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-3">
@@ -81,6 +83,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
         <div class="col-lg-10 col-md-9 main-header-navigation">
           <!-- Main-menu -->
           <div class="main-nav text-left float-lg-left float-md-right">
+            <?php if(0) { ?>
             <ul class="mobi-menu d-none menu-3-columns" id="navigation">
               <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Global Economy</a>
               </li>
@@ -109,10 +112,11 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
               <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Media
                   Relations</a></li>
             </ul>
+            <?php } ?>
             <nav>
               <ul class="main-menu d-none d-lg-inline">
                 <li >
-                  <a href="https://newsviral-html.vercel.app/index.html">
+                  <a href="/">
                       <span >
                         <ion-icon name="home-outline" role="img" class="md hydrated"
                                   aria-label="home outline"><template shadowrootmode="open"><div
