@@ -1,4 +1,4 @@
-<div class="sidebar-widget widget-weather border-radius-10 bg-white mb-30 mt-55">
+<div class="sidebar-widget widget-weather border-radius-10 bg-white mb-30">
   <div class="d-flex">
     <div class="font-medium">
       <p><?= $day ?></p>

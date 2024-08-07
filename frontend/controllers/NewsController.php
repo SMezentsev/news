@@ -71,29 +71,12 @@ class NewsController extends Controller {
 
   public function actionIndex($category_id = null) {
 
-    $categories = NewsCategory::find()->all();
-
+    $category = NewsCategory::find()->where(['id' => $category_id])->one();
     $news = new NewsSearch();
     $news = $news->search(Yii::$app->request->queryParams);
 
-    $breadCrumbs = [];
-    $breadCrumbs[] = [
-      'url' => '',
-      'name' => 'Новости'
-    ];
-
-    if($category_id) {
-
-      $category = NewsCategory::findOne($category_id);
-      $breadCrumbs[] = [
-        'url' => '/news/'.$category->id,
-        'name' => $category->name
-      ];
-    }
-
     return $this->render('index',[
-      'breadCrumbs' => $breadCrumbs,
-      'categories' => $categories,
+      'category' => $category,
       'news' => $news->getModels(),
     ]);
   }

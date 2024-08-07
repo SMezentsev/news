@@ -64,12 +64,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
         <div class="col-lg-2 col-md-3">
           <div class="header-logo d-none d-lg-block">
             <a href="/">
-
-              <?php if (1) { ?>
-                <span style="color:#ee4a5f">MOS</span><span style="color:#29abe2">OVKA</span>.RU
-              <?php } else { ?>
-              <span style="color:#ee4a5f">ГЛАВНАЯ</span>
-              <?php }  ?>
+              <span style="color:#ee4a5f">MOS</span><span style="color:#29abe2">OVKA</span>.RU
             </a>
           </div>
           <div class="logo-tablet d-md-inline d-lg-none d-none">
@@ -138,7 +133,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
                   <a href="https://newsviral-html.vercel.app/index.html">Москва</a>
                   <ul class="sub-menu text-muted font-small">
                     <?php foreach ($moscowCategories as $item) { ?>
-                      <li><a href=""><?= $item->name ?></a></li>
+                      <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
                     <?php } ?>
                   </ul>
                 </li>
@@ -146,7 +141,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
                   <a href="https://newsviral-html.vercel.app/index.html">Мир</a>
                   <ul class="sub-menu text-muted font-small">
                     <?php foreach ($worldCategories as $item) { ?>
-                      <li><a href=""><?= $item->name ?></a></li>
+                      <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
                     <?php } ?>
                   </ul>
                 </li>
@@ -155,22 +150,22 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
                     <a href="https://newsviral-html.vercel.app/index.html#">
                       <?php if (0) { ?>
                         <span class="mr-15">
-                                                    <ion-icon name="desktop-outline" role="img" class="md hydrated"
-                                                              aria-label="desktop outline"><template
-                                                        shadowrootmode="open"><div class="icon-inner"><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect
-                                                              x="32" y="64" width="448" height="320" rx="32" ry="32"
-                                                              stroke-linejoin="round"
-                                                              class="ionicon-fill-none ionicon-stroke-width"></rect><path
-                                                              stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M304 448l-8-64h-80l-8 64h96z"
-                                                              class="ionicon-stroke-width"></path><path
-                                                              stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M368 448H144"
-                                                              class="ionicon-fill-none ionicon-stroke-width"></path><path
-                                                              d="M32 304v48a32.09 32.09 0 0032 32h384a32.09 32.09 0 0032-32v-48zm224 64a16 16 0 1116-16 16 16 0 01-16 16z"></path></svg></div></template></ion-icon>
-                                                </span>
+                                  <ion-icon name="desktop-outline" role="img" class="md hydrated"
+                                            aria-label="desktop outline"><template
+                                      shadowrootmode="open"><div class="icon-inner"><svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="ionicon s-ion-icon" viewBox="0 0 512 512"><rect
+                                            x="32" y="64" width="448" height="320" rx="32" ry="32"
+                                            stroke-linejoin="round"
+                                            class="ionicon-fill-none ionicon-stroke-width"></rect><path
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            d="M304 448l-8-64h-80l-8 64h96z"
+                                            class="ionicon-stroke-width"></path><path
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            d="M368 448H144"
+                                            class="ionicon-fill-none ionicon-stroke-width"></path><path
+                                            d="M32 304v48a32.09 32.09 0 0032 32h384a32.09 32.09 0 0032-32v-48zm224 64a16 16 0 1116-16 16 16 0 01-16 16z"></path></svg></div></template></ion-icon>
+                        </span>
                       <?php } ?>
                       Layouts
                     </a>
@@ -577,6 +572,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
             </nav>
           </div>
           <!-- Search -->
+          <?php if(0) { ?>
           <form action="https://newsviral-html.vercel.app/index.html#" method="get"
                 class="search-form d-lg-inline float-right position-relative mr-30 d-none">
             <input type="text" class="search_field" placeholder="Search" value="" name="s">
@@ -603,6 +599,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
               </ion-icon>
             </div>
           </div>
+          <?php } ?>
         </div>
       </div>
     </div>

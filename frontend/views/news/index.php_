@@ -2,8 +2,25 @@
 
 use frontend\components\WeatherWidget\WeatherWidget;
 use frontend\components\SidebarWidget;
+use common\models\NewsCategory;
 
 ?>
+
+<div class="entry-meta category-menu meta-0 font-small mb-30">
+
+  <?php
+  $parent = NewsCategory::find()->where(['id' => $model->parent_id])->one();
+  $categories = NewsCategory::find()->where(['parent_id' => $model->parent_id])->all();
+  ?>
+  <?php if ($model->parent_id) { ?>
+    <a href="category.html"><span class="post-cat"><?= $parent->name ?></span></a>:
+  <?php } ?>
+  <?php foreach ($categories as $category) { ?>
+    <a href="/news/<?= $category->id ?>"><span
+        class="post-cat <?= $model->id == $category->id ? 'active' : '' ?>"><?= $category->name ?></span></a>
+  <?php } ?>
+
+</div>
 
 <div class="row" style="transform: none;">
   <!-- sidebar-left -->
@@ -17,8 +34,6 @@ use frontend\components\SidebarWidget;
       <?= SidebarWidget::widget(['categoryIds' => [
         'science', 'culture', 'travel', 'economics', 'sport', 'health'
       ]]); ?>
-
-
     </div>
   </div>
   <!-- main content -->
@@ -28,24 +43,7 @@ use frontend\components\SidebarWidget;
       <div class="col-lg-8 col-md-12">
 
         <div class="latest-post mb-50">
-          <?php if (0) { ?>
-          <div class="widget-header position-relative mb-30">
 
-            <div class="row">
-              <div class="col-7">
-                <h4 class="widget-title mb-0">Последние <span>новости</span></h4>
-              </div>
-              <?php if (0) { ?>
-                <div class="col-5 text-right">
-                  <h6 class="font-medium pr-15">
-                    <a class="text-muted font-small" href="https://newsviral-html.vercel.app/index.html#">View
-                      all</a>
-                  </h6>
-                </div>
-              <?php } ?>
-            </div>
-          </div>
-          <?php } ?>
           <div class="loop-list-style-1">
             <?php if (0) { ?>
               <article class="first-post p-10 background-white border-radius-10 mb-30 wow fadeIn animated"
@@ -139,8 +137,8 @@ use frontend\components\SidebarWidget;
 
   </div>
 </div>
-<?//= $this->render('@frontend/views/adv/_horizontal.php') ?>
-<div class="post-carausel-1-items mt-30 mb-30 slick-initialized slick-slider">
+<?= $this->render('@frontend/views/adv/_horizontal.php') ?>
+<div class="post-carausel-1-items mt-30 slick-initialized slick-slider">
   <div class="slick-list draggable">
     <div class="slick-track">
       <?php $randomNews = \common\models\News::find()->limit(5)->all(); ?>
@@ -149,14 +147,14 @@ use frontend\components\SidebarWidget;
              style="width: 252px;">
           <div class="slider-single bg-white p-10 border-radius-15">
             <div class="img-hover-scale border-radius-10">
-              <a href="/news/<?= $item->category_id ?>/<?= $item->id ?>" tabindex="-1">
+              <a href="single.html" tabindex="-1">
                 <img class="border-radius-10" src="<?= $item->files->resize_image2 ?>" alt="post-slider">
               </a>
             </div>
             <h6 class="post-title pr-5 pl-5 mb-10 mt-15 text-limit-2-row">
-              <a href="/news/<?= $item->category_id ?>/<?= $item->id ?>" tabindex="-1"><?= $item->title ?></a>
+              <a href="single.html" tabindex="-1"><?= $item->title ?></a>
             </h6>
-            <?php if(0) { ?>
+            <?php if (0) { ?>
               <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase pl-5 pb-15">
                 <span class="post-by">By <a href="author.html" tabindex="-1">K. Marry</a></span>
                 <span class="post-on">3m ago</span>

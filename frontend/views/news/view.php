@@ -11,10 +11,11 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
 <div class="entry-header entry-header-1 mb-30 mt-50">
   <div class="entry-meta category-menu meta-0 font-small mb-30">
-    <a href="category.html"><span class="post-cat"><?= $parent->name??$category->name ?></span></a>:
+    <a href="<?= '/news/'.($parent->id??$category->id) ?>"><span class="post-cat"><?= $parent->name??$category->name ?></span></a>:
     <?php if($parent) { ?>
+
       <?php foreach ($categories as $category) { ?>
-        <a href="category.html"><span class="post-cat <?= $model->category_id == $category->id ? 'active' : ''?>"><?= $category->name ?></span></a>
+        <a href="<?= '/news/'.$category->id ?>"><span class="post-cat <?= $model->category_id == $category->id ? 'active' : ''?>"><?= $category->name ?></span></a>
       <?php } ?>
     <?php } ?>
   </div>
@@ -81,12 +82,14 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
     </div>
     <?php } ?>
     <div class="overflow-hidden mt-30">
+      <?php if(0) { ?>
       <div class="tags float-left text-muted mb-md-30">
         <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>Tags: </span>
         <a href="category.html" rel="tag">tech</a>
         <a href="category.html" rel="tag">world</a>
         <a href="category.html" rel="tag">global</a>
       </div>
+      <?php } ?>
       <?php if(0) { ?>
       <div class="single-social-share float-right">
         <ul class="d-inline-block list-inline">
@@ -107,6 +110,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
       <?php } ?>
     </div>
   </div>
+  <?php if(0) { ?>
   <!--related posts-->
   <div class="related-posts">
     <h3 class="mb-30">Related posts</h3>
@@ -184,5 +188,6 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
       </article>
     </div>
   </div>
+  <?php } ?>
 
 </div>
