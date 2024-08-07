@@ -30,7 +30,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
         <li class="mb-20">
           <div class="d-flex">
             <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-              <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+              <a class="color-white" href="<?= 'news/'.$item->category->id.'/'. $item->id ?>">
                 <img src="<?= $item->files->resize_image1 ?>" alt="">
               </a>
             </div>

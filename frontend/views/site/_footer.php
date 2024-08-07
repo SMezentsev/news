@@ -1,4 +1,10 @@
+<?php
+
+use common\models\NewsCategory;
+?>
+
 <footer>
+  <?php if(0) { ?>
   <div class="footer-area pt-50 bg-white">
     <div class="container">
       <div class="row pb-30">
@@ -81,6 +87,7 @@
       </div>
     </div>
   </div>
+  <?php } ?>
   <!-- footer-bottom aera -->
   <div class="footer-bottom-area bg-white text-muted">
     <div class="container">
@@ -88,32 +95,17 @@
         <div class="row d-flex mb-15">
           <div class="col-12">
             <ul class="list-inline font-small">
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">World</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">U.S.</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Politics</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">N.Y.</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Business</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Opinion</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Tech</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Science</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Health</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Sports</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Arts</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Books</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Style</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Food</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Travel</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Magazine</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">T Magazine</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Real Estate</a></li>
-              <li class="list-inline-item"><a href="https://newsviral-html.vercel.app/category.html">Video</a></li>
+              <?php $categories = NewsCategory::find()->where(['parent_id' => 0])->all(); ?>
+              <?php foreach ( $categories as $category) { ?>
+                <li class="list-inline-item"><a href="news/<?= $category->id; ?>"><?= $category->name; ?></a></li>
+              <?php } ?>
             </ul>
           </div>
         </div>
         <div class="row d-flex align-items-center justify-content-between">
           <div class="col-12">
             <div class="footer-copy-right">
-              <p class="font-small text-muted">© 2020, NewsViral | All rights reserved | Design by <a href="https://alithemes.com/" target="_blank">AliThemes</a></p>
+              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" target="_blank">SM Digital</a></p>
             </div>
           </div>
         </div>

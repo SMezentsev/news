@@ -11,7 +11,7 @@
 
           <li style="margin: 0px; padding: 0px; height: 64.4886px;">
           <span class="font-small">
-          <a class="text-success" href="https://newsviral-html.vercel.app/index.html#"><?= $weather->city->name ?></a><br>
+          <span class="text-success"><?= $weather->city->name ?></span><br>
           <?= $weather->type->icon ?>
             <?= $weather->value ?>ºc
           </span>
