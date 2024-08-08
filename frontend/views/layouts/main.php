@@ -36,6 +36,7 @@ $this->beginPage();
       visibility: inherit
     }
   </style>
+  <meta name="yandex-verification" content="2a5623401af2d15e" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><?= Html::encode($this->title ? 'MOSOVKA.RU - '.$this->title : 'MOSOVKA.RU - Новостной портал') ?></title>
 <!--  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">-->
