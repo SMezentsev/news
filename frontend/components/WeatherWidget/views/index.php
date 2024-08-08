@@ -8,17 +8,16 @@
     <div class="font-medium weather ml-10">
       <div id="datetime" class="d-inline-block" style="overflow: hidden; position: relative; height: 90px">
         <ul>
-
-          <li style="margin: 0px; padding: 0px; height: 64.4886px;">
-          <span class="font-small">
-          <span class="text-success"><?= $weather->city->name ?></span><br>
-          <?= $weather->type->icon ?>
-            <?= $weather->value ?>ºc
-          </span>
-            <p style="width:40px"><?= $weather->type->name ?></p>
+        <?php foreach ($weatherList as $item) { ?>
+          <li>
+            <span class="font-small">
+            <span class="text-success"><?= $item->city->name ?></span><br>
+            <?= $item->type->icon ?>
+              <?= $item->value ?>ºc
+            </span>
+            <p style="width:40px"><?= $item->type->name ?></p>
           </li>
-
-          </li>
+        <?php } ?>
         </ul>
       </div>
     </div>
