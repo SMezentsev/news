@@ -58,6 +58,10 @@ class NewsController extends Controller {
         'name' => $category->name
       ];
 
+      $this->view->title = $model->title;
+      $this->view->registerMetaTag(['name' => 'keywords', 'content' => $model->title]);
+      $this->view->registerMetaTag(['name' => 'description', 'content' =>$model->announce]);
+
       return $this->render('view', [
         'breadCrumbs' => $breadCrumbs,
         'categories' => $categories,

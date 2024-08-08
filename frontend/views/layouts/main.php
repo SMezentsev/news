@@ -21,7 +21,6 @@ use yii\helpers\Html;
 yii\bootstrap4\Progress::widget(['percent' => 60, 'label' => 'test']);
 
 $this->beginPage();
-Yii::$app->metaTags->register('main');
 
 ?>
 <!DOCTYPE html>
@@ -29,27 +28,21 @@ Yii::$app->metaTags->register('main');
 
 <!--<![endif]-->
 <head>
-  <style data-styles="">ion-icon {
+  <style data-styles="">
+    ion-icon {
       visibility: hidden
     }
-
     .hydrated {
       visibility: inherit
-    }</style>
+    }
+  </style>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>MOSOVKA.RU - Новостной портал</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
-  <title><?= Yii::$app->metaTags->title(); ?></title>
+  <title><?= Html::encode($this->title ? 'MOSOVKA.RU - '.$this->title : 'MOSOVKA.RU - Новостной портал') ?></title>
+<!--  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">-->
 
-  <!-- fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
-  <!-- css -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
-          data-stencil-namespace="ionicons"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
-          data-stencil-namespace="ionicons"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js" data-stencil-namespace="ionicons"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js" data-stencil-namespace="ionicons"></script>
   <?php $this->head() ?>
   <style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {
       content: "";
