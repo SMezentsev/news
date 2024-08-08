@@ -36,7 +36,9 @@ $this->beginPage();
       visibility: inherit
     }
   </style>
+  <?php if(Yii::$app->params['yandexWebmaster']??false) { ?>
   <meta name="yandex-verification" content="2a5623401af2d15e" />
+  <?php } ?>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><?= Html::encode($this->title ? 'MOSOVKA.RU - '.$this->title : 'MOSOVKA.RU - Новостной портал') ?></title>
 <!--  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">-->
@@ -50,6 +52,7 @@ $this->beginPage();
       display: table;
       clear: both;
     }</style>
+  <?php if(Yii::$app->params['yandexMetrika']??false) { ?>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -64,6 +67,7 @@ $this->beginPage();
       accurateTrackBounce:true
     });
   </script>
+  <?php } ?>
   <noscript><div><img src="https://mc.yandex.ru/watch/98021012" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 </head>
