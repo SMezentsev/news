@@ -7,7 +7,7 @@ $healthCategory = NewsCategory::find()->where(['eng_name' => 'health'])->one();
 $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)->all();
 
 ?>
-
+<?= $this->render('@frontend/views/site/_subscribe.php') ?>
 <div class="sidebar-widget mb-30">
   <div class="widget-header position-relative mb-30">
     <div class="row">
@@ -44,9 +44,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
     </ul>
   </div>
 </div>
-<!--Top authors-->
-<? //= $this->render('@frontend/views/site/_subscribe.php') ?>
-<!--Post aside style 2-->
+
 
 
 <div class="sidebar-widget mb-30">

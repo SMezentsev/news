@@ -11,7 +11,8 @@ use frontend\assets\CustomAsset;
 use yii\helpers\ArrayHelper;
 use lavrentiev\widgets\toastr\Notification;
 
-
+use frontend\components\WeatherWidget\WeatherWidget;
+use frontend\components\SidebarWidget;
 AppAsset::register($this);
 
 //CustomAsset::register($this);
@@ -249,7 +250,21 @@ $this->beginPage();
 
   <main class="position-relative" style="transform: none;">
     <div class="container" style="transform: none;">
+      <div class="row" style="transform: none;">
+        <!-- sidebar-left -->
+        <div class="col-lg-2 col-md-3 primary-sidebar sticky-sidebar sidebar-left order-2 order-md-1" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+          <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 15px;">
+            <?= WeatherWidget::widget(); ?>
+            <?= SidebarWidget::widget(['title' => 'Москва', 'eng_name' => 'moscow']); ?>
+            <?= SidebarWidget::widget(['categoryIds' => [
+              'science', 'culture', 'travel', 'economics', 'sport', 'health'
+            ]]); ?>
+
+          </div>
+        </div>
       <?= $content ?>
+      </div>
     </div>
   </main>
 

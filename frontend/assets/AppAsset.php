@@ -41,6 +41,7 @@ class AppAsset extends AssetBundle
 
     /* Import third party CSS library */
     //'css/bootstrap.min.css',
+    'css/style.css',
     'css/owl.carousel.min.css',
     'css/ticker-style.css',
     'css/material-icons.min.css',
@@ -56,7 +57,7 @@ class AppAsset extends AssetBundle
     'css/nice-select.css',
     'css/perfect-scrollbar.css',
 
-    'css/style.css',
+
     'css/widgets.css',
     'css/color.css',
     'css/responsive.css',
@@ -65,7 +66,7 @@ class AppAsset extends AssetBundle
   ];
 
   public $depends = [
-    'yii\web\YiiAsset',
+//    'yii\web\YiiAsset',
 ///        'frontend\assets\AngularAsset',
         'yii\bootstrap4\BootstrapAsset',
 

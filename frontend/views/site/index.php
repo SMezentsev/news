@@ -5,22 +5,6 @@ use frontend\components\SidebarWidget;
 
 ?>
 
-<div class="row" style="transform: none;">
-  <!-- sidebar-left -->
-  <div class="col-lg-2 col-md-3 primary-sidebar sticky-sidebar sidebar-left order-2 order-md-1"
-       style="position: relative; overflow: visible; box-sizing: border-box; ">
-
-    <div class="theiaStickySidebar"
-         style="padding-top: 1px; padding-bottom: 1px; position: fixed; transform: translateY(100px); top: 0px; ">
-      <?= WeatherWidget::widget(); ?>
-      <?= SidebarWidget::widget(['title' => 'Москва', 'eng_name' => 'moscow']); ?>
-      <?= SidebarWidget::widget(['categoryIds' => [
-        'science', 'culture', 'travel', 'economics', 'sport', 'health'
-      ]]); ?>
-
-
-    </div>
-  </div>
   <!-- main content -->
   <div class="col-lg-10 col-md-9 order-1 order-md-2">
 
@@ -138,8 +122,7 @@ use frontend\components\SidebarWidget;
 
 
   </div>
-</div>
-<?//= $this->render('@frontend/views/adv/_horizontal.php') ?>
+<?php if(0) { ?>
 <div class="post-carausel-1-items mt-30 mb-30 slick-initialized slick-slider">
   <div class="slick-list draggable">
     <div class="slick-track">
@@ -169,3 +152,4 @@ use frontend\components\SidebarWidget;
     </div>
   </div>
 </div>
+<?php } ?>
