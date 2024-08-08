@@ -3,24 +3,14 @@
 namespace frontend\controllers;
 
 use common\models\Faq;
-use common\models\ProductProperty;
-use common\models\Search\ProductsSearchArrayProvider;
 use frontend\models\ContactForm;
-use frontend\models\OrderForm;
 use Yii;
-use yii\base\InvalidArgumentException;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
-use common\models\User;
-use common\models\Products;
-use common\models\Tree;
-use yii\helpers\Html;
 use common\components\Catalog;
-use common\Exceptions\ValidationErrorException;
-use common\models\Property;
+use common\models\NewsCategory;
 use common\models\Pages;
 use frontend\components\CatalogHeader\CatalogHeaderWidget;
 
@@ -39,9 +29,6 @@ class SiteController extends Controller
   {
     return [
       '*',
-      'http://admin',
-      'http://admin/user/update/1',
-      'http://theme/',
     ];
   }
 
@@ -122,8 +109,6 @@ class SiteController extends Controller
   public function actionIndex()
   {
 
-
-
     return $this->render('index', [
 
     ]);
@@ -185,6 +170,15 @@ class SiteController extends Controller
       'content' => Yii::$app->pages->getContent(Pages::PAGE_CONTACTS),
       'send' => $send
     ]);
+  }
+
+
+  public function actionSitemap()
+  {
+    Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+    Yii::$app->response->headers->add('Content-Type', 'text/xml');
+    $categories = NewsCategory::find()->where(['!=', 'parent_id', 0])->all();
+    return $this->renderPartial('sitemap', ['categories' => $categories]);
   }
 
   public function beforeAction($action)

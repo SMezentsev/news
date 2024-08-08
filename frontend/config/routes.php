@@ -5,6 +5,7 @@ use yii\web\UrlRule;
 
 return [
     '' => 'site/index',
+    'sitemap.xml' => 'site/sitemap',
     '<action:(terms|faqs|contacts|about|list|delivery)>' => 'site/<action>',
     '<action:(details|remember|addresses|dashboard|history|profile|password)>' => 'account/<action>',
     '<action:(login|register|logout|restore|verify-email)>' => 'auth/<action>',
