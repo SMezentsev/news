@@ -30,7 +30,7 @@ class WeatherWidget extends Widget
       ->where(['=', new \yii\db\Expression("date::date"), Carbon::today()->format('Y-m-d')])->all();
 
     return $this->render('index', [
-      'day' => $days[$n],
+      'day' => $days[$n-1],
       'date' => Carbon::now()->format('d'),
       'month' => DateHelper::months(Carbon::today()->format('m'), false),
       'weatherList' => $weatherList
