@@ -17,7 +17,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
       <?php if(0) { ?>
       <div class="col-5 text-right">
         <h6 class="font-medium pr-15">
-          <a class="text-muted font-small" href="https://newsviral-html.vercel.app/index.html#">View
+          <a class="text-muted font-small" href="#">View
             all</a>
         </h6>
       </div>
@@ -30,7 +30,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
         <li class="mb-20">
           <div class="d-flex">
             <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-              <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+              <a class="color-white" href="<?= 'news/'.$item->category->id.'/'. $item->id ?>">
                 <img src="<?= $item->files->resize_image1 ?>" alt="">
               </a>
             </div>

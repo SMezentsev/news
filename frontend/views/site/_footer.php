@@ -97,7 +97,7 @@ use common\models\NewsCategory;
             <ul class="list-inline font-small">
               <?php $categories = NewsCategory::find()->where(['parent_id' => 0])->all(); ?>
               <?php foreach ( $categories as $category) { ?>
-                <li class="list-inline-item"><a href="news/<?= $category->id; ?>"><?= $category->name; ?></a></li>
+                <li class="list-inline-item"><a href="/news/<?= $category->id; ?>"><?= $category->name; ?></a></li>
               <?php } ?>
             </ul>
           </div>
@@ -105,7 +105,7 @@ use common\models\NewsCategory;
         <div class="row d-flex align-items-center justify-content-between">
           <div class="col-12">
             <div class="footer-copy-right">
-              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" target="_blank">SM Digital</a></p>
+              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" style="color:#000000 !important; font-weight:bold" target="_blank">S<span style="color:#d90a2c">M</span> Digital</a></p>
             </div>
           </div>
         </div>

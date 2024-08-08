@@ -37,10 +37,9 @@ Yii::$app->metaTags->register('main');
       visibility: inherit
     }</style>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>NewsViral - NewsViral HTML Template</title>
+  <title>MOSOVKA.RU - Новостной портал</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="https://newsviral-html.vercel.app/site.webmanifest">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
   <title><?= Yii::$app->metaTags->title(); ?></title>
 
@@ -68,8 +67,10 @@ Yii::$app->metaTags->register('main');
 <div class="main-wrap" style="transform: none;">
 
   <aside id="sidebar-wrapper" class="custom-scrollbar offcanvas-sidebar position-right ps ps--active-x ps--active-y">
+    <?php if(0) { ?>
     <button class="off-canvas-close"><i class="ti-close"></i></button>
     <div class="sidebar-inner">
+
       <!--Search-->
       <div class="siderbar-widget mb-50 mt-30">
         <form action="https://newsviral-html.vercel.app/index.html#" method="get" class="search-form position-relative">
@@ -77,6 +78,7 @@ Yii::$app->metaTags->register('main');
           <span class="search-icon"><i class="ti-search mr-5"></i></span>
         </form>
       </div>
+
       <!--lastest post-->
       <div class="sidebar-widget mb-50">
         <div class="widget-header mb-30">
@@ -192,6 +194,7 @@ Yii::$app->metaTags->register('main');
           <a href="https://newsviral-html.vercel.app/category.html">Style</a>
         </div>
       </div>
+
       <!--Ads-->
       <div class="sidebar-widget widget-ads mb-30">
         <div class="widget-header tags-close mb-20">
@@ -201,6 +204,7 @@ Yii::$app->metaTags->register('main');
           <img class="border-radius-10" src="./images/ads-1.jpg" alt="">
         </a>
       </div>
+
     </div>
     <div class="ps__rail-x" style="width: 0px; left: 0px; bottom: 0px;">
       <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
@@ -208,6 +212,7 @@ Yii::$app->metaTags->register('main');
     <div class="ps__rail-y" style="top: 0px; height: 824px; right: 0px;">
       <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 504px;"></div>
     </div>
+    <?php }  ?>
   </aside>
   <div id="preloader-active" style="display: none;">
     <div class="preloader d-flex align-items-center justify-content-center">

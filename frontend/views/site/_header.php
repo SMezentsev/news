@@ -70,12 +70,12 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
             </a>
           </div>
           <div class="logo-tablet d-md-inline d-lg-none d-none">
-            <a href="https://newsviral-html.vercel.app/index.html">
+            <a href="/">
               MOSOVKA.RU
             </a>
           </div>
           <div class="logo-mobile d-block d-md-none">
-            <a href="https://newsviral-html.vercel.app/index.html">
+            <a href="/">
               MOSOVKA.RU
             </a>
           </div>
@@ -134,7 +134,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
                   </a>
                 </li>
                 <li class="menu-item-has-children">
-                  <a href="https://newsviral-html.vercel.app/index.html">Москва</a>
+                  <a href="#">Москва</a>
                   <ul class="sub-menu text-muted font-small">
                     <?php foreach ($moscowCategories as $item) { ?>
                       <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
@@ -142,7 +142,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->all
                   </ul>
                 </li>
                 <li class="menu-item-has-children">
-                  <a href="https://newsviral-html.vercel.app/index.html">Мир</a>
+                  <a href="#">Мир</a>
                   <ul class="sub-menu text-muted font-small">
                     <?php foreach ($worldCategories as $item) { ?>
                       <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
