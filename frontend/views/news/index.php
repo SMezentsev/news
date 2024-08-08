@@ -48,7 +48,7 @@ use Carbon\Carbon;
           <div class="latest-post mb-50">
             <div class="loop-list-style-1">
 
-              <?php if($news = \common\models\News::find()->where(['category_id' => $category->id])->all()) { ?>
+              <?php if($news = \common\models\News::find()->where(['category_id' => $category->id])->orderBy('date DESC')->all()) { ?>
                 <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>
               <?php } ?>
               <?php foreach ($news as $item) { ?>

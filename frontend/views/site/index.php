@@ -103,7 +103,7 @@ use frontend\components\SidebarWidget;
               </article>
             <?php } ?>
 
-            <?php $news = \common\models\News::find()->all(); ?>
+            <?php $news = \common\models\News::find()->orderBy('date DESC')->all(); ?>
             <?php foreach ($news as $item) { ?>
               <?= $this->render('@frontend/views/articles/_article_square_image.php', ['news' => $item]) ?>
             <?php } ?>
