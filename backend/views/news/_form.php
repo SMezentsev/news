@@ -56,8 +56,25 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 </div>
 <div class="row">
   <div class="col-md-6">
+    <?php
+
+      $categories = NewsCategory::find()->where(['in', 'eng_name', ['moscow', 'world']])->all();
+      $data = [];
+      foreach ($categories as $category) {
+
+        $subCat = NewsCategory::find()->where(['parent_id' => $category->id])->asArray()->all();
+        $data[$category->name] = ArrayHelper::map($subCat, 'id', 'name');
+      }
+
+      $subCat = NewsCategory::find()->where(['not in', 'eng_name', ['moscow', 'world']])->andWhere(['parent_id' => 0])->asArray()->all();
+      $subCat = ArrayHelper::map($subCat, 'id', 'name');
+      $data = array_merge($data, [
+        'общие' => $subCat
+      ]);
+
+    ?>
     <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
-      'data' => ArrayHelper::map(NewsCategory::find()->asArray()->all(), 'id', 'name'),
+      'data' => $data,
       'options' => ['placeholder' => 'Выбрать категорию'],
     ]); ?>
 
