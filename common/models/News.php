@@ -11,6 +11,7 @@ namespace common\models;
 use Yii;
 use yii\db\ActiveRecord;
 use Carbon\Carbon;
+use common\models\Query\NewsQuery;
 
 
 class News extends ActiveRecord
@@ -79,7 +80,12 @@ class News extends ActiveRecord
     return static::findAll(['show' => self::STATUS_ACTIVE]);
   }
 
-  public function beforeSave($insert)
+  public static function find()
+  {
+    return (new NewsQuery(get_called_class()))->show();
+  }
+
+    public function beforeSave($insert)
   {
 
     if (parent::beforeSave($insert)) {
