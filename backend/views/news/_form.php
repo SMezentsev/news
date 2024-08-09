@@ -41,19 +41,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 <!--  --><?//= isset($files[0]) ? Html::img(Yii::$app->params['imageUrl'] . $files[0]['resize_image1'], ['style' => 'width:160px']) : '' ?>
 <!--</div>-->
 
-<div class="row">
-  <div class="col-md-12">
-    <?= $form->field($model, 'file')->widget(FileInput::classname(), [
-      'options' => ['accept' => 'image/*'],
-      'pluginOptions' => [
-        'showPreview' => false,
-        'showCaption' => true,
-        'showRemove' => true,
-        'showUpload' => false
-      ]
-    ]); ?>
-  </div>
-</div>
+
 <div class="row">
   <div class="col-md-6">
     <?php
