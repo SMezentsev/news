@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Roboto&display=swap');
 
 /* Import third party CSS library */
+/*
 @import url(css/bootstrap.min.css);
 @import url(css/owl.carousel.min.css);
 @import url(css/ticker-style.css);
@@ -18,7 +19,7 @@
 @import url(css/slick.css);
 @import url(css/nice-select.css);
 @import url(css/perfect-scrollbar.css);
-
+*/
 /* GENERAL */
 body{font-family:'Roboto',sans-serif;font-weight:normal;font-style:normal;background:#f7f8f9;}
 h1,
