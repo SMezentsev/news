@@ -88,7 +88,10 @@ use frontend\components\SidebarWidget;
             <?php } ?>
 
             <?php $news = \common\models\News::find()->orderBy('date DESC')->all(); ?>
-            <?php foreach ($news as $item) { ?>
+
+            <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>
+
+            <?php foreach (array_slice($news, 1) as $item) { ?>
               <?= $this->render('@frontend/views/articles/_article_square_image.php', ['news' => $item]) ?>
             <?php } ?>
           </div>
