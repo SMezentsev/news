@@ -18,7 +18,7 @@ use Carbon\Carbon;
           <?php if ($news = \common\models\News::find()->where(['category_id' => $category->id])->orderBy('date DESC')->all()) { ?>
             <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>`
           <?php } ?>
-          <?php foreach ($news as $item) { ?>
+          <?php foreach (array_slice($news, 1) as $item) { ?>
             <?= $this->render('@frontend/views/articles/_article_250_250_announce.php', ['news' => $item]) ?>
           <?php } ?>
 
