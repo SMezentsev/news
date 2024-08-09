@@ -9,7 +9,7 @@ $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
 $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->all();
 ?>
 
-<div class="entry-header entry-header-1 mb-30 mt-50">
+<div class="entry-header entry-header-1 ml-10 mb-30 mt-50">
   <div class="entry-meta category-menu meta-0 font-small mb-30">
     <a href="<?= '/news/'.($parent->id??$category->id) ?>"><span class="post-cat"><?= $parent->name??$category->name ?></span></a>:
     <?php if($parent) { ?>
@@ -28,6 +28,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
           href="author.html">Michael D. Shear</a></span>
     <?php } ?>
     <span class="post-on">
+          <?= Carbon::parse($model->date)->format('H:i, '); ?>
           <?= intval(Carbon::parse($model->date)->format('d')); ?>
           <?= DateHelper::months(Carbon::parse($model->date)->format('m'), false) ?>
           <?= Carbon::parse($model->date)->format('y'); ?>

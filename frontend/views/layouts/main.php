@@ -250,7 +250,9 @@ $this->beginPage();
 
   <main class="position-relative" style="transform: none;">
     <div class="container" style="transform: none;">
+      <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
       <div class="row" style="transform: none;">
+      <?php } ?>
         <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
         <div class="col-lg-2 col-md-3 primary-sidebar sticky-sidebar sidebar-left order-2 order-md-1" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
@@ -262,7 +264,10 @@ $this->beginPage();
             ]]); ?>
 
           </div>
+
+          <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
         </div>
+          <?php } ?>
         <?php } ?>
         <?= $content ?>
       </div>
