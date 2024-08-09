@@ -87,7 +87,7 @@ use frontend\components\SidebarWidget;
               </article>
             <?php } ?>
 
-            <?php $news = \common\models\News::find()->orderBy('date DESC')->all(); ?>
+            <?php $news = \common\models\News::find()->orderBy('date DESC')->limit(15)->all(); ?>
 
             <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>
 
