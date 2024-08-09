@@ -48,7 +48,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
   <div class="bt-1 border-color-1 mb-30"></div>
   <?php if (0) { ?>
     <figure class="single-thumnail mb-30">
-      <img src="<?= $model->files->original ?>" alt="">
+      <img src="<?= $model->mainFile->original??'' ?>" alt="">
       <div class="credit mt-15 font-small color-grey">
         <i class="ti-credit-card mr-5"></i><span>Image credit: pexels.com</span>
       </div>
@@ -62,7 +62,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
     <div class="wp-block-image">
       <figure class="alignright is-resized">
-        <img class="border-radius-5" src="<?= $model->files->original ?>" style="max-width:500px">
+        <img class="border-radius-5" src="<?= $model->mainFile->original??'' ?>" style="max-width:500px">
         <?php if (0) { ?>
           <figcaption> And far contrary smoked some contrary among stealthy</figcaption>
         <?php } ?>
