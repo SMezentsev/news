@@ -44,6 +44,8 @@ class NewsController extends Controller {
 
     if($model = $this->findModel($id)) {
 
+      $model->views += 1;
+      $model->save();
       $categories = NewsCategory::find()->all();
       $category = NewsCategory::findOne($category_id);
 

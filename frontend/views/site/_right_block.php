@@ -7,7 +7,7 @@ $healthCategory = NewsCategory::find()->where(['eng_name' => 'health'])->one();
 $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)->all();
 
 ?>
-<?= $this->render('@frontend/views/site/_subscribe.php') ?>
+
 <div class="sidebar-widget mb-30">
   <div class="widget-header position-relative mb-30">
     <div class="row">
@@ -15,12 +15,12 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
         <h4 class="widget-title mb-0">Для <span>здоровья</span></h4>
       </div>
       <?php if(0) { ?>
-      <div class="col-5 text-right">
-        <h6 class="font-medium pr-15">
-          <a class="text-muted font-small" href="#">View
-            all</a>
-        </h6>
-      </div>
+        <div class="col-5 text-right">
+          <h6 class="font-medium pr-15">
+            <a class="text-muted font-small" href="#">View
+              all</a>
+          </h6>
+        </div>
       <?php } ?>
     </div>
   </div>
@@ -44,9 +44,6 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
     </ul>
   </div>
 </div>
-
-
-
 <div class="sidebar-widget mb-30">
   <div class="widget-header mb-20">
     <h5 class="widget-title">Популярные <span>новости</span></h5>
@@ -54,10 +51,11 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
   <div class="post-aside-style-3">
 
     <?php
-      $populars = \common\models\News::find()->orderBy('views DESC')->limit(4)->all();
+      $populars = \common\models\News::find()->orderBy('views DESC')->limit(10)->all();
     ?>
+    <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 5)]) ?>
 
-    <?php foreach ($populars as $item) { ?>
+    <?php foreach (array_slice($populars, 5) as $item) { ?>
 
       <?= $this->render('@frontend/views/articles/_article_380.php', [
         'news' => $item
@@ -66,3 +64,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
 
   </div>
 </div>
+<?= $this->render('@frontend/views/site/_subscribe.php') ?>
+
+
+

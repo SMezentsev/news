@@ -82,7 +82,7 @@ $this->beginPage();
 <div class="main-wrap" style="transform: none;">
 
   <aside id="sidebar-wrapper" class="custom-scrollbar offcanvas-sidebar position-right ps ps--active-x ps--active-y">
-    <?php if(0) { ?>
+    <?php if(1) { ?>
     <button class="off-canvas-close"><i class="ti-close"></i></button>
     <div class="sidebar-inner">
 
@@ -251,7 +251,7 @@ $this->beginPage();
   <main class="position-relative" style="transform: none;">
     <div class="container" style="transform: none;">
       <div class="row" style="transform: none;">
-        <!-- sidebar-left -->
+        <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
         <div class="col-lg-2 col-md-3 primary-sidebar sticky-sidebar sidebar-left order-2 order-md-1" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
           <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; top: 0px; left: 15px;">
@@ -263,7 +263,8 @@ $this->beginPage();
 
           </div>
         </div>
-      <?= $content ?>
+        <?php } ?>
+        <?= $content ?>
       </div>
     </div>
   </main>

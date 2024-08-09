@@ -10,6 +10,7 @@ namespace common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use Carbon\Carbon;
 
 
 class News extends ActiveRecord
@@ -35,7 +36,7 @@ class News extends ActiveRecord
   public function rules()
   {
     return [
-      [['id', 'category_id', 'tag_id'], 'integer'],
+      [['id', 'category_id', 'tag_id', 'views'], 'integer'],
       [['title', 'announce', 'text', 'date'], 'string'],
       [['show'],'boolean'],
       [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
@@ -55,6 +56,7 @@ class News extends ActiveRecord
       'title' => 'Заголовок',
       'file' => 'Изображение',
       'tag_id' => 'Теги',
+      'views' => 'Просмотры',
       'date' => 'Дата'
     ];
   }
@@ -75,6 +77,18 @@ class News extends ActiveRecord
   {
 
     return static::findAll(['show' => self::STATUS_ACTIVE]);
+  }
+
+  public function beforeSave($insert)
+  {
+
+    if (parent::beforeSave($insert)) {
+
+      $this->date = Carbon::parse($this->date)->format('Y-m-d');
+      $this->date .= ' '.Carbon::now()->format('H:i:s');
+      return true;
+    }
+    return false;
   }
 }
 

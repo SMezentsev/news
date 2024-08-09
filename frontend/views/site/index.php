@@ -115,7 +115,7 @@ use frontend\components\SidebarWidget;
         <?php } ?>
       </div>
       <div class="col-lg-4 col-md-12 sidebar-right">
-        <?= $this->render('@frontend/views/posts/_right_block.php') ?>
+        <?= $this->render('@frontend/views/site/_right_block.php') ?>
       </div>
     </div>
     <!--    --><? //= $this->render('@frontend/views/posts/_post_full_image.php') ?>
