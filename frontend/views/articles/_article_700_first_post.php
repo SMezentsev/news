@@ -34,8 +34,9 @@ use common\Helper\DateHelper;
       <a href="<?= '/news/' . $news->category_id . '/' . $news->id ?>"><?= $news->title; ?></a></h4>
     <p class="post-exerpt font-medium text-muted mb-30"><?= $news->announce; ?></p>
     <div class="mb-20 overflow-hidden">
-      <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
+      <div class="entry-meta meta-1 font-x-small color-grey float-left">
         <span class="post-on">
+            <?= Carbon::parse($news->date)->format('H:i, '); ?>
             <?= intval(Carbon::parse($news->date)->format('d')); ?>
             <?= DateHelper::months(Carbon::parse($news->date)->format('m'), false) ?>
             <?= Carbon::parse($news->date)->format('y'); ?>

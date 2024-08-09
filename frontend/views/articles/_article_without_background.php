@@ -21,6 +21,7 @@ use common\Helper\DateHelper;
                 <a href="<?= '/news/'.$item->category_id.'/'.$item->id ?>"><?= $item->title ?></a></h6>
               <div class="entry-meta meta-1 font-x-small color-grey float-left">
                 <span class="post-on">
+                <?= Carbon::parse($item->date)->format('H:i, '); ?>
                 <?= intval(Carbon::parse($item->date)->format('d')); ?>
                 <?= DateHelper::months(Carbon::parse($item->date)->format('m'), false) ?>
                 <?= Carbon::parse($item->date)->format('y'); ?>

@@ -26,6 +26,7 @@ use common\Helper\DateHelper;
           <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">Sean Boynton</a></span>
         <?php } ?>
         <span class="post-on">
+          <?= Carbon::parse($news->date)->format('H:i, '); ?>
           <?= intval(Carbon::parse($news->date)->format('d')); ?>
           <?= DateHelper::months(Carbon::parse($news->date)->format('m'), false) ?>
           <?= Carbon::parse($news->date)->format('y'); ?>
