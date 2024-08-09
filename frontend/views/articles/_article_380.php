@@ -8,7 +8,7 @@ use common\Helper\DateHelper;
 <article class="bg-white border-radius-15 mb-30 p-10 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
   <div class="post-thumb d-flex mb-15 border-radius-15 img-hover-scale">
     <a href="single.html">
-      <img class="border-radius-15" src="<?= $news->files->original??'' ?>" alt="">
+      <img class="border-radius-15" src="<?= $news->mainFile->original??'' ?>" alt="">
     </a>
   </div>
   <div class="pl-10 pr-10">

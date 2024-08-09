@@ -138,24 +138,13 @@ class NewsController extends Controller
   public function actionUpdateFiles($id)
   {
 
-    $model = new News();
-    $files = new Files();
-
-    $model = $model->find()->where(['id' => $id])->one();
+    $model = News::find()->where(['id' => $id])->one();
 
     if (Yii::$app->request->isPost) {
 
       if ($id && $model->load(Yii::$app->request->post())) {
 
-        $files = $model->getFiles()->all();
         if ($model->save() && isset($_FILES[ucfirst(Yii::$app->controller->id)]['tmp_name']['file']) && !empty($_FILES[ucfirst(Yii::$app->controller->id)]['tmp_name']['file'])) {
-
-//          if ($files) {
-//            foreach ($files as $file) {
-//
-//              $file->delete();
-//            }
-//          }
 
           $files = new Files();
           $path = \Yii::getAlias('@newsImages') . '/' . $model->id;

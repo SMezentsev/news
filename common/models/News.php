@@ -71,8 +71,15 @@ class News extends ActiveRecord
   public function getFiles()
   {
 
+    return $this->hasMany(Files::className(), ['table_id' => 'id'])->andWhere(['table_name' => 'news']);;
+  }
+
+  public function getMainFile()
+  {
+
     return $this->hasOne(Files::className(), ['table_id' => 'id'])->where(['main' => 1])->andWhere(['table_name' => 'news']);;
   }
+
 
   public static function getAll()
   {

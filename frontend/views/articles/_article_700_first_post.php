@@ -9,7 +9,7 @@ use common\Helper\DateHelper;
   <div class="img-hover-slide border-radius-15 mb-30 position-relative overflow-hidden">
     <span class="top-right-icon bg-dark"><i class="mdi mdi-flash-on"></i></span>
     <a href="<?= '/news/' . $news->category_id . '/' . $news->id ?>">
-      <img src="<?= $news->files->original ?? ''; ?>" alt="post-slider">
+      <img src="<?= $news->mainFile->original ?? ''; ?>" alt="post-slider">
     </a>
   </div>
   <div class="pr-10 pl-10">

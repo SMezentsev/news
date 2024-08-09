@@ -13,7 +13,7 @@ use common\Helper\DateHelper;
           <div class="d-flex">
             <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
               <a class="color-white" href="<?= '/news/'.$item->category_id.'/'.$item->id ?>">
-                <img src="<?= $item->files->resize_image1 ?? ''; ?>" alt="">
+                <img src="<?= $item->mainFile->resize_image1 ?? ''; ?>" alt="">
               </a>
             </div>
             <div class="post-content media-body">

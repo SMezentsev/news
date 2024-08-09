@@ -136,7 +136,7 @@ use frontend\components\SidebarWidget;
           <div class="slider-single bg-white p-10 border-radius-15">
             <div class="img-hover-scale border-radius-10">
               <a href="/news/<?= $item->category_id ?>/<?= $item->id ?>" tabindex="-1">
-                <img class="border-radius-10" src="<?= $item->files->resize_image2 ?>" alt="post-slider">
+                <img class="border-radius-10" src="<?= $item->mainFile->resize_image2 ?>" alt="post-slider">
               </a>
             </div>
             <h6 class="post-title pr-5 pl-5 mb-10 mt-15 text-limit-2-row">
