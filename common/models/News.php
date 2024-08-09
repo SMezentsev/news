@@ -80,10 +80,10 @@ class News extends ActiveRecord
     return static::findAll(['show' => self::STATUS_ACTIVE]);
   }
 
-  public static function find()
-  {
-    return (new NewsQuery(get_called_class()))->show();
-  }
+//  public static function find()
+//  {
+//    return (new NewsQuery(get_called_class()))->show();
+//  }
 
     public function beforeSave($insert)
   {
