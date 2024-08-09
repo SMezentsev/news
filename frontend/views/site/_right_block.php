@@ -6,6 +6,8 @@ use common\models\News;
 $healthCategory = NewsCategory::find()->where(['eng_name' => 'health'])->one();
 $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)->all();
 
+
+
 ?>
 
 <div class="sidebar-widget mb-30">
@@ -31,7 +33,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
           <div class="d-flex">
             <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
               <a class="color-white" href="<?= 'news/'.$item->category->id.'/'. $item->id ?>">
-                <img src="<?= $item->files->resize_image1 ?>" alt="">
+                <img src="<?= $item->files->resize_image1??'' ?>" alt="">
               </a>
             </div>
             <div class="post-content media-body">

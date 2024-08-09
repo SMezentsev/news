@@ -70,7 +70,7 @@ class News extends ActiveRecord
   public function getFiles()
   {
 
-    return $this->hasOne(Files::className(), ['table_id' => 'id'])->andWhere(['table_name' => 'news']);
+    return $this->hasOne(Files::className(), ['table_id' => 'id'])->where(['main' => 1])->andWhere(['table_name' => 'news']);;
   }
 
   public static function getAll()

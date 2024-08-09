@@ -327,3 +327,19 @@
   height: 24px !important;
 }
 
+.card-image img {
+
+  border-radius: 5px !important;
+}
+
+.kv-grid-table a {
+
+  margin-right: 10px;
+}
+.kv-grid-table img {
+
+  border-radius: 5px !important;
+}
+
+
+

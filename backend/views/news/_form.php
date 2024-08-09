@@ -37,9 +37,9 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 <?= PanelWidget::start(); ?>
 
 <? $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
-<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-  <?= isset($files[0]) ? Html::img(Yii::$app->params['imageUrl'] . $files[0]['resize_image1'], ['style' => 'width:160px']) : '' ?>
-</div>
+<!--<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">-->
+<!--  --><?//= isset($files[0]) ? Html::img(Yii::$app->params['imageUrl'] . $files[0]['resize_image1'], ['style' => 'width:160px']) : '' ?>
+<!--</div>-->
 
 <div class="row">
   <div class="col-md-12">

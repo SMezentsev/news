@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf2fb8757ced1dcdd073d5621a1a1cc9",
+    "content-hash": "c63babee60ed11ffdfcacd159bd6664d",
     "packages": [
         {
             "name": "2amigos/yii2-leaflet-extension",
@@ -274,13 +274,13 @@
             "version": "5.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
-                "reference": "f0b9bb582dbebb82b8823f5cd617f723c988ce0f"
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "reference": "5069a1acaf2682401b92ea500a35dfc5314b83dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/f0b9bb582dbebb82b8823f5cd617f723c988ce0f",
-                "reference": "f0b9bb582dbebb82b8823f5cd617f723c988ce0f"
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5069a1acaf2682401b92ea500a35dfc5314b83dc",
+                "reference": "5069a1acaf2682401b92ea500a35dfc5314b83dc"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -292,16 +292,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.7.1",
+            "version": "3.6.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
+                "url": "git@github.com:jquery/jquery-dist.git",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/fde1f76e2799dd877c176abde0ec836553246991",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/91ef2d8836342875f2519b5815197ea0f23613cf",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
             },
             "type": "bower-asset",
             "license": [
@@ -4842,6 +4842,53 @@
             "time": "2024-06-03T20:00:41+00:00"
         },
         {
+            "name": "newerton/yii2-fancybox",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newerton/yii2-fancybox.git",
+                "reference": "a7230615a74ebdba98ffc7c29820364167d554c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newerton/yii2-fancybox/zipball/a7230615a74ebdba98ffc7c29820364167d554c5",
+                "reference": "a7230615a74ebdba98ffc7c29820364167d554c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "~2.0.14"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "newerton\\fancybox\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Newerton Vargas de Araujo",
+                    "email": "newerton.araujo@gmail.com"
+                }
+            ],
+            "description": "fancyBox is a tool that offers a nice and elegant way to add zooming functionality for images, html content and multi-media on your webpages.",
+            "keywords": [
+                "extension",
+                "fancyapps",
+                "fancybox",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/newerton/yii2-fancybox/issues",
+                "source": "https://github.com/newerton/yii2-fancybox/tree/v1.0.0"
+            },
+            "time": "2021-02-15T17:03:36+00:00"
+        },
+        {
             "name": "notamedia/yii2-sentry",
             "version": "dev-master",
             "source": {
@@ -5931,12 +5978,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "6ad7c53bbf65659b87bcbda62454a76718a3345b"
+                "reference": "47895e28515f99c0f7db6d5c848005d9fd48faaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/6ad7c53bbf65659b87bcbda62454a76718a3345b",
-                "reference": "6ad7c53bbf65659b87bcbda62454a76718a3345b",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/47895e28515f99c0f7db6d5c848005d9fd48faaa",
+                "reference": "47895e28515f99c0f7db6d5c848005d9fd48faaa",
                 "shasum": ""
             },
             "require": {
@@ -6033,7 +6080,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-31T23:28:22+00:00"
+            "time": "2024-08-05T15:59:09+00:00"
         },
         {
             "name": "phpspec/php-diff",
