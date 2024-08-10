@@ -59,7 +59,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
       <p class="font-large"><?= $model->title ?></p>
     </div>
   <?php } ?>
-  <div class="entry-main-content">
+  <div class="entry-main-content news-text">
 
     <div class="wp-block-image">
       <figure class="alignright is-resized">
