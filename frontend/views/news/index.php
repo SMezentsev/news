@@ -4,6 +4,8 @@ use frontend\components\WeatherWidget\WeatherWidget;
 use frontend\components\SidebarWidget;
 use common\models\NewsCategory;
 use Carbon\Carbon;
+use common\models\Search\NewsSearch;
+
 
 ?>
 
@@ -15,11 +17,12 @@ use Carbon\Carbon;
       <div class="latest-post mb-50">
         <div class="loop-list-style-1">
 
-          <?php if ($news = \common\models\News::find()->where(['category_id' => $category->id])->orderBy('date DESC')->all()) { ?>
-            <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>`
-          <?php } ?>
-          <?php foreach (array_slice($news, 1) as $item) { ?>
-            <?= $this->render('@frontend/views/articles/_article_250_250_announce.php', ['news' => $item]) ?>
+          <?php if (count($news)) { ?>
+            <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>
+
+            <?php foreach (array_slice($news, 1) as $item) { ?>
+              <?= $this->render('@frontend/views/articles/_article_250_250_announce.php', ['news' => $item]) ?>
+            <?php } ?>
           <?php } ?>
 
         </div>
@@ -30,7 +33,7 @@ use Carbon\Carbon;
       <div class="widget-header mb-20">
         <h5 class="widget-title">Популярные <span>новости</span></h5>
       </div>
-        <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => $news]) ?>
+      <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => $news]) ?>
       <?php if (0) { ?>
         <div class="sidebar-widget mb-50">
           <div class="widget-header mb-30 bg-white border-radius-10 p-15">

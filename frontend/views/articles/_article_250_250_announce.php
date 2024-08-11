@@ -13,7 +13,7 @@ use common\Helper\DateHelper;
     <div class="post-content media-body">
       <div class="entry-meta mb-15 mt-10">
         <a class="entry-meta meta-2" href="<?= '/news/'.$news->category_id ?>">
-          <span class="post-in text-danger font-x-small"><?= $news->category->name ?></span></a>
+          <span class="post-in text-danger font-x-small"><?= $news->category->name??'' ?></span></a>
       </div>
       <h5 class="post-title mb-15 text-limit-2-row">
         <span class="post-format-icon">
