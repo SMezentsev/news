@@ -22,7 +22,7 @@ use common\Helper\DateHelper;
         <?= $news->category->icon ?? ''; ?>
         </span>
         <a href="<?= '/news/' . $news->category_id . '/' . $news->id ?>"><?= $news->title; ?></a></h5>
-      <p class="post-exerpt font-small text-muted mb-30"><?= $news->announce; ?></p>
+      <p class="post-exerpt font-small text-muted mb-10"><?= $news->announce; ?></p>
       <div class="entry-meta meta-1 font-x-small color-grey float-left">
         <?php if (0) { ?>
           <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">Sean Boynton</a></span>
