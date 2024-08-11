@@ -44,7 +44,7 @@ $form = ActiveForm::begin(); ?>
 <?= $form->field($model, 'eng_name'); ?>
 <?= $form->field($model, 'icon'); ?>
 <?= $form->field($model, 'parent_id')->widget(Select2::classname(), [
-  'data' => ArrayHelper::map(NewsCategory::find()->where(['=', 'parent_id', '0'])->asArray()->all(), 'id', 'name'),
+  'data' => ArrayHelper::map(NewsCategory::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
   'options' => ['placeholder' => 'Выбрать родительский каталог'],
 ]); ?>
 
