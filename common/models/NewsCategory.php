@@ -32,7 +32,7 @@ class NewsCategory extends ActiveRecord
   public function rules()
   {
     return [
-      [['id', 'parent_id'], 'integer'],
+      [['id', 'parent_id', 'sort'], 'integer'],
       [['name', 'eng_name', 'icon'], 'string'],
       [['show'],'boolean'],
     ];
@@ -46,6 +46,7 @@ class NewsCategory extends ActiveRecord
       'icon' => 'Иконка',
       'parent_id' => 'Каталог родителя',
       'show' => 'Показать/Скрыть',
+      'sort' => 'Сортировка',
 
     ];
   }

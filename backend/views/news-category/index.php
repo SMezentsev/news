@@ -11,6 +11,7 @@ use yii\helpers\Html;
 use app\components\PanelWidget;
 use app\components\BreadcrumbWidget;
 use backend\models\Menu;
+use common\models\NewsCategory;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 ?>
@@ -47,6 +48,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       ],
       'columns' => [
         //['class' => 'yii\grid\SerialColumn'],
+        'id',
         [
           'hAlign' => 'center',
           'vAlign' => 'middle',
@@ -64,6 +66,25 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           'vAlign' => 'middle',
           'attribute' => 'name',
           'filter' => false,
+        ],
+        [
+          'hAlign' => 'center',
+          'vAlign' => 'middle',
+          'attribute' => 'sort',
+          'filter' => false,
+        ],
+        [
+          'hAlign' => 'center',
+          'vAlign' => 'middle',
+          'width' => '20%',
+          'attribute' => 'parent_id',
+          'filter' => false,
+          'format' => 'raw',
+          'value' => function($model) {
+
+            $parent = NewsCategory::find()->where(['id' => $model->parent_id])->one();
+            return  $parent->name??$model->parent_id;
+          }
         ],
         [
           'class' => 'yii\grid\ActionColumn',

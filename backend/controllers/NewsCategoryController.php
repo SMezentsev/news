@@ -55,7 +55,7 @@ class NewsCategoryController extends Controller
   {
 
     $searchModel = new NewsCategory();
-    $query = $searchModel->find();
+    $query = $searchModel->find()->orderBy('id ASC');
 
     $dataProvider = new ActiveDataProvider([
       'query' => $query,

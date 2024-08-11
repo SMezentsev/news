@@ -47,7 +47,7 @@ $form = ActiveForm::begin(); ?>
   'data' => ArrayHelper::map(NewsCategory::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
   'options' => ['placeholder' => 'Выбрать родительский каталог'],
 ]); ?>
-
+<?= $form->field($model, 'sort'); ?>
 <?= $form->field($model, 'show')->widget(CheckboxX::classname(), [
   'autoLabel' => true,
   'pluginOptions' => [

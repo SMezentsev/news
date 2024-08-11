@@ -29,7 +29,8 @@ class m230227_182003_create_news_category extends Migration
         'eng_name' => $this->string(255)->notNull()->comment('Eng наименование'),
         'icon' => $this->text()->null()->comment('Иконка'),
         'parent_id' => $this->integer()->null()->comment('Родительский каталог'),
-        'show' => $this->tinyInteger()->null()->comment('Показать/скрыть')->defaultValue(1)
+        'show' => $this->tinyInteger()->null()->comment('Показать/скрыть')->defaultValue(1),
+        'sort' => $this->tinyInteger()->null()->comment('Сортировка')->defaultValue(1)
       ],
       $tableOptions
     );
