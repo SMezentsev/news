@@ -44,3 +44,13 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
 }
+
+
+
+.no-border  td {
+
+  border-color: transparent !important;
+  border-width: 0px !important;
+}
+
+
