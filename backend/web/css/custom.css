@@ -41,6 +41,13 @@
     border:2px solid #efefef !important;
 }
 
+.no-border {
+
+  border-color: transparent !important;
+  border-width: 0px !important;
+}
+
+
 .dropdown-menu .selected span.text {
 
     visibility: visible !important;
