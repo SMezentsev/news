@@ -39,6 +39,13 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
 
 }
 
+.widget_categories_2 li > a > span {
+
+  margin-bottom: -8px !important;
+}
+
+
+
 .post-on {
 
   font-family: 'Roboto', sans-serif;
