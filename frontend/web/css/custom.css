@@ -38,3 +38,9 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
   border-radius: 7px;
 
 }
+
+.post-on {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
