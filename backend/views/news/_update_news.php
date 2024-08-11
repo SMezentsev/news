@@ -31,6 +31,7 @@ use kartik\checkbox\CheckboxX;
 use kartik\editors\Summernote;
 use common\models\NewsCategory;
 use kartik\date\DatePicker;
+use mihaildev\ckeditor\CKEditor;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 //$parent = Menu::findOne(['id' => $menu->parent_id]);
@@ -123,10 +124,16 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
         <div class="row">
           <div class="col-md-12">
-            <?= $form->field($model, 'text')->widget(Summernote::class, [
-              'useKrajeePresets' => true,
-              // other widget settings
+            <?= $form->field($model, 'text')->widget(CKEditor::className(),[
+              'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+              ],
             ]); ?>
+<!--            --><?//= $form->field($model, 'text')->widget(Summernote::class, [
+//              'useKrajeePresets' => true,
+//              // other widget settings
+//            ]); ?>
           </div>
 
         </div>

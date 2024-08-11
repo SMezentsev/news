@@ -136,7 +136,7 @@
             "version": "v1.8.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:angular/bower-angular.git",
+                "url": "https://github.com/angular/bower-angular.git",
                 "reference": "142f3c4bc7d43b6de39581a0d886bbf97f8b62ef"
             },
             "dist": {
@@ -274,13 +274,13 @@
             "version": "5.x-dev",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
-                "reference": "5069a1acaf2682401b92ea500a35dfc5314b83dc"
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "reference": "40f7b1b424994dbe9a75ef67797f947552cd6adb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5069a1acaf2682401b92ea500a35dfc5314b83dc",
-                "reference": "5069a1acaf2682401b92ea500a35dfc5314b83dc"
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/40f7b1b424994dbe9a75ef67797f947552cd6adb",
+                "reference": "40f7b1b424994dbe9a75ef67797f947552cd6adb"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -2438,12 +2438,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "387635d6149b42932c6c55c34421983bae008e2b"
+                "reference": "305180ca8a484a4025d28fbf85c473a8b2aa0067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/387635d6149b42932c6c55c34421983bae008e2b",
-                "reference": "387635d6149b42932c6c55c34421983bae008e2b",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/305180ca8a484a4025d28fbf85c473a8b2aa0067",
+                "reference": "305180ca8a484a4025d28fbf85c473a8b2aa0067",
                 "shasum": ""
             },
             "default-branch": true,
@@ -2494,7 +2494,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-07-24T05:08:41+00:00"
+            "time": "2024-08-10T08:44:25+00:00"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -5978,12 +5978,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "47895e28515f99c0f7db6d5c848005d9fd48faaa"
+                "reference": "05f45f0337c8f8df8c89e31152cbe1f575cded12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/47895e28515f99c0f7db6d5c848005d9fd48faaa",
-                "reference": "47895e28515f99c0f7db6d5c848005d9fd48faaa",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/05f45f0337c8f8df8c89e31152cbe1f575cded12",
+                "reference": "05f45f0337c8f8df8c89e31152cbe1f575cded12",
                 "shasum": ""
             },
             "require": {
@@ -6080,7 +6080,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-08-05T15:59:09+00:00"
+            "time": "2024-08-11T01:00:48+00:00"
         },
         {
             "name": "phpspec/php-diff",
