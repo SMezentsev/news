@@ -41,7 +41,7 @@
     border:2px solid #efefef !important;
 }
 
-.no-border {
+ td.no-border, tr.no-border {
 
   border-color: transparent !important;
   border-width: 0px !important;
