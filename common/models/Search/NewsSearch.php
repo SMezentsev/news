@@ -53,15 +53,14 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = self::find()
-      ->select(['news.id', 'title', 'date', 'announce', 'category_id', 'name'])
-      ->leftJoin(NewsCategory::tableName(), 'news_category.id = category_id');
+    $query = News::find()
+      ->select(['id', 'title', 'date', 'show', 'announce', 'category_id']);
 
-    $query->andWhere(['<=', 'news.date', Carbon::today()->format('Y-m-d H:i:s')]);
+    $query->andWhere(['<=', 'date', Carbon::today()->format('Y-m-d H:i:s')]);
     $query->andFilterWhere([
       'id' => $this->id,
       'category_id' => $this->category_id,
-      'news.show' => 1
+      'show' => 1
     ]);
 
     return new ActiveDataProvider([

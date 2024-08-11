@@ -2,7 +2,6 @@
 
 use Carbon\Carbon;
 use common\Helper\DateHelper;
-
 ?>
 <article class="first-post p-10 background-white border-radius-10 mb-30 wow fadeIn  animated"
          style="visibility: visible; animation-name: fadeIn;">
