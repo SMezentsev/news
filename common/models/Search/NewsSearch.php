@@ -2,6 +2,7 @@
 
 namespace common\models\Search;
 
+use Carbon\Carbon;
 use common\Exceptions\ValidationErrorException;
 use common\models\News;
 use common\models\NewsCategory;
@@ -52,13 +53,15 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()
+    $query = self::find()
       ->select(['news.id', 'title', 'date', 'announce', 'category_id', 'name'])
       ->leftJoin(NewsCategory::tableName(), 'news_category.id = category_id');
 
+    $query->andWhere(['<=', 'date', Carbon::today()->format('Y-m-d H:i:s')]);
     $query->andFilterWhere([
       'id' => $this->id,
       'category_id' => $this->category_id,
+      'news.show' => 1
     ]);
 
     return new ActiveDataProvider([
