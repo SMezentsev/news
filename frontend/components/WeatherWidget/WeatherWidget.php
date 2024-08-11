@@ -21,7 +21,7 @@ class WeatherWidget extends Widget
   public function run()
   {
 
-    $days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+    $days = [1=>'Понедельник', 2=>'Вторник', 3=>'Среда', 4=>'Четверг', 5=>'Пятница', 6=>'Суббота', 0=>'Воскресенье'];
     $months = DateHelper::months();
 
     $n = date("w", mktime(0,0,0,date("m"),date("d"),date("Y")));
@@ -30,7 +30,7 @@ class WeatherWidget extends Widget
       ->where(['=', new \yii\db\Expression("date::date"), Carbon::today()->format('Y-m-d')])->all();
 
     return $this->render('index', [
-      'day' => $days[$n-1],
+      'day' => $days[Carbon::now()->dayOfWeek],
       'date' => Carbon::now()->format('d'),
       'month' => DateHelper::months(Carbon::today()->format('m'), false),
       'weatherList' => $weatherList
