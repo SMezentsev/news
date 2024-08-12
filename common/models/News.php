@@ -89,7 +89,7 @@ class News extends ActiveRecord
 
   public static function find()
   {
-    return (new NewsQuery(get_called_class()))->show()->current();
+    return (new NewsQuery(get_called_class()))->show();
   }
 
     public function beforeSave($insert)
