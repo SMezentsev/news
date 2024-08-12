@@ -28,7 +28,7 @@ use common\Helper\DateHelper;
     <?php } ?>
     <h4 class="post-title mb-20">
       <span class="post-format-icon">
-          <ion-icon name="headset-outline" role="img" class="md hydrated"  aria-label="headset outline"></ion-icon>
+          <?= $news->category->icon??'' ?>
       </span>
       <a href="<?= '/news/' . $news->category_id . '/' . $news->id ?>"><?= $news->title; ?></a></h4>
     <p class="post-exerpt font-medium text-muted mb-15"><?= $news->announce; ?></p>

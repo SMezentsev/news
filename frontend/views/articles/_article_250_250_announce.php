@@ -17,8 +17,7 @@ use common\Helper\DateHelper;
       </div>
       <h5 class="post-title mb-15 text-limit-2-row">
         <span class="post-format-icon">
-            <ion-icon name="videocam-outline" role="img" class="md hydrated"
-                      aria-label="videocam outline"></ion-icon>
+            <?= $news->category->icon??'' ?>
         </span>
         <a href="<?= '/news/'.$news->category_id.'/'.$news->id ?>"><?= $news->title ?></a></h5>
       <p class="post-exerpt font-medium text-muted mb-30 d-none d-lg-block"><?= $news->announce ?></p>
