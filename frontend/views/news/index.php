@@ -5,8 +5,15 @@ use common\models\Category;
 use Carbon\Carbon;
 
 $category = NewsCategory::find()->where(['id' => $category_id])->one();
-$parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
-$categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->orderBy('sort ASC')->all();
+if($category->eng_name == 'all') {
+  $parent = NewsCategory::find()->where(['id' => $category->id])->orderBy('data')->one();
+  $parent_id = $parent->id;
+} else {
+  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->orderBy('data')->one();
+  $parent_id = $category->parent_id;
+}
+
+$categories = NewsCategory::find()->where(['parent_id' => $parent_id])->orderBy('sort ASC')->all();
 ?>
 
 <div class="col-lg-10 col-md-9 order-1 order-md-2">

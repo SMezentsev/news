@@ -254,7 +254,7 @@ class NewsController extends Controller
   {
 
     $searchModel = new News();
-    $query = $searchModel->find();
+    $query = $searchModel->find()->orderBy('date DESC');
     $dataProvider = new ActiveDataProvider([
       'query' => $query,
       'pagination' => [
