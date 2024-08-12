@@ -6,10 +6,10 @@ use Carbon\Carbon;
 
 $category = NewsCategory::find()->where(['id' => $category_id])->one();
 if($category->eng_name == 'all') {
-  $parent = NewsCategory::find()->where(['id' => $category->id])->orderBy('data')->one();
+  $parent = NewsCategory::find()->where(['id' => $category->id])->orderBy('date')->one();
   $parent_id = $parent->id;
 } else {
-  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->orderBy('data')->one();
+  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->orderBy('date')->one();
   $parent_id = $category->parent_id;
 }
 
