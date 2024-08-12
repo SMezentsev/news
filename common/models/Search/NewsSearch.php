@@ -56,7 +56,7 @@ class NewsSearch extends ActiveRecord
     $query = News::find()
       ->select(['id', 'title', 'date', 'show', 'announce', 'category_id']);
 
-    $query->andWhere(['>=', 'date', Carbon::today()->format('Y-m-d H:i:s')]);
+    $query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
     $query->andFilterWhere([
       'id' => $this->id,
       'category_id' => $this->category_id
