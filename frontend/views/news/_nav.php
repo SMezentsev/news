@@ -5,7 +5,7 @@ use common\Helper\DateHelper;
 use common\models\NewsCategory;
 
 $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
-$categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->all();
+$categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->orderBy('sort ASC')->all();
 
 ?>
 
