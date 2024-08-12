@@ -1,17 +1,16 @@
 <?php
 
-use frontend\components\WeatherWidget\WeatherWidget;
-use frontend\components\SidebarWidget;
 use common\models\NewsCategory;
+use common\models\Category;
 use Carbon\Carbon;
-use common\models\Search\NewsSearch;
 
-
+$category = NewsCategory::find()->where(['id' => $category_id])->one();
+$parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
+$categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->orderBy('sort ASC')->all();
 ?>
 
-<!-- main content -->
-
 <div class="col-lg-10 col-md-9 order-1 order-md-2">
+
   <div class="row mb-50">
     <div class="col-lg-8 col-md-12">
       <div class="latest-post mb-50">

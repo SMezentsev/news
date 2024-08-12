@@ -51,7 +51,7 @@ class NewsCategoryController extends Controller
     ]);
   }
 
-  public function actionIndex()
+  public function actionIndex($category_id = null)
   {
 
     $searchModel = new NewsCategory();
@@ -67,6 +67,7 @@ class NewsCategoryController extends Controller
     return $this->render('index', [
       'dataProvider' => $dataProvider,
       'searchModel' => $searchModel,
+      'category_id' => $category_id??null
     ]);
   }
 

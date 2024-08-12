@@ -4,7 +4,7 @@ use common\models\NewsCategory;
 
 $categoryWithoutCity = NewsCategory::find()
   ->where(['in', 'eng_name', ['science', 'culture', 'travel', 'economics', 'sport', 'health']])
-  ->andWhere(['parent_id' => 0])->all();
+  ->andWhere(['in', 'parent_id', [0, null]])->orderBy('sort ASC')->all();
 
 $moscow = NewsCategory::find()->andWhere(['eng_name' => 'moscow'])->one();
 $moscowCategories = NewsCategory::find()->where(['parent_id' => $moscow->id])->orderBy('sort ASC')->all();

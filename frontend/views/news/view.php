@@ -9,16 +9,11 @@ $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
 $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->all();
 ?>
 
-<div class="entry-header entry-header-1 ml-10 mb-30 mt-50">
-  <div class="entry-meta category-menu meta-0 font-small mb-30">
-    <a href="<?= '/news/'.($parent->id??$category->id) ?>"><span class="post-cat"><?= $parent->name??$category->name ?></span></a>:
-    <?php if($parent) { ?>
 
-      <?php foreach ($categories as $category) { ?>
-        <a href="<?= '/news/'.$category->id ?>"><span class="post-cat <?= $model->category_id == $category->id ? 'active' : ''?>"><?= $category->name ?></span></a>
-      <?php } ?>
-    <?php } ?>
-  </div>
+<?= $this->render('@frontend/views/news/_nav.php', ['categories' => $categories, 'parent' => $parent, 'category' => $category]) ?>
+
+<div class="entry-header entry-header-1 ml-10 mb-30 mt-50">
+
   <h1 class="post-title mb-30">
     <?= $model->title ?>
   </h1>

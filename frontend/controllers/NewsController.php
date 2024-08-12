@@ -81,8 +81,11 @@ class NewsController extends Controller {
     $news = new NewsSearch();
     $news = $news->search(Yii::$app->request->queryParams);
 
+    Yii::$app->params['category'] = $category;
+
     return $this->render('index',[
       'category' => $category,
+      'category_id' => $category_id,
       'news' => $news->getModels(),
     ]);
   }

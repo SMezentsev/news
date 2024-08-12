@@ -250,6 +250,13 @@ $this->beginPage();
 
   <main class="position-relative" style="transform: none;">
     <div class="container" style="transform: none;">
+      <?php if(isset(Yii::$app->params['category'])) { ?>
+      <div class="row">
+        <div class="col-lg-8 col-md-12">
+          <?= $this->render('@frontend/views/news/_nav.php', ['category' => Yii::$app->params['category']]) ?>
+        </div>
+      </div>
+      <?php } ?>
       <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
       <div class="row" style="transform: none;">
       <?php } ?>
