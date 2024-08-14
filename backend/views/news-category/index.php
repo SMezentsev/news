@@ -12,6 +12,9 @@ use app\components\PanelWidget;
 use app\components\BreadcrumbWidget;
 use backend\models\Menu;
 use common\models\NewsCategory;
+use common\models\News;
+use Carbon\Carbon;
+
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 ?>
@@ -84,6 +87,22 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
             $parent = NewsCategory::find()->where(['id' => $model->parent_id])->one();
             return  $parent->name??$model->parent_id;
+          }
+        ],
+        [
+          'hAlign' => 'center',
+          'vAlign' => 'middle',
+          'width' => '20%',
+          'attribute' => 'Количество новостей',
+          'filter' => false,
+          'format' => 'raw',
+          'value' => function($model) {
+
+            $countAll = News::find()->where(['category_id' => $model->id])->count();
+            $countToday = News::find()->select(['count(id)'])
+              ->where(['=', new \yii\db\Expression("date::date"), Carbon::now()->format('Y-m-d')])->scalar();
+
+            return  $countAll.'('.$countToday.')';
           }
         ],
         [
