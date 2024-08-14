@@ -48,12 +48,15 @@ class NewsController extends Controller
         ->delete('news_tags', ['news_id' => $model->id])
         ->execute();
 
-      foreach ($model->news_tags as $key=>$item) {
-        $tags = new NewsTags([
-          'news_id' => $model->id,
-          'tag_id' => $item
-        ]);
-        $tags->save();
+      if($model->news_tags) {
+
+        foreach ($model->news_tags as $key=>$item) {
+          $tags = new NewsTags([
+            'news_id' => $model->id,
+            'tag_id' => $item
+          ]);
+          $tags->save();
+        }
       }
 
       if ($newTags = $model->new_tag ?? false) {
