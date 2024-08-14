@@ -71,6 +71,24 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'label' => '',
+      'filter' => false,
+      'width' => '30%',
+      'format' => 'raw',
+      'value' => function ($model) {
+
+        $tags = $model->tags;
+        $newsTags = '';
+        foreach ($tags as $tag) {
+
+          $newsTags .= '<div class="badge badge-table badge-success">'.$tag->name.'</div>  ';
+        }
+        return $newsTags;
+      }
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
       'attribute' => 'title',
       'filter' => false,
     ],
