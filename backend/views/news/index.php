@@ -68,6 +68,19 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
         return '';
       }
     ],
+
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
+      'attribute' => 'title',
+      'filter' => false,
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
+      'attribute' => 'announce',
+      'filter' => false,
+    ],
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
@@ -85,18 +98,6 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
         }
         return $newsTags;
       }
-    ],
-    [
-      'hAlign' => 'center',
-      'vAlign' => 'middle',
-      'attribute' => 'title',
-      'filter' => false,
-    ],
-    [
-      'hAlign' => 'center',
-      'vAlign' => 'middle',
-      'attribute' => 'announce',
-      'filter' => false,
     ],
     [
       'hAlign' => 'center',
