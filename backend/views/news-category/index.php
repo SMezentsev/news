@@ -100,7 +100,9 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
             $countAll = News::find()->where(['category_id' => $model->id])->count();
             $countToday = News::find()->select(['count(id)'])
-              ->where(['=', new \yii\db\Expression("date::date"), Carbon::now()->format('Y-m-d')])->scalar();
+              ->where(['=', new \yii\db\Expression("date::date"), Carbon::now()->format('Y-m-d')])
+              ->andWhere(['category_id' => $model->id])
+              ->scalar();
 
             return  $countAll.'('.$countToday.')';
           }
