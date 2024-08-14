@@ -33,6 +33,8 @@ return [
     'POST catalog/<category_id:\d+>/<id:\d+>' => 'catalog/view',
     'GET products/<id:\d+>' => 'products/index',
 
+    'GET news/tags/<tag_id:\d+>' => 'news/index',
+
     'GET account/orders/<id:\d+>' => 'account/orders-detail',
     'GET products/<id:\d+>/detail' => 'products/detail',
 

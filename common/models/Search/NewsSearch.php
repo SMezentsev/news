@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use common\Exceptions\ValidationErrorException;
 use common\models\News;
 use common\models\NewsCategory;
+use common\models\NewsTags;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
@@ -53,7 +54,13 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()->select(['id', 'title', 'date', 'show', 'announce', 'category_id']);
+    $query = News::find()->select(['news.id', 'news.title', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
+
+    if ($tag_id = $params['tag_id'] ?? false) {
+
+      $query->leftJoin(NewsTags::tableName(), 'news_tags.news_id = news.id')
+        ->andWhere(['news_tags.tag_id' => $tag_id]);
+    }
 
     $query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
     $query->andFilterWhere([

@@ -75,7 +75,7 @@ class NewsController extends Controller {
     return $this->redirect(['/']);
   }
 
-  public function actionIndex($category_id = null) {
+  public function actionIndex($category_id = null, $tag_id = null) {
 
     $category = NewsCategory::find()->where(['id' => $category_id])->one();
     $news = new NewsSearch();
@@ -85,6 +85,7 @@ class NewsController extends Controller {
 
     return $this->render('index',[
       'category' => $category,
+      'mode' => $tag_id ? 'tags' : 'news',
       'category_id' => $category_id,
       'news' => $news->getModels(),
     ]);
@@ -96,9 +97,6 @@ class NewsController extends Controller {
     if (!$model = News::findOne($id)) {
       throw new NotFoundHttpException(Yii::t('app', 'Не найдена новость с id={id}', ['id' => $id]));
     }
-
     return $model;
   }
-
-
 }

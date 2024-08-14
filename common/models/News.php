@@ -22,6 +22,7 @@ class News extends ActiveRecord
   public $file;
   public $new_tag;
   public $news_tags;
+  public $tag_id;
 
   /**
    * {@inheritdoc}
@@ -37,7 +38,7 @@ class News extends ActiveRecord
   public function rules()
   {
     return [
-      [['id', 'category_id', 'views'], 'integer'],
+      [['id', 'category_id', 'views', 'tag_id'], 'integer'],
       [['title', 'announce', 'text', 'date',], 'string'],
       [['show'], 'boolean'],
       [['news_tags', 'new_tag'], 'safe'],
@@ -59,6 +60,7 @@ class News extends ActiveRecord
       'title' => 'Заголовок',
       'file' => 'Изображение',
       'news_tags' => 'Теги',
+      'tag_id' => 'Теги ID',
       'new_tag' => 'Новый тег (через запятую)',
       'views' => 'Просмотры',
       'date' => 'Дата'
