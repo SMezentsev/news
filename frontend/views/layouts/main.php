@@ -82,7 +82,7 @@ $this->beginPage();
 <div class="main-wrap" style="transform: none;">
 
   <aside id="sidebar-wrapper" class="custom-scrollbar offcanvas-sidebar position-right ps ps--active-x ps--active-y">
-    <?php if(1) { ?>
+    <?php if(0) { ?>
     <button class="off-canvas-close"><i class="ti-close"></i></button>
     <div class="sidebar-inner">
 
