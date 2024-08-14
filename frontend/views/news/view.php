@@ -69,57 +69,16 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
   </div>
   <div class="entry-bottom mt-50 mb-30">
-    <?php if (0) { ?>
-    <div class="font-weight-500 entry-meta meta-1 font-x-small color-grey">
-      <span class="update-on"><i class="ti ti-reload mr-5"></i>Updated 18/09/2020 10:28 EST</span>
-      <span class="hit-count"><i class="ti-comment"></i>82 comments</span>
-      <span class="hit-count"><i class="ti-heart"></i>68 likes</span>
-      <span class="hit-count"><i class="ti-star"></i>8/10</span>
-    </div>
-    <?php } ?>
+    <?php  if ($tags = $model->tags) { ?>
     <div class="overflow-hidden mt-30">
       <div class="tags float-left text-muted mb-md-30">
-        <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>Tags: </span>
-        <a href="category.html" rel="tag">tech</a>
-        <a href="category.html" rel="tag">world</a>
-        <a href="category.html" rel="tag">global</a>
-      </div>
-      <div class="single-social-share float-right">
-        <ul class="d-inline-block list-inline">
-          <li class="list-inline-item"><span class="font-small text-muted"><i class="ti-sharethis mr-5"></i>Share: </span></li>
-          <li class="list-inline-item"><a class="social-icon facebook-icon text-xs-center" target="_blank" href="#"><i class="ti-facebook"></i></a></li>
-          <li class="list-inline-item"><a class="social-icon twitter-icon text-xs-center" target="_blank" href="#"><i class="ti-twitter-alt"></i></a></li>
-          <li class="list-inline-item"><a class="social-icon pinterest-icon text-xs-center" target="_blank" href="#"><i class="ti-pinterest"></i></a></li>
-          <li class="list-inline-item"><a class="social-icon instagram-icon text-xs-center" target="_blank" href="#"><i class="ti-instagram"></i></a></li>
-          <li class="list-inline-item"><a class="social-icon linkedin-icon text-xs-center" target="_blank" href="#"><i class="ti-linkedin"></i></a></li>
-        </ul>
+        <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>Теги: </span>
+        <?php foreach ($tags as $item) { ?>
+        <a href="/news/tags/<?= $item->id ?>" rel="tag"><?= $item->name ?></a>
+        <?php } ?>
       </div>
     </div>
-  </div>
-  <div class="author-bio border-radius-10 bg-white p-30 mb-40">
-    <div class="author-image mb-30">
-      <a href="author.html"><img src="assets/imgs/authors/author.png" alt="" class="avatar"></a></div>
-    <div class="author-info">
-      <h3><span class="vcard author"><span class="fn"><a href="author.html" title="Posts by Robert" rel="author">Michael D. Shear</a></span></span></h3>
-      <h5 class="text-muted">
-        <span class="mr-15">Elite author</span>
-        <i class="ti-star"></i>
-        <i class="ti-star"></i>
-        <i class="ti-star"></i>
-        <i class="ti-star"></i>
-        <i class="ti-star"></i>
-      </h5>
-      <div class="author-description">I think all aspiring and professional writers out there will agree when I say that ‘We are never fully satisfied with our work. We always feel that we can do better and that our best piece is yet to be written’. </div>
-      <a href="author.html" class="author-bio-link text-muted">View all posts</a>
-      <div class="author-social">
-        <ul class="author-social-icons">
-          <li class="author-social-link-facebook"><a href="#" target="_blank"><i class="ti-facebook"></i></a></li>
-          <li class="author-social-link-twitter"><a href="#" target="_blank"><i class="ti-twitter-alt"></i></a></li>
-          <li class="author-social-link-pinterest"><a href="#" target="_blank"><i class="ti-pinterest"></i></a></li>
-          <li class="author-social-link-instagram"><a href="#" target="_blank"><i class="ti-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
+    <?php } ?>
   </div>
   <div class="entry-bottom mt-50 mb-30">
     <?php if(0) { ?>

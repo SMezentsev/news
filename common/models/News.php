@@ -77,6 +77,16 @@ class News extends ActiveRecord
     return $this->hasMany(Files::className(), ['table_id' => 'id'])->andWhere(['table_name' => 'news']);;
   }
 
+  public function getNewsTags()
+  {
+    return $this->hasMany(NewsTags::class, ['news_id' => 'id']);
+  }
+
+  public function getTags()
+  {
+    return $this->hasMany(Tags::class, ['id' => 'tag_id'])->via('newsTags');
+  }
+
   public function getMainFile()
   {
 
