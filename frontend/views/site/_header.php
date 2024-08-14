@@ -19,43 +19,43 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
     <?php if(0) { ?>
     <div class="mobile_menu d-lg-none d-block">
       <div class="slicknav_menu">
-        <div class="container"><a href="https://newsviral-html.vercel.app/index.html#" aria-haspopup="true"
+        <div class="container"><a href="" aria-haspopup="true"
                                   role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"
                                   style="outline: none;"><span class="slicknav_menutxt">MENU</span><span
               class="slicknav_icon"><span class=""><i class="ti-menu-alt"></i></span><span
                 class="ti-close"></span></span></a></div>
         <ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Global Economy</a></li>
-          <li class="cat-item cat-item-3"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-3"><a href="" role="menuitem"
                                              tabindex="-1">Environment</a></li>
-          <li class="cat-item cat-item-4"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-4"><a href="" role="menuitem"
                                              tabindex="-1">Religion</a></li>
-          <li class="cat-item cat-item-5"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-5"><a href="" role="menuitem"
                                              tabindex="-1">Fashion</a></li>
-          <li class="cat-item cat-item-6"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-6"><a href="" role="menuitem"
                                              tabindex="-1">Terrorism</a></li>
-          <li class="cat-item cat-item-7"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-7"><a href="" role="menuitem"
                                              tabindex="-1">Conflicts</a></li>
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Scandals</a></li>
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Executive</a></li>
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Foreign policy</a></li>
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Healthy Living</a></li>
-          <li class="cat-item cat-item-3"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-3"><a href="" role="menuitem"
                                              tabindex="-1">Medical Research</a></li>
-          <li class="cat-item cat-item-4"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-4"><a href="" role="menuitem"
                                              tabindex="-1">Children’s Health</a></li>
-          <li class="cat-item cat-item-5"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-5"><a href="" role="menuitem"
                                              tabindex="-1">Around the World</a></li>
-          <li class="cat-item cat-item-6"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-6"><a href="" role="menuitem"
                                              tabindex="-1">Ad Choices</a></li>
-          <li class="cat-item cat-item-7"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-7"><a href="" role="menuitem"
                                              tabindex="-1">Mental Health</a></li>
-          <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#" role="menuitem"
+          <li class="cat-item cat-item-2"><a href="" role="menuitem"
                                              tabindex="-1">Media Relations</a></li>
         </ul>
       </div>
@@ -85,31 +85,31 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
           <div class="main-nav text-left float-lg-left float-md-right">
             <?php if(0) { ?>
             <ul class="mobi-menu d-none menu-3-columns" id="navigation">
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Global Economy</a>
+              <li class="cat-item cat-item-2"><a href="">Global Economy</a>
               </li>
-              <li class="cat-item cat-item-3"><a href="https://newsviral-html.vercel.app/index.html#">Environment</a>
+              <li class="cat-item cat-item-3"><a href="">Environment</a>
               </li>
-              <li class="cat-item cat-item-4"><a href="https://newsviral-html.vercel.app/index.html#">Religion</a></li>
-              <li class="cat-item cat-item-5"><a href="https://newsviral-html.vercel.app/index.html#">Fashion</a></li>
-              <li class="cat-item cat-item-6"><a href="https://newsviral-html.vercel.app/index.html#">Terrorism</a></li>
-              <li class="cat-item cat-item-7"><a href="https://newsviral-html.vercel.app/index.html#">Conflicts</a></li>
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Scandals</a></li>
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Executive</a></li>
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Foreign policy</a>
+              <li class="cat-item cat-item-4"><a href="">Religion</a></li>
+              <li class="cat-item cat-item-5"><a href="">Fashion</a></li>
+              <li class="cat-item cat-item-6"><a href="">Terrorism</a></li>
+              <li class="cat-item cat-item-7"><a href="">Conflicts</a></li>
+              <li class="cat-item cat-item-2"><a href="">Scandals</a></li>
+              <li class="cat-item cat-item-2"><a href="">Executive</a></li>
+              <li class="cat-item cat-item-2"><a href="">Foreign policy</a>
               </li>
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Healthy Living</a>
+              <li class="cat-item cat-item-2"><a href="">Healthy Living</a>
               </li>
-              <li class="cat-item cat-item-3"><a href="https://newsviral-html.vercel.app/index.html#">Medical
+              <li class="cat-item cat-item-3"><a href="">Medical
                   Research</a></li>
-              <li class="cat-item cat-item-4"><a href="https://newsviral-html.vercel.app/index.html#">Children’s
+              <li class="cat-item cat-item-4"><a href="">Children’s
                   Health</a></li>
-              <li class="cat-item cat-item-5"><a href="https://newsviral-html.vercel.app/index.html#">Around the
+              <li class="cat-item cat-item-5"><a href="">Around the
                   World</a></li>
-              <li class="cat-item cat-item-6"><a href="https://newsviral-html.vercel.app/index.html#">Ad Choices</a>
+              <li class="cat-item cat-item-6"><a href="">Ad Choices</a>
               </li>
-              <li class="cat-item cat-item-7"><a href="https://newsviral-html.vercel.app/index.html#">Mental Health</a>
+              <li class="cat-item cat-item-7"><a href="">Mental Health</a>
               </li>
-              <li class="cat-item cat-item-2"><a href="https://newsviral-html.vercel.app/index.html#">Media
+              <li class="cat-item cat-item-2"><a href="">Media
                   Relations</a></li>
             </ul>
             <?php } ?>
@@ -151,7 +151,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                 </li>
                 <?php if (0) { ?>
                   <li class="mega-menu-item">
-                    <a href="https://newsviral-html.vercel.app/index.html#">
+                    <a href="">
                       <?php if (0) { ?>
                         <span class="mr-15">
                                   <ion-icon name="desktop-outline" role="img" class="md hydrated"
@@ -176,37 +176,37 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                     <div class="sub-mega-menu sub-menu-list row text-muted font-small">
                       <ul class="col-md-2">
                         <li><strong>Archive layout</strong></li>
-                        <li><a href="https://newsviral-html.vercel.app/category.html">Category list</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/category-grid.html">Category grid</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/category-big.html">Category big</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/category-metro.html">Category metro</a></li>
+                        <li><a href="/category.html">Category list</a></li>
+                        <li><a href="/category-grid.html">Category grid</a></li>
+                        <li><a href="/category-big.html">Category big</a></li>
+                        <li><a href="/category-metro.html">Category metro</a></li>
                       </ul>
                       <ul class="col-md-2">
                         <li><strong>Post format</strong></li>
-                        <li><a href="https://newsviral-html.vercel.app/single.html">Post standard</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/single-video.html">Post video</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/single-gallery.html">Post gallery</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/single-audio.html">Post audio</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/single-image.html">Post image</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/single-full.html">Post full width</a></li>
+                        <li><a href="/single.html">Post standard</a></li>
+                        <li><a href="/single-video.html">Post video</a></li>
+                        <li><a href="/single-gallery.html">Post gallery</a></li>
+                        <li><a href="/single-audio.html">Post audio</a></li>
+                        <li><a href="/single-image.html">Post image</a></li>
+                        <li><a href="/single-full.html">Post full width</a></li>
                       </ul>
                       <ul class="col-md-2">
                         <li><strong>Pages</strong></li>
-                        <li><a href="https://newsviral-html.vercel.app/typography.html">Typography</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/about.html">About us</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/contact.html">Contact us</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/search.html">Search</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/author.html">Author</a></li>
-                        <li><a href="https://newsviral-html.vercel.app/404.html">404 page</a></li>
+                        <li><a href="/typography.html">Typography</a></li>
+                        <li><a href="/about.html">About us</a></li>
+                        <li><a href="/contact.html">Contact us</a></li>
+                        <li><a href="/search.html">Search</a></li>
+                        <li><a href="/author.html">Author</a></li>
+                        <li><a href="/404.html">404 page</a></li>
                       </ul>
                       <div class="col-md-6 text-right">
-                        <a href="https://newsviral-html.vercel.app/index.html#"><img class="border-radius-10"
+                        <a href=""><img class="border-radius-10"
                                                                                      src="images/ads-2.jpg" alt=""></a>
                       </div>
                     </div>
                   </li>
                   <li class="mega-menu-item">
-                    <a href="https://newsviral-html.vercel.app/category.html">
+                    <a href="/category.html">
                       <?php if (0) { ?>
                         <span class="mr-15">
                                                     <ion-icon name="megaphone-outline" role="img" class="md hydrated"
@@ -226,15 +226,15 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                     <div class="sub-mega-menu">
                       <div class="nav flex-column nav-pills" role="tablist">
                         <a class="nav-link active" data-toggle="pill"
-                           href="https://newsviral-html.vercel.app/index.html#news-0" role="tab">All</a>
+                           href="news-0" role="tab">All</a>
                         <a class="nav-link" data-toggle="pill"
-                           href="https://newsviral-html.vercel.app/index.html#news-1"
+                           href="news-1"
                            role="tab">Entertaiment</a>
                         <a class="nav-link" data-toggle="pill"
-                           href="https://newsviral-html.vercel.app/index.html#news-2"
+                           href="news-2"
                            role="tab">Fashion</a>
                         <a class="nav-link" data-toggle="pill"
-                           href="https://newsviral-html.vercel.app/index.html#news-3"
+                           href="news-3"
                            role="tab">Life Style</a>
                       </div>
                       <div class="tab-content">
@@ -242,7 +242,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                           <div class="row">
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-1.jpg" alt="">
                                 </a>
                                 <span class="top-right-icon background2">
@@ -260,7 +260,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-2.jpg" alt="">
                                 </a>
                               </div>
@@ -275,7 +275,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-3.jpg" alt="">
                                 </a>
                               </div>
@@ -290,7 +290,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-8.jpg" alt="">
                                 </a>
                               </div>
@@ -309,7 +309,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                           <div class="row">
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-5.jpg" alt="">
                                 </a>
                               </div>
@@ -324,7 +324,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-6.jpg" alt="">
                                 </a>
                                 <span class="top-right-icon background3">
@@ -342,7 +342,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-7.jpg" alt="">
                                 </a>
                               </div>
@@ -357,7 +357,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-8.jpg" alt="">
                                 </a>
                               </div>
@@ -376,7 +376,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                           <div class="row">
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-9.jpg" alt="">
                                 </a>
                                 <span class="top-right-icon background2">
@@ -394,7 +394,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-10.jpg" alt="">
                                 </a>
                                 <span class="top-right-icon background8">
@@ -412,7 +412,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-11.jpg" alt="">
                                 </a>
                               </div>
@@ -427,7 +427,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-12.jpg" alt="">
                                 </a>
                               </div>
@@ -446,7 +446,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                           <div class="row">
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-13.jpg" alt="">
                                 </a>
                               </div>
@@ -461,7 +461,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-14.jpg" alt="">
                                 </a>
                               </div>
@@ -476,7 +476,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-15.jpg" alt="">
                                 </a>
                               </div>
@@ -491,7 +491,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                             </div>
                             <div class="col-3 post-module-1">
                               <div class="post-thumb d-flex border-radius-5 img-hover-scale mb-15">
-                                <a href="https://newsviral-html.vercel.app/single.html">
+                                <a href="/single.html">
                                   <img src="images/news-16.jpg" alt="">
                                 </a>
                                 <span class="top-right-icon background2">
@@ -522,7 +522,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
               </ul>
               <?php if (0) { ?>
                 <div class="d-inline ml-50 tools-icon">
-                  <a class="red-tooltip text-danger" href="https://newsviral-html.vercel.app/index.html#"
+                  <a class="red-tooltip text-danger" href=""
                      data-toggle="tooltip" data-placement="top" title="" data-original-title="Hot Topics">
                     <ion-icon name="flame-outline" role="img" class="md hydrated" aria-label="flame outline">
                       <template shadowrootmode="open">
@@ -539,7 +539,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                       </template>
                     </ion-icon>
                   </a>
-                  <a class="red-tooltip text-primary" href="https://newsviral-html.vercel.app/index.html#"
+                  <a class="red-tooltip text-primary" href=""
                      data-toggle="tooltip" data-placement="top" title="" data-original-title="Trending">
                     <ion-icon name="flash-outline" role="img" class="md hydrated" aria-label="flash outline">
                       <template shadowrootmode="open">
@@ -554,7 +554,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                       </template>
                     </ion-icon>
                   </a>
-                  <a class="red-tooltip text-success" href="https://newsviral-html.vercel.app/index.html#"
+                  <a class="red-tooltip text-success" href=""
                      data-toggle="tooltip" data-placement="top" title="" data-original-title="Notifications">
                     <ion-icon name="notifications-outline" role="img" class="md hydrated"
                               aria-label="notifications outline">
@@ -577,7 +577,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
           </div>
           <!-- Search -->
           <?php if(0) { ?>
-          <form action="https://newsviral-html.vercel.app/index.html#" method="get"
+          <form action="" method="get"
                 class="search-form d-lg-inline float-right position-relative mr-30 d-none">
             <input type="text" class="search_field" placeholder="Search" value="" name="s">
             <span class="search-icon"><i class="ti-search mr-5"></i></span>

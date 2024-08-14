@@ -105,7 +105,7 @@ use common\models\NewsCategory;
         <div class="row d-flex align-items-center justify-content-between">
           <div class="col-12">
             <div class="footer-copy-right">
-              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" style="color:#000000 !important; font-weight:bold" target="_blank">S<span style="color:#d90a2c">M</span> Digital</a></p>
+              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" style="color:#000000 !important; font-weight:bold" target="_blank">S<span style="color:#d90a2c">Mezentsev</span> DA</a></p>
             </div>
           </div>
         </div>

@@ -88,7 +88,7 @@ $this->beginPage();
 
       <!--Search-->
       <div class="siderbar-widget mb-50 mt-30">
-        <form action="https://newsviral-html.vercel.app/index.html#" method="get" class="search-form position-relative">
+        <form action="#" method="get" class="search-form position-relative">
           <input type="text" class="search_field" placeholder="Search" value="" name="s">
           <span class="search-icon"><i class="ti-search mr-5"></i></span>
         </form>
@@ -104,15 +104,15 @@ $this->beginPage();
             <li class="mb-30 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-                  <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+                  <a class="color-white" href="#">
                     <img src="./images/thumbnail-2.jpg" alt="">
                   </a>
                 </div>
                 <div class="post-content media-body">
-                  <h6 class="post-title mb-10 text-limit-2-row"><a href="https://newsviral-html.vercel.app/single.html">Vancouver
+                  <h6 class="post-title mb-10 text-limit-2-row"><a href="#">Vancouver
                       woman finds pictures and videos of herself online</a></h6>
                   <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
-                    <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">K. Marry</a></span>
+                    <span class="post-by">By <a href="#">K. Marry</a></span>
                     <span class="post-on">4m ago</span>
                   </div>
                 </div>
@@ -121,15 +121,15 @@ $this->beginPage();
             <li class="mb-30 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-                  <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+                  <a class="color-white" href="/single.html">
                     <img src="./images/thumbnail-3.jpg" alt="">
                   </a>
                 </div>
                 <div class="post-content media-body">
-                  <h6 class="post-title mb-10 text-limit-2-row"><a href="https://newsviral-html.vercel.app/single.html">4
+                  <h6 class="post-title mb-10 text-limit-2-row"><a href="#">4
                       Things Emotionally Intelligent People Don’t Do</a></h6>
                   <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
-                    <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">Mr. John</a></span>
+                    <span class="post-by">By <a href="/author.html">Mr. John</a></span>
                     <span class="post-on">3h ago</span>
                   </div>
                 </div>
@@ -138,15 +138,15 @@ $this->beginPage();
             <li class="mb-30 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-                  <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+                  <a class="color-white" href="/single.html">
                     <img src="./images/thumbnail-5.jpg" alt="">
                   </a>
                 </div>
                 <div class="post-content media-body">
-                  <h6 class="post-title mb-10 text-limit-2-row"><a href="https://newsviral-html.vercel.app/single.html">Reflections
+                  <h6 class="post-title mb-10 text-limit-2-row"><a href="/single.html">Reflections
                       from a Token Black Friend</a></h6>
                   <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
-                    <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">Kenedy</a></span>
+                    <span class="post-by">By <a href="/author.html">Kenedy</a></span>
                     <span class="post-on">4h ago</span>
                   </div>
                 </div>
@@ -155,15 +155,15 @@ $this->beginPage();
             <li class="mb-30 wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-                  <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+                  <a class="color-white" href="/single.html">
                     <img src="./images/thumbnail-7.jpg" alt="">
                   </a>
                 </div>
                 <div class="post-content media-body">
-                  <h6 class="post-title mb-10 text-limit-2-row"><a href="https://newsviral-html.vercel.app/single.html">How
+                  <h6 class="post-title mb-10 text-limit-2-row"><a href="/single.html">How
                       to Identify a Smart Person in 3 Minutes</a></h6>
                   <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
-                    <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">Steven</a></span>
+                    <span class="post-by">By <a href="/author.html">Steven</a></span>
                     <span class="post-on">5h ago</span>
                   </div>
                 </div>
@@ -172,15 +172,15 @@ $this->beginPage();
             <li class="wow fadeIn  animated" style="visibility: visible; animation-name: fadeIn;">
               <div class="d-flex">
                 <div class="post-thumb d-flex mr-15 border-radius-5 img-hover-scale">
-                  <a class="color-white" href="https://newsviral-html.vercel.app/single.html">
+                  <a class="color-white" href="/single.html">
                     <img src="./images/thumbnail-8.jpg" alt="">
                   </a>
                 </div>
                 <div class="post-content media-body">
-                  <h6 class="post-title mb-10 text-limit-2-row"><a href="https://newsviral-html.vercel.app/single.html">Blackface
+                  <h6 class="post-title mb-10 text-limit-2-row"><a href="/single.html">Blackface
                       Minstrel Songs Don’t Belong in Children’s Music Class</a></h6>
                   <div class="entry-meta meta-1 font-x-small color-grey float-left text-uppercase">
-                    <span class="post-by">By <a href="https://newsviral-html.vercel.app/author.html">J.Smith</a></span>
+                    <span class="post-by">By <a href="/author.html">J.Smith</a></span>
                     <span class="post-on">5h30 ago</span>
                   </div>
                 </div>
@@ -195,18 +195,18 @@ $this->beginPage();
           <h5 class="widget-title mt-5">Tags Cloud</h5>
         </div>
         <div class="tagcloud">
-          <a href="https://newsviral-html.vercel.app/category.html">Beauty</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Book</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Design</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Fashion</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Lifestyle</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Travel</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Science</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Health</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Sports</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Arts</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Books</a>
-          <a href="https://newsviral-html.vercel.app/category.html">Style</a>
+          <a href="">Beauty</a>
+          <a href="">Book</a>
+          <a href="">Design</a>
+          <a href="">Fashion</a>
+          <a href="">Lifestyle</a>
+          <a href="">Travel</a>
+          <a href="">Science</a>
+          <a href="">Health</a>
+          <a href="">Sports</a>
+          <a href="">Arts</a>
+          <a href="">Books</a>
+          <a href="">Style</a>
         </div>
       </div>
 
