@@ -83,7 +83,9 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'data' => ArrayHelper::map(\common\models\Tags::find()->asArray()->all(), 'id', 'name'),
       'options' => ['placeholder' => 'Выбрать тег', 'multiple' => true],
     ]); ?>
-
+  </div>
+  <div class="col-md-6">
+    <?= $form->field($model, 'new_tag'); ?>
   </div>
 </div>
 <div class="row">

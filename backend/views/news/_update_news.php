@@ -103,12 +103,16 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <?= $form->field($model, 'tag_id')->widget(Select2::classname(), [
+          <div class="col-md-12">
+            <?= $form->field($model, 'news_tags')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(\common\models\Tags::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать тег', 'multiple' => true],
             ]); ?>
-
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <?= $form->field($model, 'new_tag'); ?>
           </div>
         </div>
         <div class="row">

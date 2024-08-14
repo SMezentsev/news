@@ -13,7 +13,6 @@ use yii\db\ActiveRecord;
 use Carbon\Carbon;
 use common\models\Query\NewsQuery;
 
-
 class News extends ActiveRecord
 {
 
@@ -21,7 +20,8 @@ class News extends ActiveRecord
   const STATUS_ACTIVE = 1;
 
   public $file;
-  public $tag_id;
+  public $new_tag;
+  public $news_tags;
 
   /**
    * {@inheritdoc}
@@ -37,14 +37,16 @@ class News extends ActiveRecord
   public function rules()
   {
     return [
-      [['id', 'category_id', 'tag_id', 'views'], 'integer'],
-      [['title', 'announce', 'text', 'date'], 'string'],
-      [['show'],'boolean'],
+      [['id', 'category_id', 'views'], 'integer'],
+      [['title', 'announce', 'text', 'date',], 'string'],
+      [['show'], 'boolean'],
+      [['news_tags', 'new_tag'], 'safe'],
       [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
     ];
   }
 
-  public function attributeLabels() {
+  public function attributeLabels()
+  {
 
     return [
       'id' => 'id',
@@ -56,16 +58,17 @@ class News extends ActiveRecord
       'text' => 'Содержание',
       'title' => 'Заголовок',
       'file' => 'Изображение',
-      'tag_id' => 'Теги',
+      'news_tags' => 'Теги',
+      'new_tag' => 'Новый тег (через запятую)',
       'views' => 'Просмотры',
       'date' => 'Дата'
     ];
   }
 
-  public  function getCategory()
+  public function getCategory()
   {
 
-    return $this->hasOne(NewsCategory::class,  ['id' => 'category_id']);
+    return $this->hasOne(NewsCategory::class, ['id' => 'category_id']);
   }
 
   public function getFiles()
@@ -80,7 +83,6 @@ class News extends ActiveRecord
     return $this->hasOne(Files::className(), ['table_id' => 'id'])->where(['main' => 1])->andWhere(['table_name' => 'news']);;
   }
 
-
   public static function getAll()
   {
 
@@ -92,13 +94,13 @@ class News extends ActiveRecord
     return (new NewsQuery(get_called_class()))->show();
   }
 
-    public function beforeSave($insert)
+  public function beforeSave($insert)
   {
 
     if (parent::beforeSave($insert)) {
 
       $this->date = Carbon::parse($this->date)->format('Y-m-d');
-      $this->date .= ' '.Carbon::now()->format('H:i:s');
+      $this->date .= ' ' . Carbon::now()->format('H:i:s');
       return true;
     }
     return false;
