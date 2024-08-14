@@ -80,7 +80,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'vAlign' => 'middle',
       'label' => '',
       'filter' => false,
-      'width' => '30%',
+      'width' => '10%',
       'format' => 'raw',
       'value' => function ($model) {
 
