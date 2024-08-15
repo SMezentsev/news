@@ -94,7 +94,7 @@ class NewsController extends Controller {
   private function findModel($id)
   {
 
-    if (!$model = News::findOne($id)) {
+    if (!$model = News::find()->where(['id' => $id])->one()) {
       throw new NotFoundHttpException(Yii::t('app', 'Не найдена новость с id={id}', ['id' => $id]));
     }
     return $model;
