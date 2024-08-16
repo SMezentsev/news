@@ -44,14 +44,11 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
   margin-bottom: -8px !important;
 }
 
-
-
 .post-on {
 
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
 }
-
 
 
 .no-border  td {
@@ -61,3 +58,8 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
 }
 
 
+.tags-nav a.active, .tags-nav a:hover  {
+
+  background: #ee4a5f !important;
+  color: #fff !important;
+}

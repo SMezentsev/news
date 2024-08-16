@@ -115,6 +115,8 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
             <?php } ?>
             <nav>
               <ul class="main-menu d-none d-lg-inline">
+
+                <?php if(0) { ?>
                 <li >
                   <a href="/">
                       <span >
@@ -133,6 +135,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                       </span>
                   </a>
                 </li>
+                <?php } ?>
                 <li class="menu-item-has-children">
                   <a href="#">Москва</a>
                   <ul class="sub-menu text-muted font-small">
@@ -519,6 +522,13 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                     <a href="<?= '/news/'.$item->id ?>"><?= $item->name ?></a>
                   </li>
                 <?php } ?>
+                <li>
+                  <a href="<?= '/news/tags/'.(rand(1,10)) ?>">
+                  <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>
+                    ТЕГИ
+                  </span>
+                  </a>
+                </li>
               </ul>
               <?php if (0) { ?>
                 <div class="d-inline ml-50 tools-icon">

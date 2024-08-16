@@ -10,6 +10,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\web\NotFoundHttpException;
 use common\models\News;
+use common\models\Tags;
 
 /**
  * Site controller
@@ -82,6 +83,12 @@ class NewsController extends Controller {
     $news = $news->search(Yii::$app->request->queryParams);
 
     Yii::$app->params['category'] = $category;
+    if($tag_id) {
+      Yii::$app->params['tags'] = [
+        'tags' => Tags::find()->all(),
+        'current' => $tag_id
+      ];
+    }
 
     return $this->render('index',[
       'category' => $category,

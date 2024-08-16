@@ -252,8 +252,16 @@ $this->beginPage();
     <div class="container" style="transform: none;">
       <?php if(isset(Yii::$app->params['category'])) { ?>
       <div class="row">
-        <div class="col-lg-8 col-md-12">
+        <div class="col-lg-12 col-md-12">
           <?= $this->render('@frontend/views/news/_nav.php', ['category' => Yii::$app->params['category']]) ?>
+        </div>
+      </div>
+      <?php } ?>
+
+      <?php if(isset(Yii::$app->params['tags'])) { ?>
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <?= $this->render('@frontend/views/news/_tags_nav.php', ['tags' => Yii::$app->params['tags']['tags'], 'current' => Yii::$app->params['tags']['current']]) ?>
         </div>
       </div>
       <?php } ?>
@@ -269,7 +277,6 @@ $this->beginPage();
             <?= SidebarWidget::widget(['categoryIds' => [
               'science', 'culture', 'travel', 'economics', 'sport', 'health'
             ]]); ?>
-
           </div>
 
           <?php if(!in_array(Yii::$app->controller->action->id, ['view'])) { ?>
