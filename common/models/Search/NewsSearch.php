@@ -54,7 +54,7 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()->select(['news.id', 'news.title', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
+    $query = News::find()->current()->select(['news.id', 'news.title', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
 
     if ($tag_id = $params['tag_id'] ?? false) {
 
