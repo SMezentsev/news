@@ -83,7 +83,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
               'options' => [],
               'pluginOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-mm-yyyy h:i:s'
+                'format' => 'h:i:s dd-mm-yyyy'
               ]
             ]); ?>
           </div>
