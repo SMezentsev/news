@@ -80,10 +80,12 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           </div>
           <div class="col-md-6">
             <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
-              'options' => [],
+              'options' => [
+                'format' => 'yyyy-mm-dd H:i:s'
+              ],
               'pluginOptions' => [
                 'autoclose' => true,
-                'format' => 'h:i:s dd-mm-yyyy'
+                'format' => 'yyyy-mm-dd hh:i:s'
               ]
             ]); ?>
           </div>
