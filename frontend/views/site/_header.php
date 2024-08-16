@@ -13,7 +13,7 @@ $world = NewsCategory::find()->andWhere(['eng_name' => 'world'])->one();
 $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->orderBy('sort ASC')->all();
 
 ?>
-<header class="main-header header-style-2 mb-40">
+<header class="main-header header-style-2 mb-25">
   <div class="header-bottom header-sticky background-white text-center">
     <div class="scroll-progress gradient-bg-1" style="width: 0%;"></div>
     <?php if(0) { ?>
