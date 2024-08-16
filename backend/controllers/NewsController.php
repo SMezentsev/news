@@ -36,7 +36,7 @@ class NewsController extends Controller
   {
 
     $model = new News();
-    $model = $model->find()->where(['id' => $id])->one();
+    $model = $model->find()->current()->where(['id' => $id])->one();
 
 
     if ($model && $model->load(Yii::$app->request->post())) {
