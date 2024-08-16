@@ -6,32 +6,18 @@
  * Time: 15:00
  */
 
-use app\components\TableDataWidget;
+
 use app\components\PanelWidget;
 use yii\helpers\Html;
-use app\components\FormWidget;
-use common\models\Manufacturers;
-use common\models\Category;
-use common\models\City;
-use common\models\Ingredients;
-use common\models\Colors;
 use backend\models\Menu;
-use common\models\PackagingType;
-use kartik\tree\TreeViewInput;
 use kartik\select2\Select2;
 use yii\widgets\ActiveForm;
-use common\models\Tree;
 use yii\helpers\ArrayHelper;
-use common\models\Brands;
-use common\models\Property;
 use app\components\BreadcrumbWidget;
-use yii\widgets\Breadcrumbs;
-use kartik\file\FileInput;
 use kartik\checkbox\CheckboxX;
-use kartik\editors\Summernote;
 use common\models\NewsCategory;
-use kartik\date\DatePicker;
 use mihaildev\ckeditor\CKEditor;
+use kartik\datetime\DateTimePicker;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 //$parent = Menu::findOne(['id' => $menu->parent_id]);
@@ -93,11 +79,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
           </div>
           <div class="col-md-6">
-            <?= $form->field($model, 'date')->widget(DatePicker::classname(), [
+            <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
               'options' => [],
               'pluginOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-M-yyyy'
+                'format' => 'dd-mm-yyyy h:i:s'
               ]
             ]); ?>
           </div>

@@ -111,8 +111,12 @@ class News extends ActiveRecord
 
     if (parent::beforeSave($insert)) {
 
-      $this->date = Carbon::parse($this->date)->format('Y-m-d');
-      $this->date .= ' ' . Carbon::now()->format('H:i:s');
+
+      if($this->date == null) {
+
+        $this->date = Carbon::parse($this->date)->format('Y-m-d H:i:s');
+      }
+
       return true;
     }
     return false;
