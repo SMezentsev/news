@@ -70,7 +70,9 @@ class NewsSearch extends ActiveRecord
 
     return new ActiveDataProvider([
       'query' => $query,
-      'pagination' => false,
+      'pagination' => [
+        'pageSize' => 15
+      ],
       'sort' => [
         'defaultOrder' => [
           'date' => SORT_DESC,
