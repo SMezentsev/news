@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Faq;
+use common\models\Search\NewsSearch;
 use frontend\models\ContactForm;
 use Yii;
 use yii\web\Controller;
@@ -109,8 +110,11 @@ class SiteController extends Controller
   public function actionIndex()
   {
 
-    return $this->render('index', [
+    $news = new NewsSearch();
+    $news = $news->search(Yii::$app->request->queryParams);
 
+    return $this->render('index', [
+      'news' => $news->getModels(),
     ]);
   }
 

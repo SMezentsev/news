@@ -36,7 +36,7 @@ use Carbon\Carbon;
 
               <?= $this->render('@frontend/views/articles/_article_700_first_post.php', ['news' => $news[0]]) ?>
               <?php foreach (array_slice($news, 1) as $item) { ?>
-                <?= $this->render('@frontend/views/articles/_article_250_250_announce.php', ['news' => $item]) ?>
+                <?= $this->render('@frontend/views/articles/_article_square_image.php', ['news' => $item]) ?>
               <?php } ?>
 
             <?php } ?>

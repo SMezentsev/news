@@ -6,8 +6,6 @@ use common\models\News;
 $healthCategory = NewsCategory::find()->where(['eng_name' => 'health'])->one();
 $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)->all();
 
-
-
 ?>
 
 <div class="sidebar-widget mb-30">
