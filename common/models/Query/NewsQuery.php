@@ -18,6 +18,6 @@ class NewsQuery extends ActiveQuery
   public function current()
   {
 
-    return $this->andWhere(['<=', new \yii\db\Expression("date::date"), Carbon::today()->format('Y-m-d')]);
+    return $this->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
   }
 }

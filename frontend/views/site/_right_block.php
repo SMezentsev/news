@@ -4,7 +4,7 @@ use common\models\NewsCategory;
 use common\models\News;
 
 $healthCategory = NewsCategory::find()->where(['eng_name' => 'health'])->one();
-$health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)->all();
+$health = News::find()->show()->current()->where(['category_id' => $healthCategory->id])->limit(5)->all();
 
 ?>
 
@@ -17,8 +17,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
       <?php if(0) { ?>
         <div class="col-5 text-right">
           <h6 class="font-medium pr-15">
-            <a class="text-muted font-small" href="#">View
-              all</a>
+            <a class="text-muted font-small" href="#">View all</a>
           </h6>
         </div>
       <?php } ?>
@@ -51,7 +50,7 @@ $health = News::find()->where(['category_id' => $healthCategory->id])->limit(5)-
   <div class="post-aside-style-3">
 
     <?php
-      $populars = \common\models\News::find()->orderBy('views DESC')->limit(10)->all();
+      $populars = \common\models\News::find()->show()->current()->orderBy('views DESC')->limit(10)->all();
     ?>
     <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 5)]) ?>
 

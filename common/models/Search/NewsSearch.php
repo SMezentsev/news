@@ -54,7 +54,7 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()->current()->select(['news.id', 'news.title', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
+    $query = News::find()->show()->current()->select(['news.id', 'news.title', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
 
     if ($tag_id = $params['tag_id'] ?? false) {
 
@@ -62,7 +62,7 @@ class NewsSearch extends ActiveRecord
         ->andWhere(['news_tags.tag_id' => $tag_id]);
     }
 
-    $query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
+    //$query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
     $query->andFilterWhere([
       'id' => $this->id,
       'category_id' => $this->category_id
