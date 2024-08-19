@@ -64,7 +64,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
       <div class="wp-block-image">
         <figure class="alignright is-resized">
-          <img class="border-radius-5" src="<?= $model->mainFile->original ?? '' ?>" style="max-width:500px">
+          <img class="border-radius-5" src="<?= $model->mainFile->resize_image2 ?? '' ?>" style="max-width:500px">
           <?php if (0) { ?>
             <figcaption> And far contrary smoked some contrary among stealthy</figcaption>
           <?php } ?>
