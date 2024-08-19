@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use common\models\News;
 use common\models\NewsTags;
+use common\models\NewsGallery;
 use common\models\Tags;
 use yii\web\UploadedFile;
 use common\components\Services\ImageService;
@@ -213,6 +214,23 @@ class NewsController extends Controller
     return $this->render('_update_news', [
       'model' => $model
     ]);
+  }
+
+  public function actionGallery($news_id, $file_id) {
+
+
+    $file = NewsGallery::find()->where(['news_id' => $news_id, 'file_id' => $file_id])->one();
+    if(!$file) {
+      $file = new NewsGallery([
+        'news_id' => $news_id,
+        'file_id' => $file_id
+      ]);
+      $file->save();
+    } else {
+      $file->delete();
+    }
+
+    Yii::$app->getResponse()->setStatusCode(204);
   }
 
   public function actionIndex()

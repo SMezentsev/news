@@ -70,7 +70,8 @@
     "yiisoft/rbac-rules-container": "^1.0",
     "yiisoft/yii2-bootstrap4": "^2.0",
     "mihaildev/yii2-ckeditor": "*",
-    "newerton/yii2-fancybox": "^1.0"
+    "newerton/yii2-fancybox": "^1.0",
+
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.1.0",

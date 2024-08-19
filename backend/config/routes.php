@@ -27,6 +27,7 @@ return [
   '<controller:\w+>/<id:\d+>/<action>'=>'<controller>/<action>',
 
   'category-groups/<id:\d+>/delete' => 'category-groups/delete',
+  'news/<news_id:\d+>/gallery/<file_id:\d+>' => 'news/gallery',
 
   'city' => 'city/index',
 

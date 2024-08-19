@@ -12,6 +12,7 @@ use Yii;
 use yii\db\ActiveRecord;
 use Carbon\Carbon;
 use common\models\Query\NewsQuery;
+use common\models\NewsGallery;
 
 class News extends ActiveRecord
 {
@@ -41,7 +42,7 @@ class News extends ActiveRecord
       [['id', 'category_id', 'views', 'tag_id'], 'integer'],
       [['title', 'announce', 'text', 'date',], 'string'],
       [['show'], 'boolean'],
-      [['news_tags', 'new_tag'], 'safe'],
+      [['news_tags', 'new_tag', 'gallery'], 'safe'],
       [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
     ];
   }
@@ -58,6 +59,7 @@ class News extends ActiveRecord
       'category_id' => 'Категория',
       'text' => 'Содержание',
       'title' => 'Заголовок',
+      'gallery' => 'Галерея',
       'file' => 'Изображение',
       'news_tags' => 'Теги',
       'tag_id' => 'Теги ID',
@@ -78,6 +80,19 @@ class News extends ActiveRecord
 
     return $this->hasMany(Files::className(), ['table_id' => 'id'])->andWhere(['table_name' => 'news']);;
   }
+
+
+
+  public function getNewsGallery()
+  {
+    return $this->hasMany(NewsGallery::class, ['news_id' => 'id']);
+  }
+
+  public function getGallery()
+  {
+    return $this->hasMany(Files::class, ['id' => 'file_id'])->via('newsGallery');
+  }
+
 
   public function getNewsTags()
   {

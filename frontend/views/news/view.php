@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use common\Helper\DateHelper;
 use common\models\NewsCategory;
+;
 
 $category = NewsCategory::find()->where(['id' => $model->category_id])->one();
 $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
@@ -70,8 +71,17 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
         </figure>
       </div>
       <p><?= $model->text ?></p>
-      <?php ?>
 
+      <?php
+      if($gallery = $model->gallery??false) { ?>
+        <br>
+        <hr class="wp-block-separator is-style-wide">
+        <?php foreach ($gallery as $item) { ?>
+
+          <?= \yii\helpers\Html::a(yii\helpers\Html::img($item->resize_image1, ['width' => '120px']), $item->original, ['rel' => 'fancybox', 'class' => 'news-gallery']); ?>
+
+        <?php } ?>
+      <?php } ?>
     </div>
     <div class="entry-bottom mt-50 mb-30">
       <?php if ($tags = $model->tags) { ?>

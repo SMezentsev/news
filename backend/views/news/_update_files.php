@@ -59,6 +59,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
     ['label' => $model->title]
   ]
 ]);
+
 ?>
 
 <?= PanelWidget::start(false); ?>
@@ -174,7 +175,17 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
           },
         ],
+        [
+          'hAlign' => 'center',
+          'vAlign' => 'middle',
+          'filter' => false,
+          'attribute' => 'Галерея',
+          'format' => 'raw',
+          'value' => function ($file) use ($model) {
 
+            return $this->render('_gallery_checkbox', ['news' => $model, 'model' => $file]);
+          },
+        ],
         [
           'class' => 'yii\grid\ActionColumn',
           'headerOptions' => ['width' => '60'],
