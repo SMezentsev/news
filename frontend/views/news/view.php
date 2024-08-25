@@ -9,6 +9,8 @@ use common\models\NewsCategory;
 $category = NewsCategory::find()->where(['id' => $model->category_id])->one();
 $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
 $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->all();
+
+$relatedIds[] = $model->id;
 ?>
 
 
@@ -113,7 +115,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
     ?>
 
     <?php if($related) { ?>
-    <?php $relatedIds[] = [];  ?>
+
     <div class="related-posts">
       <h3 class="mb-30">Похожие новости</h3>
       <div class="row">
