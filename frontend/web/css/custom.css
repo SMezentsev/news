@@ -74,3 +74,11 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
 
   margin-top: 0px !important;
 }
+
+li.disabled  span {
+
+  font-size: 13px;
+  display: block;
+  margin-top: 8px !important;
+  padding-right: 8px !important;
+}

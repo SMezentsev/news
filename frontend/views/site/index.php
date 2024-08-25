@@ -1,7 +1,6 @@
 <?php
 
-use frontend\components\WeatherWidget\WeatherWidget;
-use frontend\components\SidebarWidget;
+use yii\widgets\LinkPager;
 
 ?>
 
@@ -40,18 +39,42 @@ use frontend\components\SidebarWidget;
               <?= $this->render('@frontend/views/articles/_article_square_image.php', ['news' => $item]) ?>
             <?php } ?>
 
-            <div class="pagination-area mb-30">
+            <div class="pagination-area mb-30 mt-30">
               <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-start">
-                  <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-left"></i></a></li>
-                  <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                  <li class="page-item"><a class="page-link" href="#">02</a></li>
-                  <li class="page-item"><a class="page-link" href="#">03</a></li>
-                  <li class="page-item"><a class="page-link" href="#">04</a></li>
-                  <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-right"></i></a></li>
-                </ul>
+                <?php
+
+                echo LinkPager::widget([
+                  'pagination' => $pages,
+                  //Css option for container
+                  'options' => ['class' => 'pagination justify-content-start'],
+                  //First option value
+                  'firstPageLabel' => '',
+
+                  //Last option value
+                  'lastPageLabel' => '',
+                  //Previous option value
+                  'prevPageLabel' => '<i class="ti-angle-left"></i>',
+                  //Next option value
+                  'nextPageLabel' => '<i class="ti-angle-right"></i>',
+                  //Current Active option value
+                  'activePageCssClass' => 'page-item active',
+                  //Max count of allowed options
+                  'maxButtonCount' => 8,
+
+                  // Css for each options. Links
+                  'linkOptions' => ['class' => 'page-link'],
+                  'disabledPageCssClass' => 'disabled',
+
+                  // Customzing CSS class for navigating link
+                  'prevPageCssClass' => 'page-item',
+                  'nextPageCssClass' => 'page-item',
+                  'firstPageCssClass' => 'page-item',
+                  'lastPageCssClass' => 'page-item',
+                ]);
+                ?>
               </nav>
             </div>
+
           </div>
         </div>
         <?php if (0) { ?>

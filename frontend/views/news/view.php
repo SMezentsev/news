@@ -4,8 +4,6 @@ use Carbon\Carbon;
 use common\Helper\DateHelper;
 use common\models\NewsCategory;
 
-;
-
 $category = NewsCategory::find()->where(['id' => $model->category_id])->one();
 $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
 $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])->all();

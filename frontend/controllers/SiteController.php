@@ -6,6 +6,7 @@ use common\models\Faq;
 use common\models\Search\NewsSearch;
 use frontend\models\ContactForm;
 use Yii;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -113,8 +114,14 @@ class SiteController extends Controller
     $news = new NewsSearch();
     $news = $news->search(Yii::$app->request->queryParams);
 
+    $pages = new Pagination([
+      'totalCount' => $news->totalCount,
+      'forcePageParam' => false,
+    ]);
+
     return $this->render('index', [
       'news' => $news->getModels(),
+      'pages' => $pages,
     ]);
   }
 

@@ -3,6 +3,7 @@
 use common\models\NewsCategory;
 use common\models\Category;
 use Carbon\Carbon;
+use yii\widgets\LinkPager;
 
 //
 //$category = NewsCategory::find()->where(['id' => $category_id])->one();
@@ -43,6 +44,43 @@ use Carbon\Carbon;
 
           <?php } ?>
 
+
+          <div class="pagination-area mb-30 mt-30">
+            <nav aria-label="Page navigation example">
+              <?php
+
+              echo LinkPager::widget([
+                'pagination' => $pages,
+                //Css option for container
+                'options' => ['class' => 'pagination justify-content-start'],
+                //First option value
+                'firstPageLabel' => '',
+
+                //Last option value
+                'lastPageLabel' => '',
+                //Previous option value
+                'prevPageLabel' => '<i class="ti-angle-left"></i>',
+                //Next option value
+                'nextPageLabel' => '<i class="ti-angle-right"></i>',
+                //Current Active option value
+                'activePageCssClass' => 'page-item active',
+                //Max count of allowed options
+                'maxButtonCount' => 8,
+
+                // Css for each options. Links
+                'linkOptions' => ['class' => 'page-link'],
+                'disabledPageCssClass' => 'disabled',
+
+                // Customzing CSS class for navigating link
+                'prevPageCssClass' => 'page-item',
+                'nextPageCssClass' => 'page-item',
+                'firstPageCssClass' => 'page-item',
+                'lastPageCssClass' => 'page-item',
+              ]);
+              ?>
+            </nav>
+          </div>
+
         </div>
       </div>
     </div>
@@ -50,7 +88,7 @@ use Carbon\Carbon;
       <div class="widget-header mb-20">
         <h5 class="widget-title">Популярные <span>новости</span></h5>
       </div>
-      <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => $news]) ?>
+      <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => $popular]) ?>
     </div>
   </div>
 </div>

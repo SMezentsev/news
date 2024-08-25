@@ -46,7 +46,7 @@ class NewsSearch extends ActiveRecord
     ];
   }
 
-  public function search(?array $params = []): ActiveDataProvider
+  public function search(?array $params = [], $limit = 15): ActiveDataProvider
   {
 
     if (!empty($params) && (!$this->load($params) || !$this->validate())) {
@@ -68,10 +68,16 @@ class NewsSearch extends ActiveRecord
       'category_id' => $this->category_id
     ]);
 
+
+    if($notIn = $params['notIn']??false) {
+
+      $query->andWhere(['not in', 'news.id', $notIn]);
+    }
+
     return new ActiveDataProvider([
       'query' => $query,
       'pagination' => [
-        'pageSize' => 15
+        'pageSize' => $limit
       ],
       'sort' => [
         'defaultOrder' => [

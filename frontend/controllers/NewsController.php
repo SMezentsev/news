@@ -11,6 +11,8 @@ use yii\widgets\ActiveForm;
 use yii\web\NotFoundHttpException;
 use common\models\News;
 use common\models\Tags;
+use yii\helpers\ArrayHelper;
+use yii\data\Pagination;
 
 /**
  * Site controller
@@ -79,8 +81,15 @@ class NewsController extends Controller {
   public function actionIndex($category_id = null, $tag_id = null) {
 
     $category = NewsCategory::find()->where(['id' => $category_id])->one();
-    $news = new NewsSearch();
-    $news = $news->search(Yii::$app->request->queryParams);
+    $newsModel = new NewsSearch();
+    $news = $newsModel->search(Yii::$app->request->queryParams);
+
+    foreach ($news->getModels() as $item) {
+
+      $newsIds[] = $item->id;
+    }
+
+    $popular = $newsModel->search(ArrayHelper::merge(Yii::$app->request->queryParams, ['notIn' => $newsIds]));
 
     Yii::$app->params['category'] = $category;
     if($tag_id) {
@@ -90,11 +99,18 @@ class NewsController extends Controller {
       ];
     }
 
+    $pages = new Pagination([
+      'totalCount' => $news->totalCount,
+      'forcePageParam' => false,
+    ]);
+
     return $this->render('index',[
       'category' => $category,
       'mode' => $tag_id ? 'tags' : 'news',
       'category_id' => $category_id,
       'news' => $news->getModels(),
+      'popular' => $popular->getModels(),
+      'pages' => $pages,
     ]);
   }
 
