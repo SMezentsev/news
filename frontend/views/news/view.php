@@ -155,7 +155,7 @@ $relatedIds[] = $model->id;
     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 983.778px; top: 0px;">
       <div class="pl-lg-50">
         <?php
-        $populars = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', $relatedIds])->orderBy('views DESC')->limit(10)->all();
+        $populars = \common\models\News::find()->where(['category_id' => $model->category_id])->current()->andWhere(['not in', 'id', $relatedIds])->orderBy('views DESC')->limit(10)->all();
 
         if (count($populars)) {
           ?>
