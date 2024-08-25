@@ -17,7 +17,7 @@ use common\Helper\DateHelper;
         <a class="entry-meta meta-2" href="<?= '/news/' . $news->category_id ?>"><span
             class="post-in text-danger font-x-small"><?= $news->category->name ?? ''; ?></span></a>
       </div>
-      <h5 class="post-title mb-15 text-limit-2-row">
+      <h5 class="post-title mb-5 text-limit-2-row">
           <span class="post-format-icon">
         <?= $news->category->icon ?? ''; ?>
         </span>

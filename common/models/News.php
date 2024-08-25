@@ -12,7 +12,7 @@ use Yii;
 use yii\db\ActiveRecord;
 use Carbon\Carbon;
 use common\models\Query\NewsQuery;
-use common\models\NewsGallery;
+use common\models\NewsSources;
 
 class News extends ActiveRecord
 {
@@ -39,7 +39,7 @@ class News extends ActiveRecord
   public function rules()
   {
     return [
-      [['id', 'category_id', 'views', 'tag_id'], 'integer'],
+      [['id', 'category_id', 'views', 'tag_id', 'category_id', 'news_source_id'], 'integer'],
       [['title', 'announce', 'text', 'date',], 'string'],
       [['show'], 'boolean'],
       [['news_tags', 'new_tag', 'gallery'], 'safe'],
@@ -57,6 +57,7 @@ class News extends ActiveRecord
       'announce' => 'Анонс',
       'data' => 'Дата',
       'category_id' => 'Категория',
+      'news_source_id' => 'Источник новости',
       'text' => 'Содержание',
       'title' => 'Заголовок',
       'gallery' => 'Галерея',
@@ -108,6 +109,12 @@ class News extends ActiveRecord
   {
 
     return $this->hasOne(Files::className(), ['table_id' => 'id'])->where(['main' => 1])->andWhere(['table_name' => 'news']);;
+  }
+
+  public function getSource()
+  {
+
+    return $this->hasOne(NewsSources::className(), ['id' => 'news_source_id']);
   }
 
   public static function getAll()

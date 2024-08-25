@@ -18,6 +18,7 @@ use kartik\checkbox\CheckboxX;
 use common\models\NewsCategory;
 use mihaildev\ckeditor\CKEditor;
 use kartik\datetime\DateTimePicker;
+use common\models\NewsSources;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 //$parent = Menu::findOne(['id' => $menu->parent_id]);
@@ -75,6 +76,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
               'data' => $data,
               'options' => ['placeholder' => 'Выбрать категорию'],
+            ]); ?>
+
+            <?= $form->field($model, 'news_source_id')->widget(Select2::classname(), [
+              'data' => ArrayHelper::map(NewsSources::find()->asArray()->all(), 'id', 'name'),
+              'options' => ['placeholder' => 'Выбрать источник'],
             ]); ?>
 
           </div>

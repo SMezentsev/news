@@ -78,6 +78,18 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'label' => 'Кол-во симовлов',
+      'filter' => false,
+      'width' => '10%',
+      'format' => 'raw',
+      'value' => function ($model) {
+
+        return strlen(str_replace(' ', '', $model->text));
+      }
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
       'label' => '',
       'filter' => false,
       'width' => '10%',

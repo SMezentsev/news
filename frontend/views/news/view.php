@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use common\Helper\DateHelper;
 use common\models\NewsCategory;
+
 ;
 
 $category = NewsCategory::find()->where(['id' => $model->category_id])->one();
@@ -42,9 +43,6 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
 <div class="row mb-50" style="transform: none;">
 
-  <!--End col-lg-4-->
-
-
   <div class="col-lg-8 col-md-12">
 
     <div class="bt-1 border-color-1 mb-30"></div>
@@ -74,7 +72,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
       <p><?= $model->text ?></p>
 
       <?php
-      if($gallery = $model->gallery??false) { ?>
+      if ($gallery = $model->gallery ?? false) { ?>
         <br>
         <hr class="wp-block-separator is-style-wide">
         <?php foreach ($gallery as $item) { ?>
@@ -84,7 +82,15 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
         <?php } ?>
       <?php } ?>
     </div>
-    <div class="entry-bottom mt-50 mb-30">
+
+    <?php if ($model->source ?? false) { ?>
+      <div class="entry-bottom mt-40 mb-10">
+        <div class="font-weight-500 entry-meta meta-1 font-x-small color-grey">
+          <span class="update-on">Источник:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>
+        </div>
+      </div>
+    <?php } ?>
+    <div class="entry-bottom mt-20 mb-30">
       <?php if ($tags = $model->tags) { ?>
         <div class="overflow-hidden mt-30">
           <div class="tags float-left text-muted mb-md-30">
@@ -96,71 +102,70 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
         </div>
       <?php } ?>
     </div>
-    <div class="entry-bottom mt-50 mb-30">
-      <?php if (0) { ?>
-        <div class="font-weight-500 entry-meta meta-1 font-x-small color-grey">
-          <span class="update-on"><i class="ti ti-reload mr-5"></i>Updated 18/09/2020 10:28 EST</span>
-          <span class="hit-count"><i class="ti-comment"></i>82 comments</span>
-          <span class="hit-count"><i class="ti-heart"></i>68 likes</span>
-          <span class="hit-count"><i class="ti-star"></i>8/10</span>
-        </div>
-      <?php } ?>
-      <div class="overflow-hidden mt-30">
-        <?php if (0) { ?>
-          <div class="tags float-left text-muted mb-md-30">
-            <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>Tags: </span>
-            <a href="category.html" rel="tag">tech</a>
-            <a href="category.html" rel="tag">world</a>
-            <a href="category.html" rel="tag">global</a>
-          </div>
-        <?php } ?>
-        <?php if (0) { ?>
-          <div class="single-social-share float-right">
-            <ul class="d-inline-block list-inline">
-              <li class="list-inline-item"><span class="font-small text-muted"><i
-                    class="ti-sharethis mr-5"></i>Share: </span></li>
-              <li class="list-inline-item"><a class="social-icon facebook-icon text-xs-center" target="_blank" href="#"><i
-                    class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a class="social-icon twitter-icon text-xs-center" target="_blank"
-                                              href="#"><i
-                    class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a class="social-icon pinterest-icon text-xs-center" target="_blank"
-                                              href="#"><i
-                    class="ti-pinterest"></i></a></li>
-              <li class="list-inline-item"><a class="social-icon instagram-icon text-xs-center" target="_blank"
-                                              href="#"><i
-                    class="ti-instagram"></i></a></li>
-              <li class="list-inline-item"><a class="social-icon linkedin-icon text-xs-center" target="_blank" href="#"><i
-                    class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        <?php } ?>
-      </div>
-    </div>
+
     <?php if ($relatedPosts ?? false) { ?>
       <?= $this->render('@frontend/views/news/_related_posts.php', ['relatedNews' => $relatedNews]) ?>
     <?php } ?>
+
+    <div class="related-posts">
+      <h3 class="mb-30">Похожие новости</h3>
+      <div class="row">
+        <?php
+
+        $related = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(10)->all();
+
+        ?>
+        <?php foreach ($related as $item) { ?>
+          <article class="col-lg-4">
+            <div class="background-white border-radius-10 p-10 mb-30">
+              <div class="post-thumb d-flex mb-15 border-radius-15 img-hover-scale">
+                <a href="/news/<?= $item->category_id . '/' . $item->id; ?>">
+                  <img class="border-radius-15" src="<?= $item->mainFile->resize_image2 ?? '' ?>" alt="">
+                </a>
+              </div>
+              <div class="pl-10 pr-10">
+                <div class="entry-meta mb-15 mt-10">
+                  <a class="entry-meta meta-2" href="/news/<?= $item->category_id; ?>">
+                    <span class="post-in text-primary font-x-small"><?= $item->category->name ?? '' ?></span>
+                  </a>
+                </div>
+                <h5 class="post-title mb-15">
+                  <span class="post-format-icon">
+                      <ion-icon name="image-outline" role="img" class="md hydrated" aria-label="image outline"></ion-icon>
+                  </span>
+                  <a href="/news/<?= $item->category_id . '/' . $item->id; ?>"><?= $item->title ?? '' ?></a>
+                </h5>
+              </div>
+            </div>
+          </article>
+        <?php } ?>
+
+      </div>
+    </div>
 
   </div>
 
   <div class="col-lg-4 col-md-12 sidebar-right sticky-sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
-    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 983.778px; top: 0px;"><div class="pl-lg-50">
+    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 983.778px; top: 0px;">
+      <div class="pl-lg-50">
         <?php
         $populars = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(10)->all();
 
-        if(count($populars)) {
-        ?>
-        <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 5)]) ?>
+        if (count($populars)) {
+          ?>
+          <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 5)]) ?>
 
-        <?php foreach (array_slice($populars, 5) as $item) { ?>
+          <?php foreach (array_slice($populars, 5) as $item) { ?>
 
-          <?= $this->render('@frontend/views/articles/_article_380.php', [
-            'news' => $item
-          ]) ?>
+            <?= $this->render('@frontend/views/articles/_article_380.php', [
+              'news' => $item
+            ]) ?>
+          <?php } ?>
         <?php } ?>
-        <?php } ?>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
 
 </div>
