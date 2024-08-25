@@ -63,9 +63,11 @@ class NewsController extends Controller
       if ($newTags = $model->new_tag ?? false) {
 
         $tags = new Tags();
-        $newTags = explode(',', str_replace(' ', '', $newTags));
+        $newTags = explode(',', $newTags);
 
         foreach ($newTags as $key => $item) {
+
+          $item = trim($item);
 
           if ($tag = $tags->find()->where(['name' => $item])->one()) {
 
