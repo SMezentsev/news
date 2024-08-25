@@ -107,15 +107,19 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
       <?= $this->render('@frontend/views/news/_related_posts.php', ['relatedNews' => $relatedNews]) ?>
     <?php } ?>
 
+    <?php
+    $related = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(6)->all();
+
+    ?>
+
+    <?php if($related) { ?>
+    <?php $relatedIds[] = [];  ?>
     <div class="related-posts">
       <h3 class="mb-30">Похожие новости</h3>
       <div class="row">
-        <?php
 
-        $related = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(10)->all();
-
-        ?>
         <?php foreach ($related as $item) { ?>
+        <?php $relatedIds[] = $item->id; ?>
           <article class="col-lg-4">
             <div class="background-white border-radius-10 p-10 mb-30">
               <div class="post-thumb d-flex mb-15 border-radius-15 img-hover-scale">
@@ -142,6 +146,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
       </div>
     </div>
+    <?php } ?>
 
   </div>
 
@@ -150,7 +155,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
     <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 983.778px; top: 0px;">
       <div class="pl-lg-50">
         <?php
-        $populars = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(10)->all();
+        $populars = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', $relatedIds])->orderBy('views DESC')->limit(10)->all();
 
         if (count($populars)) {
           ?>
