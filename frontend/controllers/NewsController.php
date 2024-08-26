@@ -91,6 +91,7 @@ class NewsController extends Controller {
     $newsModel = new NewsSearch();
     $news = $newsModel->search(Yii::$app->request->queryParams);
 
+    $newsIds = [];
     foreach ($news->getModels() as $item) {
 
       $newsIds[] = $item->id;
