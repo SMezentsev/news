@@ -22,8 +22,9 @@ use common\Helper\DateHelper;
       <h2 class="mb-1"><?= $model->title??'' ?></h2>
 
         <div class="text-muted fw-bold">
+
+          <a href="https://mosovka.ru/news/<?= $model->category->id ?>/<?= $model->id ?>" target="_blank">Ссылка</a> <br>
           <?php if(0) { ?>
-          <a href="#">Keenthemes</a>
           <span class="mx-3">|</span>
           <a href="#">File Manager</a>
           <span class="mx-3">|</span>2.6 GB
