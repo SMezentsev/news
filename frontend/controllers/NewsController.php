@@ -51,6 +51,7 @@ class NewsController extends Controller {
       $model->save();
       $categories = NewsCategory::find()->all();
       $category = NewsCategory::findOne($category_id);
+      $newsModel = new NewsSearch();
 
       $breadCrumbs = [];
       $breadCrumbs[] = [
@@ -63,6 +64,11 @@ class NewsController extends Controller {
         'name' => $category->name
       ];
 
+      $newsCycles = false;
+      if($model->news_cycle_id) {
+
+        $newsCycles = $newsModel->search(['notIn' => [$model->id], 'news_cycle_id' => $model->news_cycle_id]);
+      }
       $this->view->title = $category->name.': '.$model->title;
       $this->view->registerMetaTag(['name' => 'keywords', 'content' => $category->name.' '.$model->title]);
       $this->view->registerMetaTag(['name' => 'description', 'content' => $category->name.' '.$model->announce]);
@@ -71,7 +77,8 @@ class NewsController extends Controller {
         'breadCrumbs' => $breadCrumbs,
         'categories' => $categories,
         'category' => $category,
-        'model' => $model
+        'model' => $model,
+        'newsCycles' => $newsCycles->getModels()
       ]);
     }
 

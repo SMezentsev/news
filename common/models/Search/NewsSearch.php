@@ -62,9 +62,16 @@ class NewsSearch extends ActiveRecord
         ->andWhere(['news_tags.tag_id' => $tag_id]);
     }
 
+    if ($news_cycle_id = $params['news_cycle_id'] ?? false) {
+
+      $query->andWhere(['news.news_cycle_id' => $news_cycle_id]);
+    }
+
     //$query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
+
     $query->andFilterWhere([
       'id' => $this->id,
+      'news_cycle_id' => $this->news_cycle_id,
       'category_id' => $this->category_id
     ]);
 

@@ -83,16 +83,17 @@ $relatedIds[] = $model->id;
       <?php } ?>
     </div>
 
+
     <?php if ($model->source ?? false) { ?>
-      <div class="entry-bottom mt-40 mb-10">
+      <div class="entry-bottom mt-30 mb-0">
         <div class="font-weight-500 entry-meta meta-1 font-x-small color-grey">
           <span class="update-on">Источник:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>
         </div>
       </div>
     <?php } ?>
-    <div class="entry-bottom mt-20 mb-30">
-      <?php if ($tags = $model->tags) { ?>
-        <div class="overflow-hidden mt-30">
+    <?php if ($tags = $model->tags) { ?>
+    <div class="entry-bottom mb-30">
+        <div class="overflow-hidden mt-10">
           <div class="tags float-left text-muted mb-md-30">
             <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>Теги: </span>
             <?php foreach ($tags as $item) { ?>
@@ -100,8 +101,45 @@ $relatedIds[] = $model->id;
             <?php } ?>
           </div>
         </div>
-      <?php } ?>
     </div>
+    <?php } ?>
+
+
+    <?php if($newsCycles) { ?>
+
+      <div class="related-posts">
+        <h3 class="mb-30">Новости по теме</h3>
+        <div class="row">
+
+          <?php foreach ($newsCycles as $item) { ?>
+            <?php $relatedIds[] = $item->id; ?>
+            <article class="col-lg-4">
+              <div class="background-white border-radius-10 p-10 mb-30">
+                <div class="post-thumb d-flex mb-15 border-radius-15 img-hover-scale">
+                  <a href="/news/<?= $item->category_id . '/' . $item->id; ?>">
+                    <img class="border-radius-15" src="<?= $item->mainFile->resize_image2 ?? '' ?>" alt="">
+                  </a>
+                </div>
+                <div class="pl-10 pr-10">
+                  <div class="entry-meta mb-15 mt-10">
+                    <a class="entry-meta meta-2" href="/news/<?= $item->category_id; ?>">
+                      <span class="post-in text-primary font-x-small"><?= $item->category->name ?? '' ?></span>
+                    </a>
+                  </div>
+                  <h5 class="post-title mb-15">
+                  <span class="post-format-icon">
+                      <ion-icon name="image-outline" role="img" class="md hydrated" aria-label="image outline"></ion-icon>
+                  </span>
+                    <a href="/news/<?= $item->category_id . '/' . $item->id; ?>"><?= $item->title ?? '' ?></a>
+                  </h5>
+                </div>
+              </div>
+            </article>
+          <?php } ?>
+
+        </div>
+      </div>
+    <?php } ?>
 
     <?php if ($relatedPosts ?? false) { ?>
       <?= $this->render('@frontend/views/news/_related_posts.php', ['relatedNews' => $relatedNews]) ?>
@@ -111,6 +149,8 @@ $relatedIds[] = $model->id;
     $related = \common\models\News::find()->where(['category_id' => $model->category_id])->andWhere(['not in', 'id', [$model->id]])->orderBy('views DESC')->limit(6)->all();
 
     ?>
+
+
 
     <?php if($related) { ?>
 
