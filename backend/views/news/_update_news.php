@@ -20,6 +20,7 @@ use mihaildev\ckeditor\CKEditor;
 use kartik\datetime\DateTimePicker;
 use common\models\NewsSources;
 use common\models\NewsTypes;
+use common\models\NewsCycles;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 //$parent = Menu::findOne(['id' => $menu->parent_id]);
@@ -87,6 +88,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'news_type_id')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(NewsTypes::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать тип новости'],
+            ]); ?>
+
+            <?= $form->field($model, 'news_cycle_id')->widget(Select2::classname(), [
+              'data' => ArrayHelper::map(NewsCycles::find()->asArray()->all(), 'id', 'name'),
+              'options' => ['placeholder' => 'Выбрать цикл новостей'],
             ]); ?>
 
           </div>
