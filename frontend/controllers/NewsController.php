@@ -78,7 +78,7 @@ class NewsController extends Controller {
         'categories' => $categories,
         'category' => $category,
         'model' => $model,
-        'newsCycles' => $newsCycles->getModels()
+        'newsCycles' => $newsCycles ? $newsCycles->getModels() : false
       ]);
     }
 
