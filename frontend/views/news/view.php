@@ -128,7 +128,7 @@ $relatedIds[] = $model->id;
                   </div>
                   <h5 class="post-title mb-15">
                   <span class="post-format-icon">
-                      <ion-icon name="image-outline" role="img" class="md hydrated" aria-label="image outline"></ion-icon>
+                      <?= $item->category->icon; ?>
                   </span>
                     <a href="/news/<?= $item->category_id . '/' . $item->id; ?>"><?= $item->title ?? '' ?></a>
                   </h5>
@@ -175,7 +175,7 @@ $relatedIds[] = $model->id;
                 </div>
                 <h5 class="post-title mb-15">
                   <span class="post-format-icon">
-                      <ion-icon name="image-outline" role="img" class="md hydrated" aria-label="image outline"></ion-icon>
+                      <?= $item->category->icon; ?>
                   </span>
                   <a href="/news/<?= $item->category_id . '/' . $item->id; ?>"><?= $item->title ?? '' ?></a>
                 </h5>
