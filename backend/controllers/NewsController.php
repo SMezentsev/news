@@ -226,7 +226,7 @@ class NewsController extends Controller
     $model = new News();
     if ($model->load(Yii::$app->request->post())) {
 
-      if($model->save()) {
+      if($model->save(false)) {
 
         $keywords = new Keywords([
           'page' => 'news',
