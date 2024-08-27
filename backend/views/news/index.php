@@ -104,9 +104,9 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'value' => function ($model) {
 
         if($model->keywords??false) {
-          return 'Не указаны';
+          return '';
         }
-        return '';
+        return 'Не указаны';
       }
     ],
     [
