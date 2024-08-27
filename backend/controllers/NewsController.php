@@ -13,6 +13,8 @@ use common\models\NewsGallery;
 use common\models\Tags;
 use yii\web\UploadedFile;
 use common\components\Services\ImageService;
+use common\models\NewsKeywords;
+use common\models\Keywords;
 
 
 class NewsController extends Controller
@@ -39,8 +41,13 @@ class NewsController extends Controller
     $model = new News();
     $model = $model->find()->where(['id' => $id])->one();
 
-
     if ($model && $model->load(Yii::$app->request->post())) {
+
+      $model->keywords->meta_tag_title = $model->kw_title??$model->title;
+      $model->keywords->meta_tag_keywords = $model->kw_keywords;
+      $model->keywords->meta_tag_description = $model->kw_description;
+      $model->keywords->save();
+
 
       //Удаляем
       Yii::$app
@@ -95,6 +102,13 @@ class NewsController extends Controller
         $tagsArray[] = $tags;
       }
       $model->news_tags = $tagsArray;
+    }
+
+    if($model->keywords) {
+
+      $model->kw_title = $model->keywords->meta_tag_title;
+      $model->kw_keywords = $model->keywords->meta_tag_keywords;
+      $model->kw_description = $model->keywords->meta_tag_description;
     }
 
     return $this->render('_update_news', [
@@ -208,7 +222,25 @@ class NewsController extends Controller
   {
 
     $model = new News();
-    if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    if ($model->load(Yii::$app->request->post())) {
+
+      if($model->save()) {
+
+        $keywords = new Keywords([
+          'page' => 'news',
+          'meta_tag_title' => $model->kw_title??$model->title,
+          'meta_tag_keywords' => $model->kw_keywords,
+          'meta_tag_description' => $model->kw_description,
+        ]);
+        if($keywords->save()) {
+
+          $newsKeywords = new NewsKeywords([
+            'keyword_id' => $keywords->id,
+            'news_id' => $model->id,
+          ]);
+          $newsKeywords->save();
+        }
+      }
 
       return $this->redirect('/news/' . $model->id);
     }

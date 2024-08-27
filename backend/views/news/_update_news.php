@@ -95,6 +95,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
               'options' => ['placeholder' => 'Выбрать цикл новостей'],
             ]); ?>
 
+
           </div>
           <div class="col-md-6">
             <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
@@ -121,16 +122,34 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'new_tag'); ?>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12">
-            <?= $form->field($model, 'title'); ?>
+            <?= $form->field($model, 'kw_title')->textarea(['rows' => '2']); ?>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <?= $form->field($model, 'announce'); ?>
+            <?= $form->field($model, 'kw_keywords')->textarea(['rows' => '2']); ?>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <?= $form->field($model, 'kw_description')->textarea(['rows' => '2']); ?>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <?= $form->field($model, 'title')->textarea(['rows' => '2']); ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <?= $form->field($model, 'announce')->textarea(['rows' => '2']); ?>
+          </div>
+        </div>
+
 
         <div class="row">
           <div class="col-md-12">

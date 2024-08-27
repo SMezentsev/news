@@ -13,6 +13,8 @@ use yii\db\ActiveRecord;
 use Carbon\Carbon;
 use common\models\Query\NewsQuery;
 use common\models\NewsSources;
+use common\models\NewsKeywords;
+use common\models\Keywords;
 
 class News extends ActiveRecord
 {
@@ -24,6 +26,10 @@ class News extends ActiveRecord
   public $new_tag;
   public $news_tags;
   public $tag_id;
+
+  public $kw_title;
+  public $kw_keywords;
+  public $kw_description;
 
   /**
    * {@inheritdoc}
@@ -42,7 +48,7 @@ class News extends ActiveRecord
       [['id', 'category_id', 'views', 'tag_id', 'category_id', 'news_source_id', 'news_type_id', 'news_cycle_id'], 'integer'],
       [['title', 'announce', 'text', 'date',], 'string'],
       [['show'], 'boolean'],
-      [['news_tags', 'new_tag', 'gallery'], 'safe'],
+      [['news_tags', 'new_tag', 'gallery', 'kw_title', 'kw_keywords', 'kw_description'], 'safe'],
       [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
     ];
   }
@@ -68,6 +74,11 @@ class News extends ActiveRecord
       'tag_id' => 'Теги ID',
       'new_tag' => 'Новый тег (через запятую)',
       'views' => 'Просмотры',
+
+      'kw_title' => 'Тайтл (может совпадать с заголовком новости)',
+      'kw_keywords' => 'Ключевые слова (через запятую)',
+      'kw_description' => 'Описание - основные тезисы из ключевых слов (через запятую)',
+
       'date' => 'Дата'
     ];
   }
@@ -106,6 +117,20 @@ class News extends ActiveRecord
   {
     return $this->hasMany(Tags::class, ['id' => 'tag_id'])->via('newsTags');
   }
+
+
+
+  public function getNewsKeywords()
+  {
+    return $this->hasMany(NewsKeywords::class, ['news_id' => 'id']);
+  }
+
+  public function getKeywords()
+  {
+    return $this->hasOne(Keywords::class, ['id' => 'keyword_id'])->via('newsKeywords');
+  }
+
+
 
   public function getMainFile()
   {
