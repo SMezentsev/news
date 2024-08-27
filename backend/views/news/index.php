@@ -75,6 +75,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'hAlign' => 'center',
       'vAlign' => 'middle',
       'attribute' => 'title',
+      'width' => '30%',
       'filter' => false,
       'format' => 'raw',
       'value' => function ($model) {
@@ -97,7 +98,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
-      'label' => 'Ключ. слоав',
+      'label' => 'Ключ. слова',
       'filter' => false,
       'width' => '10%',
       'format' => 'raw',
