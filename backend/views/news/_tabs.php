@@ -19,11 +19,13 @@ use common\Helper\DateHelper;
     <!--end::Icon-->
     <!--begin::Title-->
     <div class="d-flex flex-column" style="padding-left: 10px; vertical-align: top">
+      <?php if($model->id??false) { ?>
       <h2 class="mb-1"><?= $model->title??'' ?></h2>
 
         <div class="text-muted fw-bold">
 
           <a href="https://mosovka.ru/news/<?= $model->category->id ?>/<?= $model->id ?>" target="_blank">Ссылка</a> <br>
+
           <?php if(0) { ?>
           <span class="mx-3">|</span>
           <a href="#">File Manager</a>
@@ -35,6 +37,7 @@ use common\Helper\DateHelper;
           <?= DateHelper::months(Carbon::parse($model->date)->format('m'), false) ?>
           <?= Carbon::parse($model->date)->format('y'); ?>
         </div>
+      <?php } ?>
 
     </div>
     <!--end::Title-->
