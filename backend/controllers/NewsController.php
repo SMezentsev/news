@@ -43,11 +43,13 @@ class NewsController extends Controller
 
     if ($model && $model->load(Yii::$app->request->post())) {
 
-      $model->keywords->meta_tag_title = $model->kw_title??$model->title;
-      $model->keywords->meta_tag_keywords = $model->kw_keywords;
-      $model->keywords->meta_tag_description = $model->kw_description;
-      $model->keywords->save();
+      if($model->keywords??false) {
 
+        $model->keywords->meta_tag_title = $model->kw_title??$model->title;
+        $model->keywords->meta_tag_keywords = $model->kw_keywords;
+        $model->keywords->meta_tag_description = $model->kw_description;
+        $model->keywords->save();
+      }
 
       //Удаляем
       Yii::$app
