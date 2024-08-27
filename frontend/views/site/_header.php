@@ -522,6 +522,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                     <a href="<?= '/news/'.$item->id ?>"><?= $item->name ?></a>
                   </li>
                 <?php } ?>
+                <?php if (0) { ?>
                 <li>
                   <a href="<?= '/news/tags/'.(rand(1,10)) ?>">
                   <span class="font-small mr-10"><i class="fa fa-tag mr-5"></i>
@@ -529,6 +530,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                   </span>
                   </a>
                 </li>
+                <?php } ?>
               </ul>
               <?php if (0) { ?>
                 <div class="d-inline ml-50 tools-icon">
