@@ -49,7 +49,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
   <div class="card-body pb-0">
     <div class="row">
       <!--begin::Col-->
-      <div class="col-md-8">
+      <div class="col-md-10">
 
         <? $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
         <!--<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">-->
@@ -80,22 +80,15 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
               'options' => ['placeholder' => 'Выбрать категорию'],
             ]); ?>
 
+
             <?= $form->field($model, 'news_source_id')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(NewsSources::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать источник'],
             ]); ?>
-
-            <?= $form->field($model, 'news_type_id')->widget(Select2::classname(), [
-              'data' => ArrayHelper::map(NewsTypes::find()->asArray()->all(), 'id', 'name'),
-              'options' => ['placeholder' => 'Выбрать тип новости'],
+            <?= $form->field($model, 'news_tags')->widget(Select2::classname(), [
+              'data' => ArrayHelper::map(\common\models\Tags::find()->asArray()->all(), 'id', 'name'),
+              'options' => ['placeholder' => 'Выбрать тег', 'multiple' => true],
             ]); ?>
-
-            <?= $form->field($model, 'news_cycle_id')->widget(Select2::classname(), [
-              'data' => ArrayHelper::map(NewsCycles::find()->asArray()->all(), 'id', 'name'),
-              'options' => ['placeholder' => 'Выбрать цикл новостей'],
-            ]); ?>
-
-
           </div>
           <div class="col-md-6">
             <?= $form->field($model, 'date')->widget(DateTimePicker::classname(), [
@@ -107,16 +100,20 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
                 'format' => 'yyyy-mm-dd hh:i:s'
               ]
             ]); ?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <?= $form->field($model, 'news_tags')->widget(Select2::classname(), [
-              'data' => ArrayHelper::map(\common\models\Tags::find()->asArray()->all(), 'id', 'name'),
-              'options' => ['placeholder' => 'Выбрать тег', 'multiple' => true],
+
+
+            <?= $form->field($model, 'news_type_id')->widget(Select2::classname(), [
+              'data' => ArrayHelper::map(NewsTypes::find()->asArray()->all(), 'id', 'name'),
+              'options' => ['placeholder' => 'Выбрать тип новости'],
+            ]); ?>
+
+            <?= $form->field($model, 'news_cycle_id')->widget(Select2::classname(), [
+              'data' => ArrayHelper::map(NewsCycles::find()->asArray()->all(), 'id', 'name'),
+              'options' => ['placeholder' => 'Выбрать цикл новостей'],
             ]); ?>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12">
             <?= $form->field($model, 'new_tag'); ?>
