@@ -137,7 +137,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'value' => function ($model) {
 
         return Carbon::parse($model->date)->format('H:i, ').'
-        '.Carbon::parse($model->date)->format('m-d-y');
+        '.Carbon::parse($model->date)->format('d-m-y');
       }
     ],
     [
