@@ -45,6 +45,7 @@ class News extends ActiveRecord
   public function rules()
   {
     return [
+      [['id', 'category_id', 'title', 'announce', 'text'], 'required'],
       [['id', 'category_id', 'views', 'tag_id', 'category_id', 'news_source_id', 'news_type_id', 'news_cycle_id'], 'integer'],
       [['title', 'announce', 'text', 'date',], 'string'],
       [['show'], 'boolean'],

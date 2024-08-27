@@ -11,6 +11,8 @@ use yii\helpers\Html;
 use app\components\PanelWidget;
 use app\components\BreadcrumbWidget;
 use backend\models\Menu;
+use Carbon\Carbon;
+use common\Helper\DateHelper;
 
 $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 ?>
@@ -74,6 +76,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'vAlign' => 'middle',
       'attribute' => 'title',
       'filter' => false,
+      'format' => 'raw',
+      'value' => function ($model) {
+
+         return '<strong>'.$model->category->name.'</strong>: '.$model->title;
+      }
     ],
     [
       'hAlign' => 'center',
@@ -90,13 +97,16 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
-      'label' => '',
+      'label' => 'Ключ. слоав',
       'filter' => false,
       'width' => '10%',
       'format' => 'raw',
       'value' => function ($model) {
 
-        return $model->category->name??'';
+        if($model->keywords??false) {
+          return 'Не указаны';
+        }
+        return '';
       }
     ],
     [
@@ -121,7 +131,13 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'hAlign' => 'center',
       'vAlign' => 'middle',
       'attribute' => 'date',
+      'width' => '10%',
       'filter' => false,
+      'value' => function ($model) {
+
+        return Carbon::parse($model->date)->format('H:i, ').'
+        '.Carbon::parse($model->date)->format('m-d-y');
+      }
     ],
     [
       'class' => 'yii\grid\ActionColumn',
