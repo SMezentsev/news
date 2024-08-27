@@ -19,7 +19,7 @@ use common\Helper\DateHelper;
     <!--end::Icon-->
     <!--begin::Title-->
     <div class="d-flex flex-column" style="padding-left: 10px; vertical-align: top">
-      <?php if($model->id??false) { ?>
+      <?php if($model->id??false && $model->category??false) { ?>
       <h2 class="mb-1"><?= $model->title??'' ?></h2>
 
         <div class="text-muted fw-bold">

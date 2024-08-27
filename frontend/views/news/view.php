@@ -107,7 +107,7 @@ $relatedIds[] = $model->id;
 
     <?php if($newsCycles) { ?>
 
-      <div class="related-posts">
+      <div class="related-posts mt-30">
         <h3 class="mb-30">Новости по теме</h3>
         <div class="row">
 
@@ -154,7 +154,7 @@ $relatedIds[] = $model->id;
 
     <?php if($related) { ?>
 
-    <div class="related-posts">
+    <div class="related-posts mt-20 ">
       <h3 class="mb-30">Похожие новости</h3>
       <div class="row">
 
