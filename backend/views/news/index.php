@@ -96,7 +96,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
       'format' => 'raw',
       'value' => function ($model) {
 
-        return $model->category->name;
+        return $model->category->name??'';
       }
     ],
     [
