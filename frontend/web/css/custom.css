@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5, h6, a.read-more, .entry-meta, .readmore-btn, .widget-taber a
 .entry-main-content figure.alignright {
 
   margin-top: 0px !important;
+
 }
 
 li.disabled  span {
@@ -81,4 +82,13 @@ li.disabled  span {
   display: block;
   margin-top: 8px !important;
   padding-right: 8px !important;
+}
+
+.moscow-menu {
+  min-width: 270px !important;
+}
+.sub-menu {
+
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+
 }

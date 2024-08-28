@@ -138,7 +138,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                 <?php } ?>
                 <li class="menu-item-has-children">
                   <a href="#">Москва</a>
-                  <ul class="sub-menu text-muted font-small">
+                  <ul class="sub-menu moscow-menu text-muted font-small">
                     <?php foreach ($moscowCategories as $item) { ?>
                       <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
                     <?php } ?>
@@ -146,7 +146,7 @@ $worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->ord
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">Мир</a>
-                  <ul class="sub-menu text-muted font-small">
+                  <ul class="sub-menu world-menu text-muted font-small">
                     <?php foreach ($worldCategories as $item) { ?>
                       <li><a href="/news/<?= $item->id ?>"><?= $item->name ?></a></li>
                     <?php } ?>
