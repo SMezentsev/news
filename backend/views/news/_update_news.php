@@ -84,10 +84,16 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'news_source_id')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(NewsSources::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать источник'],
+              'pluginOptions' => [
+                'allowClear' => true
+              ],
             ]); ?>
             <?= $form->field($model, 'news_tags')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(\common\models\Tags::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать тег', 'multiple' => true],
+              'pluginOptions' => [
+                'allowClear' => true
+              ],
             ]); ?>
           </div>
           <div class="col-md-6">
@@ -105,11 +111,17 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'news_type_id')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(NewsTypes::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать тип новости'],
+              'pluginOptions' => [
+                'allowClear' => true
+              ],
             ]); ?>
 
             <?= $form->field($model, 'news_cycle_id')->widget(Select2::classname(), [
               'data' => ArrayHelper::map(NewsCycles::find()->asArray()->all(), 'id', 'name'),
               'options' => ['placeholder' => 'Выбрать цикл новостей'],
+              'pluginOptions' => [
+                'allowClear' => true
+              ],
             ]); ?>
           </div>
         </div>
