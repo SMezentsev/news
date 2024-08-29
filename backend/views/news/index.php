@@ -29,6 +29,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 echo $this->context->renderPartial('_search_form', [
   'searchModel' => $searchModel
 ]);
+
 ?>
 
 <?= \kartik\grid\GridView::widget([
@@ -92,9 +93,9 @@ echo $this->context->renderPartial('_search_form', [
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'width' => '10%',
       'attribute' => 'news_cycle_id',
       'filter' => false,
-      'format' => 'raw',
       'value' => function ($model) {
 
         return $model->cycle->name??'';

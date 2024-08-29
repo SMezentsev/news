@@ -134,7 +134,7 @@ class News extends ActiveRecord
 
   public function getCycle()
   {
-    return $this->hasOne(NewsCycles::class, ['id' => 'news_cycle_id']);
+    return $this->hasOne(NewsCycles::className(), ['id' => 'news_cycle_id']);
   }
 
 
