@@ -75,7 +75,7 @@ echo newerton\fancybox\FancyBox::widget([
   <meta name="yandex-verification" content="2a5623401af2d15e" />
   <?php } ?>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title><?= Html::encode($this->title ? 'MOSOVKA.RU - '.$this->title : 'MOSOVKA.RU - Новостной портал') ?></title>
+  <title><?= Html::encode($this->title ? 'MOSOVKA.RU - '.$this->title : 'MOSOVKA.RU - Новостной портал г. Москва') ?></title>
 <!--  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">-->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
