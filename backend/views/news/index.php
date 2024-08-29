@@ -97,7 +97,7 @@ echo $this->context->renderPartial('_search_form', [
       'format' => 'raw',
       'value' => function ($model) {
 
-        return $model->news_cycle_id ? 'Есть' : '';
+        return $model->cycle->name??'';
       }
     ],
     [
