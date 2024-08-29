@@ -15,6 +15,7 @@ use common\models\Query\NewsQuery;
 use common\models\NewsSources;
 use common\models\NewsKeywords;
 use common\models\Keywords;
+use common\models\NewsCycles;
 
 class News extends ActiveRecord
 {
@@ -95,7 +96,6 @@ class News extends ActiveRecord
 
     return $this->hasMany(Files::className(), ['table_id' => 'id'])->andWhere(['table_name' => 'news']);;
   }
-
 
 
   public function getNewsGallery()

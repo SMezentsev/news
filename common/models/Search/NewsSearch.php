@@ -48,6 +48,7 @@ class NewsSearch extends ActiveRecord
       'category_id' => 'Категория',
       'tag_id' => 'Теги',
       'category' => 'category',
+      'news_cycle_id' => 'Цикл новостей',
       'name' => 'Название новости',
     ];
   }

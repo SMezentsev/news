@@ -92,6 +92,17 @@ echo $this->context->renderPartial('_search_form', [
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'attribute' => 'news_cycle_id',
+      'filter' => false,
+      'format' => 'raw',
+      'value' => function ($model) {
+
+        return $model->news_cycle_id ? 'Есть' : '';
+      }
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
       'label' => 'Кол-во симовлов',
       'filter' => false,
       'width' => '10%',
