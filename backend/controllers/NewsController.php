@@ -15,6 +15,7 @@ use yii\web\UploadedFile;
 use common\components\Services\ImageService;
 use common\models\NewsKeywords;
 use common\models\Keywords;
+use common\models\Search\NewsSearch;
 
 
 class NewsController extends Controller
@@ -272,14 +273,9 @@ class NewsController extends Controller
   public function actionIndex()
   {
 
-    $searchModel = new News();
-    $query = $searchModel->find()->orderBy('date DESC');
-    $dataProvider = new ActiveDataProvider([
-      'query' => $query,
-      'pagination' => [
-        'pageSize' => 15
-      ]
-    ]);
+    $searchModel = new NewsSearch();
+    $params = $this->request->queryParams;
+    $dataProvider = $searchModel->search($params);
 
     return $this->render('index', [
       'dataProvider' => $dataProvider,

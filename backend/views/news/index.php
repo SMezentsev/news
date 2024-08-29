@@ -25,6 +25,12 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
 <?= PanelWidget::start(); ?>
 
+<?php
+echo $this->context->renderPartial('_search_form', [
+  'searchModel' => $searchModel
+]);
+?>
+
 <?= \kartik\grid\GridView::widget([
   'dataProvider' => $dataProvider,
   'filterModel' => $searchModel,
