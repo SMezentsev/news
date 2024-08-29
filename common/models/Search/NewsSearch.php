@@ -54,7 +54,7 @@ class NewsSearch extends ActiveRecord
     ];
   }
 
-  public function search(?array $params = [], $limit = 15): ActiveDataProvider
+  public function search(?array $params = [], $current = true, $limit = 15): ActiveDataProvider
   {
 
     if (!empty($params) && (!$this->load($params) || !$this->validate())) {
@@ -62,7 +62,7 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()->show()->current()->select(['news.id', 'news.title', 'news.news_cycle_id', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
+    $query = News::find()->show()->current($current)->select(['news.id', 'news.title', 'news.news_cycle_id', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
 
     if ($tag_id = $params['tag_id'] ?? false) {
 

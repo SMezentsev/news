@@ -15,9 +15,9 @@ class NewsQuery extends ActiveQuery
     return $this->andWhere(['show' => 1]);
   }
 
-  public function current()
+  public function current($flag = true)
   {
 
-    return $this->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
+    return $flag ? $this->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]) : $this;
   }
 }

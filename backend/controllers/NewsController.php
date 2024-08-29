@@ -275,7 +275,7 @@ class NewsController extends Controller
 
     $searchModel = new NewsSearch();
     $params = $this->request->queryParams;
-    $dataProvider = $searchModel->search($params);
+    $dataProvider = $searchModel->search($params, false);
 
     return $this->render('index', [
       'dataProvider' => $dataProvider,
