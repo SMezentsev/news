@@ -147,7 +147,7 @@ class News extends ActiveRecord
   public function getSource()
   {
 
-    return $this->hasOne(NewsSources::className(), ['id' => 'news_source_id']);
+    return $this->hasOne(NewsSources::class, ['id' => 'news_source_id']);
   }
 
   public static function getAll()

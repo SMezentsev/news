@@ -64,8 +64,10 @@ $relatedIds[] = $model->id;
         <figure class="alignright is-resized">
           <?= \yii\helpers\Html::a(yii\helpers\Html::img($model->mainFile->resize_image2), $model->mainFile->original ?? '', ['rel' => 'fancybox', 'class' => 'news-gallery']); ?>
 
-          <?php if (0) { ?>
-            <figcaption> And far contrary smoked some contrary among stealthy</figcaption>
+          <?php if ($model->mainFile->source->name??false) { ?>
+            <div class="credit mt-15 font-small color-grey">
+              <i class="ti-credit-card mr-5"></i><span><?= $model->mainFile->source->name ?></span>
+            </div>
           <?php } ?>
         </figure>
       </div>

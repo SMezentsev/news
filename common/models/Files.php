@@ -6,6 +6,7 @@ use Yii;
 use yii\db\ActiveRecord;
 use yii\web\UploadedFile;
 use yii\imagine\Image;
+use \common\models\FilesSources;
 
 class Files extends ActiveRecord
 {
@@ -127,6 +128,13 @@ class Files extends ActiveRecord
     }
 
     return $model;
+  }
+
+
+  public function getSource()
+  {
+
+    return $this->hasOne(FilesSources::className(), ['id' => 'file_source_id']);
   }
 
   /**

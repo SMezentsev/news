@@ -21,6 +21,7 @@ class NewsSearch extends ActiveRecord
   public ?string $category = '';
   public $tag_id ;
   public $news_cycle_id ;
+  public $news_source_id ;
 
   /**
    * {@inheritdoc}
@@ -36,7 +37,7 @@ class NewsSearch extends ActiveRecord
   public function rules()
   {
     return [
-      [['category_id', 'id', 'news_cycle_id'], 'integer'],
+      [['category_id', 'id', 'news_cycle_id', 'news_source_id'], 'integer'],
       [['category'], 'integer'],
       [['title'], 'string'],
      [['tag_id'], 'safe']
@@ -50,6 +51,7 @@ class NewsSearch extends ActiveRecord
       'tag_id' => 'Теги',
       'category' => 'category',
       'news_cycle_id' => 'Цикл новостей',
+      'news_source_id' => 'Источник',
       'name' => 'Название новости',
     ];
   }
@@ -62,7 +64,7 @@ class NewsSearch extends ActiveRecord
       throw ValidationErrorException::create($this->errors);
     }
 
-    $query = News::find()->show()->current($current)->select(['news.id', 'news.title', 'news.news_cycle_id', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
+    $query = News::find()->show()->current($current)->select(['news.id', 'news.title', 'news.news_source_id', 'news.news_cycle_id', 'news.date', 'news.show', 'news.announce', 'news.category_id']);
 
     if ($tag_id = $params['tag_id'] ?? false) {
 

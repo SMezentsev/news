@@ -93,12 +93,23 @@ echo $this->context->renderPartial('_search_form', [
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'width' => '5%',
+      'attribute' => 'news_source_id',
+      'filter' => false,
+      'value' => function ($model) {
+
+        return $model->source->name??'';
+      }
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
       'width' => '10%',
       'attribute' => 'news_cycle_id',
       'filter' => false,
       'value' => function ($model) {
 
-        return ($model->source->name??'').' - '.($model->cycle->name??'');
+        return $model->cycle->name??'';
       }
     ],
     [
@@ -195,7 +206,7 @@ echo $this->context->renderPartial('_search_form', [
       'buttons' => [
         'edit' => function ($url, $model) {
 
-          return '<a href="/news/' . $model->id . '" class="menu-link px-3">
+          return '<a href="/news/' . $model->id . '" class="menu-link px-3" data-pjax="0">
                     <span class="svg-icon svg-icon-primary svg-icon-2x">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -209,7 +220,7 @@ echo $this->context->renderPartial('_search_form', [
         },
         'delete' => function ($url, $model) {
 
-          return '<a href="/news/' . $model->id . '/delete" class="menu-link px-3" data-kt-ecommerce-product-filter="delete_row">
+          return '<a href="/news/' . $model->id . '/delete" class="menu-link px-3" data-kt-ecommerce-product-filter="delete_row" data-pjax="0">
                     <span class="svg-icon svg-icon-primary svg-icon-2x">
                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
