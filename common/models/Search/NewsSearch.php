@@ -88,6 +88,7 @@ class NewsSearch extends ActiveRecord
     $query->andFilterWhere([
       'id' => $this->id,
       'category_id' => $this->category_id,
+      'news_source_id' => $this->news_source_id
     ]);
 
 

@@ -13,6 +13,7 @@ use kartik\select2\Select2;
 use common\models\NewsCategory;
 use common\models\Tags;
 use yii\helpers\ArrayHelper;
+use common\models\NewsSources;
 
 ?>
 
@@ -20,7 +21,7 @@ use yii\helpers\ArrayHelper;
 <?php
 $form = ActiveForm::begin(['method' => 'get']); ?>
 
-<div class="raw">
+<div class="row">
   <div class="col-md-2">
     <?= $form->field($searchModel, 'title')->label(false); ?>
   </div>
@@ -59,6 +60,19 @@ $form = ActiveForm::begin(['method' => 'get']); ?>
     <?= $form->field($searchModel, 'tag_id')->widget(Select2::classname(), [
       'data' => ArrayHelper::map(Tags::find()->asArray()->all(), 'id', 'name'),
       'options' => ['placeholder' => 'Выбрать тэг'],
+      'pluginOptions' => [
+        'allowClear' => true
+      ],
+    ])->label(false); ?>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+
+    <?= $form->field($searchModel, 'news_source_id')->widget(Select2::classname(), [
+      'data' => ArrayHelper::map(NewsSources::find()->asArray()->all(), 'id', 'name'),
+      'options' => ['placeholder' => 'Выбрать источник'],
       'pluginOptions' => [
         'allowClear' => true
       ],
