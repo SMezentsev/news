@@ -36,6 +36,7 @@ class NewsController extends Controller
     ];
   }
 
+
   public function actionUpdate($id)
   {
 

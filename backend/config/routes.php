@@ -29,6 +29,8 @@ return [
   'category-groups/<id:\d+>/delete' => 'category-groups/delete',
   'news/<news_id:\d+>/gallery/<file_id:\d+>' => 'news/gallery',
 
+  'GET, POST  files/<id:\d+>/sources' => 'files/sources',
+
   'city' => 'city/index',
 
   'settings/city' => 'settings/city',

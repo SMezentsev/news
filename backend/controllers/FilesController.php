@@ -10,34 +10,60 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\imagine\Image;
 use Imagine\Image\Box;
 use yii\web\Controller;
 use common\models\Files;
 
-class FilesController extends Controller {
+class FilesController extends Controller
+{
 
-    public function actions() {
-        return [
-//            'error' => [
-//                'class' => 'yii\web\ErrorAction',
-//            ],
-//            'captcha' => [
-//                'class' => 'yii\captcha\CaptchaAction',
-//                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-//            ],
-        ];
+
+
+  public function actions()
+  {
+    return [
+      'error' => [
+        'class' => 'yii\web\ErrorAction',
+      ],
+      'captcha' => [
+        'class' => 'yii\captcha\CaptchaAction',
+        'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+      ],
+    ];
+  }
+
+  public function actionIndex() {
+
+
+  }
+
+  public function actionSources($id)
+  {
+
+
+    $file = new Files();
+    if($file = $file->find()->where(['id' => $id])->one()) {
+
+      $file->load(Yii::$app->request->post());
+      $file->save();
     }
 
-    public function actionUpdate($id) {
+    Yii::$app->getResponse()->setStatusCode(204);
+  }
 
-        $file = new Files();
-        $file = $file->find()->where(['id' => $id])->one();
-        if ($file) {
+  public function actionUpdate($id)
+  {
 
-            $file->load(['Files'=>Yii::$app->request->post()]);
-            $file->save();
-        }
-        Yii::$app->getResponse()->setStatusCode(204);
+    $file = new Files();
+    $file = $file->find()->where(['id' => $id])->one();
+    if ($file) {
+
+      $file->load(['Files' => Yii::$app->request->post()]);
+      $file->save();
     }
+    Yii::$app->getResponse()->setStatusCode(204);
+  }
 }

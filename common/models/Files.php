@@ -34,6 +34,7 @@ class Files extends ActiveRecord
       [['thumbnail', 'size', 'table_name', 'resize_image1', 'resize_image2', 'resize_image3',  'original'], 'string'],
       [['main'], 'boolean'],
       [['show'], 'boolean'],
+      [['file_source_id'], 'safe'],
       [['file'], 'file', 'extensions' => 'png, jpg, jpeg'],
 
     ];
@@ -49,6 +50,7 @@ class Files extends ActiveRecord
       'original' => 'Оригинал',
       'thumbnail' => 'Иконка',
       'file_type_id' => 'Тип файла',
+      'file_source_id' => 'Источник файла',
       'table_name' => 'Имя таблицы',
       'table_id' => 'ID таблицы',
       'show' => 'Статус',

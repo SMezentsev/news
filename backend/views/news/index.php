@@ -104,6 +104,34 @@ echo $this->context->renderPartial('_search_form', [
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
+      'label' => 'Автор картинок',
+      'filter' => false,
+      'width' => '10%',
+      'format' => 'raw',
+      'value' => function ($model) {
+
+        $filesHasSource = 0;
+        $filesHasNotSource = 0;
+        if($files = $model->files??false) {
+
+          foreach($files as $item) {
+
+            if($item->file_source_id) {
+
+              $filesHasSource += 1;
+            } else {
+              $filesHasNotSource += 1;
+            }
+          }
+        }
+
+        return count($files).' / '.$filesHasSource.' / '.( $filesHasNotSource ? '<span class="text-danger">'.$filesHasNotSource.'</span>' : '');
+      }
+    ],
+
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
       'label' => 'Кол-во симовлов',
       'filter' => false,
       'width' => '10%',
@@ -125,7 +153,7 @@ echo $this->context->renderPartial('_search_form', [
         if($model->keywords??false) {
           return '';
         }
-        return 'Не указаны';
+        return '<div class="text-danger">нет</div>';
       }
     ],
     [

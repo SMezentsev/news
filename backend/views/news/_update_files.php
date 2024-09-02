@@ -87,6 +87,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             'showUpload' => false
           ]
         ])->label(false);
+
         ?>
 
       </div>
@@ -161,7 +162,19 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           },
         ],
 
+        [
 
+          'hAlign' => 'center',
+          'vAlign' => 'middle',
+          'filter' => false,
+          'attribute' => 'file_source_id',
+          'format' => 'raw',
+          'value' => function ($model) {
+
+            return $this->render('_files_author', ['model' => $model]);
+
+          },
+        ],
         [
 
           'hAlign' => 'center',
