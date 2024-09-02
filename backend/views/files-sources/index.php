@@ -16,8 +16,8 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 ?>
 
 <?= BreadcrumbWidget::widget([
-  'title' => 'Цвета',
-  'createUrl' => '/news-sources/create',
+  'title' => 'Источники файлов',
+  'createUrl' => '/files-sources/create',
 ]);
 ?>
 
@@ -78,7 +78,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           'buttons' => [
             'delete' => function ($url, $model) {
               return Html::a('<span class="glyphicon glyphicon-trash"></span>',
-                ['/colors/' . $model->id.'/delete'],
+                ['/files-sources/' . $model->id.'/delete'],
               );
 
             },
