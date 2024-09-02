@@ -19,7 +19,7 @@ use common\models\NewsSources;
 
 
 <?php
-$form = ActiveForm::begin(['method' => 'get']); ?>
+$form = ActiveForm::begin(['method' => 'get', 'action' => '/news/']); ?>
 
 <div class="row">
   <div class="col-md-2">
