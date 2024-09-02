@@ -98,7 +98,7 @@ echo $this->context->renderPartial('_search_form', [
       'filter' => false,
       'value' => function ($model) {
 
-        return $model->cycle->name??'';
+        return ($model->source->name??'').' - '.($model->cycle->name??'');
       }
     ],
     [
@@ -129,18 +129,19 @@ echo $this->context->renderPartial('_search_form', [
       }
     ],
 
-    [
-      'hAlign' => 'center',
-      'vAlign' => 'middle',
-      'label' => 'Кол-во симовлов',
-      'filter' => false,
-      'width' => '10%',
-      'format' => 'raw',
-      'value' => function ($model) {
 
-        return strlen(str_replace(' ', '', $model->text));
-      }
-    ],
+//    [
+//      'hAlign' => 'center',
+//      'vAlign' => 'middle',
+//      'label' => 'Кол-во симовлов',
+//      'filter' => false,
+//      'width' => '10%',
+//      'format' => 'raw',
+//      'value' => function ($model) {
+//
+//        return strlen(str_replace(' ', '', $model->text));
+//      }
+//    ],
     [
       'hAlign' => 'center',
       'vAlign' => 'middle',
