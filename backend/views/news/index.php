@@ -98,7 +98,13 @@ echo $this->context->renderPartial('_search_form', [
       'filter' => false,
       'format' => 'raw',
       'value' => function ($model) {
-        return '<h5>'. Carbon::parse($model->date)->format('H:i d-m').'</h5>';
+
+        $class = 'color-black';
+        if(Carbon::parse($model->date)->format('d') > Carbon::now()->format('d')) {
+          $class = 'color-primary';
+        }
+
+        return '<span class="'.$class.'">'. Carbon::parse($model->date)->format('H:i d-m').'</span>';
       }
     ],
     [
