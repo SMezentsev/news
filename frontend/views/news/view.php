@@ -16,28 +16,18 @@ $relatedIds[] = $model->id;
 
 <div class="entry-header entry-header-1 ml-10 mb-30 mt-50">
 
-  <h1 class="post-title mb-30">
+  <h1 class="post-title mb-20">
     <?= $model->title ?>
   </h1>
   <div class="entry-meta meta-1 font-x-small color-grey">
-    <?php if (0) { ?>
-      <span class="post-by">By <a href="author.html">Adam Liptak </a> &amp; <a
-          href="author.html">Michael D. Shear</a></span>
-    <?php } ?>
+
     <span class="post-on">
           <?= Carbon::parse($model->date)->format('H:i, '); ?>
           <?= intval(Carbon::parse($model->date)->format('d')); ?>
           <?= DateHelper::months(Carbon::parse($model->date)->format('m'), false) ?>
           <?= Carbon::parse($model->date)->format('y'); ?>
     </span>
-    <?php if (0) { ?>
-      <span class="time-reading">12 mins read</span>
-      <p class="font-x-small mt-10">
-        <span class="hit-count"><i class="ti-comment mr-5"></i>82 comments</span>
-        <span class="hit-count"><i class="ti-heart mr-5"></i>68 likes</span>
-        <span class="hit-count"><i class="ti-star mr-5"></i>8/10</span>
-      </p>
-    <?php } ?>
+
   </div>
 </div>
 
@@ -75,7 +65,6 @@ $relatedIds[] = $model->id;
 
       <?php
       if ($gallery = $model->gallery ?? false) { ?>
-        <br>
         <hr class="wp-block-separator is-style-wide">
         <?php foreach ($gallery as $item) { ?>
 
@@ -88,7 +77,7 @@ $relatedIds[] = $model->id;
 
     <?php if ($model->source ?? false) { ?>
       <div class="entry-bottom mt-30 mb-0">
-        <div class="font-weight-500 entry-meta meta-1 font-x-small color-grey">
+        <div class="font-weight-100 entry-meta meta-1 color-grey">
           <span class="update-on">Источник:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>
         </div>
       </div>
