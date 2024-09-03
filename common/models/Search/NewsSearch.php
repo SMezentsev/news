@@ -87,7 +87,6 @@ class NewsSearch extends ActiveRecord
 
     $query->andFilterWhere([
       'id' => $this->id,
-      'category_id' => $this->category_id,
       'news_source_id' => $this->news_source_id
     ]);
 
@@ -95,6 +94,16 @@ class NewsSearch extends ActiveRecord
     if($notIn = $params['notIn']??false) {
 
       $query->andWhere(['not in', 'news.id', $notIn]);
+    }
+
+    if($categoryIds = $params['categoryIds']??false) {
+
+      $query->andWhere(['in', 'news.category_id', $categoryIds]);
+    } else {
+
+      $query->andFilterWhere([
+        'category_id' => $this->category_id,
+      ]);
     }
 
     return new ActiveDataProvider([

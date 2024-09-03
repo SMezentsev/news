@@ -7,10 +7,10 @@ $categoryWithoutCity = NewsCategory::find()
   ->andWhere(['in', 'parent_id', [0, null]])->orderBy('sort ASC')->all();
 
 $moscow = NewsCategory::find()->andWhere(['eng_name' => 'moscow'])->one();
-$moscowCategories = NewsCategory::find()->where(['parent_id' => $moscow->id])->orderBy('sort ASC')->all();
+$moscowCategories = NewsCategory::find()->where(['parent_id' => $moscow->id])->andWhere(['!=', 'eng_name', 'all'])->orderBy('sort ASC')->all();
 
 $world = NewsCategory::find()->andWhere(['eng_name' => 'world'])->one();
-$worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->orderBy('sort ASC')->all();
+$worldCategories = NewsCategory::find()->where(['parent_id' => $world->id])->andWhere(['!=', 'eng_name', 'all'])->orderBy('sort ASC')->all();
 
 ?>
 <header class="main-header header-style-2 mb-25">

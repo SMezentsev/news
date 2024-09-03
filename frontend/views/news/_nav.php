@@ -16,7 +16,9 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
   <?php if($parent) { ?>
 
     <?php foreach ($categories as $item) { ?>
+    <?php if($item->eng_name !== 'all') { ?>
       <a href="<?= '/news/'.$item->id ?>"><span class="post-cat <?= $category->id == $item->id ? 'active' : ''?>"><?= $item->name ?></span></a>
+    <?php } ?>
     <?php } ?>
   <?php } ?>
 </div>
