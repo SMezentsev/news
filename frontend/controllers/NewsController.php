@@ -111,7 +111,7 @@ class NewsController extends Controller {
     if($tag_id) {
       Yii::$app->params['tags'] = [
         'tags' => Tags::find()->all(),
-        'current' => $tag_id
+        'current' => Tags::findOne($tag_id)
       ];
     }
 
