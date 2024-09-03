@@ -72,7 +72,7 @@ class NewsController extends Controller {
       //$this->view->title = $category->name.': '.$model->title;
 //      $this->view->registerMetaTag(['name' => 'keywords', 'content' => $category->name.' '.$model->title]);
 //      $this->view->registerMetaTag(['name' => 'description', 'content' => $category->name.' '.$model->announce]);
-      $this->view->title = $model->keywords->meta_tag_keywords??$category->name.': '.$model->title;
+      $this->view->title = $category->name.': '.$model->title;
       $this->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords->meta_tag_keywords??'']);
       $this->view->registerMetaTag(['name' => 'description', 'content' => $model->keywords->meta_tag_description??'']);
 
