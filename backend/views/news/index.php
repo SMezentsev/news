@@ -94,7 +94,7 @@ echo $this->context->renderPartial('_search_form', [
       'hAlign' => 'center',
       'vAlign' => 'middle',
       'width' => '10%',
-      'attribute' => '',
+      'attribute' => 'date',
       'filter' => false,
       'format' => 'raw',
       'value' => function ($model) {
