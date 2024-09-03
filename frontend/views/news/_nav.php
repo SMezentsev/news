@@ -11,7 +11,7 @@ $categories = NewsCategory::find()->where(['parent_id' => $category->parent_id])
 
 <div class="entry-meta category-menu meta-0 font-small mb-30">
   <a href="<?= '/news/'.($parent->id??$category->id) ?>"><span class="post-cat"><?= $parent->name??$category->name ?></span></a>
-  <a href="#" style="margin-top: -1px">:</a>
+  <a href="#" style="margin-top: -1px; margin-right: 10px;">:</a>
 
   <?php if($parent) { ?>
 

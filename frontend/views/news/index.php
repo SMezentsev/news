@@ -5,17 +5,17 @@ use common\models\Category;
 use Carbon\Carbon;
 use yii\widgets\LinkPager;
 
-//
-//$category = NewsCategory::find()->where(['id' => $category_id])->one();
-//if($category->eng_name == 'all') {
-//  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
-//  $parent_id = $parent->id;
-//} else {
-//  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
-//  $parent_id = $category->parent_id;
-//}
-//
-//$categories = NewsCategory::find()->where(['parent_id' => $parent_id])->orderBy('sort ASC')->all();
+
+$category = NewsCategory::find()->where(['id' => $category_id])->one();
+if($category->eng_name == 'all') {
+  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
+  $parent_id = $parent->id;
+} else {
+  $parent = NewsCategory::find()->where(['id' => $category->parent_id])->one();
+  $parent_id = $category->parent_id;
+}
+
+$categories = NewsCategory::find()->where(['parent_id' => $parent_id])->orderBy('sort ASC')->all();
 ?>
 
 <div class="col-lg-10 col-md-9 order-1 order-md-2">
