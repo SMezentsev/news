@@ -63,7 +63,7 @@ echo $this->context->renderPartial('_search_form', [
       'vAlign' => 'middle',
       'label' => '',
       'filter' => false,
-      'width' => '10%',
+      'width' => '5%',
       'format' => 'raw',
       'value' => function ($model) {
 
@@ -79,15 +79,26 @@ echo $this->context->renderPartial('_search_form', [
     ],
 
     [
-      'hAlign' => 'center',
+      'hAlign' => 'left',
       'vAlign' => 'middle',
       'attribute' => 'title',
-      'width' => '20%',
+      'width' => '30%',
       'filter' => false,
       'format' => 'raw',
       'value' => function ($model) {
 
          return '<strong>'.$model->category->name.'</strong>: '.$model->title;
+      }
+    ],
+    [
+      'hAlign' => 'center',
+      'vAlign' => 'middle',
+      'width' => '10%',
+      'attribute' => '',
+      'filter' => false,
+      'format' => 'raw',
+      'value' => function ($model) {
+        return '<h5>'. Carbon::parse($model->date)->format('H:i d-m').'</h5>';
       }
     ],
     [
@@ -186,23 +197,12 @@ echo $this->context->renderPartial('_search_form', [
         return $newsTags;
       }
     ],
-    [
-      'hAlign' => 'center',
-      'vAlign' => 'middle',
-      'attribute' => 'date',
-      'width' => '10%',
-      'filter' => false,
-      'value' => function ($model) {
 
-        return Carbon::parse($model->date)->format('H:i, ').'
-        '.Carbon::parse($model->date)->format('d-m-y');
-      }
-    ],
     [
       'class' => 'yii\grid\ActionColumn',
       'headerOptions' => ['width' => '150'],
       'contentOptions' => ['class' => 'actions'],
-      'template' => '{edit}  {delete}',
+      'template' => '{edit}',
       'buttons' => [
         'edit' => function ($url, $model) {
 
