@@ -14,9 +14,9 @@ $relatedIds[] = $model->id;
 
 <?= $this->render('@frontend/views/news/_nav.php', ['categories' => $categories, 'parent' => $parent, 'category' => $category]) ?>
 
-<div class="entry-header entry-header-1 ml-10 mb-30 mt-50">
+<div class="entry-header entry-header-1 ml-10 mb-30 pt-20">
 
-  <h1 class="post-title mb-20">
+  <h1 class="post-title mb-20 ">
     <?= $model->title ?>
   </h1>
   <div class="entry-meta meta-1 font-x-small color-grey">
