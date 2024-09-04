@@ -97,6 +97,8 @@ return [
   'news/<id:\d+>/delete' => 'news/delete',
   'news/<id:\d+>' => 'news/update',
 
+  'news/<id:\d+>/files/<file_id:\d+>/delete' => 'news/files-delete',
+
   'colors/<id:\d+>' => 'colors/update',
   'colors/<id:\d+>/delete' => 'colors/delete',
   'GET, POST colors/<id:\d+>/update' => 'colors/update',

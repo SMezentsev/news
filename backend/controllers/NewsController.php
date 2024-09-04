@@ -296,6 +296,19 @@ class NewsController extends Controller
     return $this->actionIndex();
   }
 
+
+  public function actionFilesDelete($id, $file_id)
+  {
+
+    $model = new Files();
+    $model = $model->find()->where(['id' => $file_id])->one();
+    if ($model) {
+
+      $model->delete();
+    }
+    return $this->redirect('/news/'.$id.'/update-files');
+  }
+
   protected function findModel($id)
   {
     if (!$model = News::findOne($id)) {
