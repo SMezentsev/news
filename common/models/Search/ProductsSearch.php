@@ -118,7 +118,7 @@ class ProductsSearch extends Model
     $dataProvider = new ActiveDataProvider([
       'query' => $query,
       'pagination' => [
-        'pageSize' => 15
+        'pageSize' => 20
       ],
       'sort' => ['attributes' => ['id','price', 'name','code']]
     ]);

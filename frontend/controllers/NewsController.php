@@ -105,7 +105,6 @@ class NewsController extends Controller {
       $newsIds[] = $item->id;
     }
 
-
     $popular = $newsModel->search(ArrayHelper::merge(Yii::$app->request->queryParams, ['notIn' => $newsIds]));
 
     Yii::$app->params['category'] = $category;

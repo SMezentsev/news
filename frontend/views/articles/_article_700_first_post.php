@@ -6,7 +6,6 @@ use common\Helper\DateHelper;
 <article class="first-post p-10 background-white border-radius-10 mb-30 wow fadeIn  animated"
          style="visibility: visible; animation-name: fadeIn;">
   <div class="img-hover-slide border-radius-15 mb-20 position-relative overflow-hidden">
-    <span class="top-right-icon bg-dark"><i class="mdi mdi-flash-on"></i></span>
     <a href="<?= '/news/' . $news->category_id . '/' . $news->id ?>">
       <img src="<?= $news->mainFile->original ?? ''; ?>" alt="post-slider">
     </a>
