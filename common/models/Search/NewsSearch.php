@@ -56,7 +56,7 @@ class NewsSearch extends ActiveRecord
     ];
   }
 
-  public function search(?array $params = [], $current = true, $limit = 20): ActiveDataProvider
+  public function search(?array $params = [], $current = true, $limit = 15): ActiveDataProvider
   {
 
     if (!empty($params) && (!$this->load($params) || !$this->validate())) {

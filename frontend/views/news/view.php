@@ -75,7 +75,7 @@ $relatedIds[] = $model->id;
     </div>
 
 
-    <?php if ($model->source ?? false) { ?>
+    <?php if (0 && $model->source ?? false) { ?>
       <div class="entry-bottom mt-30 mb-0">
         <div class="font-weight-100 entry-meta meta-1 color-grey">
           <span class="update-on">Источник:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>

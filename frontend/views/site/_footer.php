@@ -102,10 +102,10 @@ use common\models\NewsCategory;
             </ul>
           </div>
         </div>
-        <div class="row d-flex align-items-center justify-content-between">
+        <div class="row d-flex align-items-center justify-content-between mb-10">
           <div class="col-12">
             <div class="footer-copy-right">
-              <p class="font-small text-muted">© 2024, All rights reserved | Разработано в <a href="https://smezentsev.ru/" style="color:#000000 !important; font-weight:bold" target="_blank">S<span style="color:#d90a2c">Mezentsev</span> DA</a></p>
+              <p class="font-small text-muted">На данном ресурсе могут быть использованы материалы интернет-ресурсов Facebook и Instagram, владельцем которых является компания Meta Platforms Inc., запрещенная на территории Российской Федерации.</p>
             </div>
           </div>
         </div>
