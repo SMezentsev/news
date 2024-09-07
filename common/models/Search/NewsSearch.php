@@ -39,7 +39,7 @@ class NewsSearch extends ActiveRecord
     return [
       [['category_id', 'id', 'news_cycle_id', 'news_source_id'], 'integer'],
       [['category'], 'integer'],
-      [['title'], 'string'],
+      [['title', 'source_link'], 'string'],
      [['tag_id'], 'safe']
     ];
   }
@@ -52,6 +52,7 @@ class NewsSearch extends ActiveRecord
       'category' => 'category',
       'news_cycle_id' => 'Цикл новостей',
       'news_source_id' => 'Источник',
+      'source_link' => 'Ссылка на источник',
       'name' => 'Название новости',
     ];
   }

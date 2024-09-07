@@ -131,6 +131,11 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'new_tag'); ?>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <?= $form->field($model, 'source_link'); ?>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-12">

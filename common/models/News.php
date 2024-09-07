@@ -48,7 +48,7 @@ class News extends ActiveRecord
     return [
       [['id', 'category_id', 'title', 'announce', 'text'], 'required'],
       [['id', 'category_id', 'views', 'tag_id', 'category_id', 'news_source_id', 'news_type_id', 'news_cycle_id'], 'integer'],
-      [['title', 'announce', 'text', 'date',], 'string'],
+      [['title', 'announce', 'text', 'date', 'source_link'], 'string'],
       [['show'], 'boolean'],
       [['news_tags', 'new_tag', 'gallery', 'kw_title', 'kw_keywords', 'kw_description'], 'safe'],
       [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
@@ -71,6 +71,7 @@ class News extends ActiveRecord
       'news_type_id' => 'Тип новости',
       'news_cycle_id' => 'Цикл новостей',
       'gallery' => 'Галерея',
+      'source_link' => 'Ссылка на источник',
       'file' => 'Изображение',
       'news_tags' => 'Теги',
       'tag_id' => 'Теги ID',
