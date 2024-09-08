@@ -44,7 +44,7 @@ class Images extends ActiveRecord {
             [['show'], 'boolean'],
             [['created_at'], 'integer'],
             [['updated_at'], 'integer'],
-            [['file'], 'file', 'extensions' => 'png, jpg, jpeg'],
+            [['file'], 'file', 'extensions' => 'png, jpg, jpeg, mpeg, mp4'],
 
         ];
     }
@@ -67,7 +67,7 @@ class Images extends ActiveRecord {
             'updated_at' => 'Дата обновления',
         ];
     }
-    
+
 
     public function beforeSave($insert) {
 
@@ -93,7 +93,7 @@ class Images extends ActiveRecord {
     }
 
     public function saveImages($image = [], $resize = ['width'=>50, 'height'=>50]) {
-        
+
             $model = new $this;
             $model->size = isset($image['size']) ? $image['size'] : self::MAIN;
             $model->main = 0;
@@ -103,7 +103,7 @@ class Images extends ActiveRecord {
             $model->table_id = $image['table_id'];
             $model->file = UploadedFile::getInstanceByName($image['file_name']);
             $model->type_id = 1;
-            
+
             $size = getimagesize($image['file_path']);
 
             $width = isset($image['width']) ? $image['width'] : $size[0];

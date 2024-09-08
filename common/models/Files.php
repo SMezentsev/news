@@ -36,7 +36,7 @@ class Files extends ActiveRecord
       [['main'], 'boolean'],
       [['show'], 'boolean'],
       [['file_source_id'], 'safe'],
-      [['file'], 'file', 'extensions' => 'png, jpg, jpeg'],
+      [['file'], 'file', 'extensions' => 'png, jpg, jpeg, mpeg, mp4', 'checkExtensionByMimeType' => false],
 
     ];
   }

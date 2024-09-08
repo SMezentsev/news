@@ -51,7 +51,7 @@ class News extends ActiveRecord
       [['title', 'announce', 'text', 'date', 'source_link'], 'string'],
       [['show'], 'boolean'],
       [['news_tags', 'new_tag', 'gallery', 'kw_title', 'kw_keywords', 'kw_description'], 'safe'],
-      [['file'], 'file', 'extensions' => 'png,jpg, jpeg'],
+      [['file'], 'file', 'extensions' => 'png, jpg, jpeg, mpeg, mp4', 'checkExtensionByMimeType' => false],
     ];
   }
 

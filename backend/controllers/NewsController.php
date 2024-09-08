@@ -124,6 +124,12 @@ class NewsController extends Controller
   public function actionUpdateFiles($id)
   {
 
+
+    ini_set( 'upload_max_size' , '1256M' );
+    ini_set( 'post_max_size', '1256M');
+    ini_set( 'max_execution_time', '300' );
+
+
     $model = News::find()->where(['id' => $id])->one();
 
     if (Yii::$app->request->isPost) {
@@ -180,7 +186,6 @@ class NewsController extends Controller
               $path = substr($path, strlen($_SERVER['DOCUMENT_ROOT']) + 1);
               $fileModel['resize_image1'] = $path;
               $fileModel->save(false);
-
 
               $size = $this->imageService->size($tmpDestination);
               $destination2 = $this->imageService->imagePath($fileInfo['dirname'], $fileInfo['extension']);
