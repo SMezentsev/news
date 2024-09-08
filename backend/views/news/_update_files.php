@@ -80,7 +80,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
 
         <?php echo $form->field($model, 'file')->widget(FileInput::classname(), [
 
-          'options' => ['accept' => 'video/*', 'multiple' => true],
+          'options' => ['accept' => 'image/*', 'multiple' => false],
           'pluginOptions' => [
             'allowedFileExtensions' => ['jpg', 'png','jpeg', 'mp4'],
             'allowedFileTypes' => ["image", "video"],

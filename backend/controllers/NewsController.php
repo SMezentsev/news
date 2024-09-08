@@ -124,20 +124,9 @@ class NewsController extends Controller
   public function actionUpdateFiles($id)
   {
 
-
-    ini_set( 'upload_max_size' , '1256M' );
-    ini_set( 'post_max_size', '1256M');
-    ini_set( 'max_execution_time', '300' );
-
-
     $model = News::find()->where(['id' => $id])->one();
 
     if (Yii::$app->request->isPost) {
-
-      echo '<pre>';
-      print_r($_FILES);
-      echo '</pre>';
-      die;
 
       if ($id && $model->load(Yii::$app->request->post())) {
 
