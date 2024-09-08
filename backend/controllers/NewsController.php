@@ -134,6 +134,11 @@ class NewsController extends Controller
 
     if (Yii::$app->request->isPost) {
 
+      echo '<pre>';
+      print_r($_FILES);
+      echo '</pre>';
+      die;
+
       if ($id && $model->load(Yii::$app->request->post())) {
 
         if ($model->save() && isset($_FILES[ucfirst(Yii::$app->controller->id)]['tmp_name']['file']) && !empty($_FILES[ucfirst(Yii::$app->controller->id)]['tmp_name']['file'])) {
