@@ -99,7 +99,11 @@ foreach (range(1, $daysInMonth) as $keyDay => $item) {
   $newsCount = News::find()
     ->where(['=', new \yii\db\Expression("created_at::date"), Carbon::today()->format('Y-m-'.$item)])->all();
 
-  $table .= '<td class="text-center">'.count($newsCount).'</td>';
+  $newsToday = News::find()
+    ->where(['=', new \yii\db\Expression("date::date"), Carbon::today()->format('Y-m-'.$item)])->all();
+
+
+  $table .= '<td class="text-center"><span style="color:#009ef7">'.count($newsCount).'</span>/'.count($newsToday).'</td>';
 }
   $table .= '</tr>';
 }
