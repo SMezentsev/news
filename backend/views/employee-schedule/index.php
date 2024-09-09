@@ -8,6 +8,7 @@
 
 use app\components\TableDataWidget;
 use app\components\ModalWidget;
+use common\models\Weather;
 use yiister\gentelella\widgets\Panel;
 use yii\helpers\Html;
 use app\components\PanelWidget;
@@ -17,6 +18,7 @@ use kartik\date\DatePicker;
 use Carbon\Carbon;
 use common\Helper\DateHelper;
 use yii\web\View;
+use common\models\News;
 
 ?>
 
@@ -87,59 +89,18 @@ foreach (range(1, $daysInMonth) as $key => $item) {
 
 $table .= '</tr>';
 
-foreach ($employeeModel as $key => $employee) {
+foreach ([1] as $key => $employee) {
 
   $table .= '<tr>';
-  $table .= '<td class="text-center" title="' . $employee->name . ' ' . $employee->first_name . ' ' . $employee->last_name . ' ' . $employee->phone . ' ' . $employee->email . '">
-    ' . ($employee->name . ' ' . mb_substr($employee->first_name, 0, 1) . ' ' . mb_substr($employee->last_name, 0, 1)) . '
-    </td>';
-  $total = 0;
-  $daysOff = 0;
-  $sick = 0;
-  foreach (range(1, $daysInMonth) as $key => $item) {
+  $table .= '<td class="text-center">Админ</td>';
 
-    $date = Carbon::createFromDate($date->year, $date->month, $item);
-    $dayInWeek = date('N', strtotime($date->format('Y-m-d')));
+foreach (range(1, $daysInMonth) as $keyDay => $item) {
 
-    $employeeHour = '';
-    foreach ($employeeScheduleModel as $employeeSchedule) {
+  $newsCount = News::find()
+    ->where(['=', new \yii\db\Expression("created_at::date"), Carbon::today()->format('Y-m-'.$item)])->all();
 
-      if (strpos($employeeSchedule['date'], $date->format('Y-m-d')) !== false && $employee->id === $employeeSchedule['employee_id']) {
-
-        if($employeeSchedule['hours']) {
-
-          switch($employeeSchedule['hours']) {
-
-            case 'Б':
-              $sick += 1;
-              break;
-            case 'В':
-              $daysOff += 1;
-              break;
-          }
-        }
-        if(is_int($employeeSchedule['hours']) || is_float($employeeSchedule['hours'])) {
-          $daysOff += 1;
-        } else {
-
-          $employeeSchedule['hours'] = str_replace(',', '.', $employeeSchedule['hours']);
-          $total += (float)$employeeSchedule['hours'];
-        }
-        $employeeHour = $employeeSchedule['hours'];
-      }
-    }
-
-
-    $table .= '<td class="text-center employee-hours ' . (in_array($dayInWeek, [6, 7]) ? 'day-off' : '') . '"
-    style="' . (in_array($dayInWeek, [6, 7]) ? 'background-color:#cecece;' : '') . 'cursor:pointer;' . (intval($employeeHour) ? 'background-color:#90EE90' : '') . '"
-    onclick="clickHours(this)"
-    data-employee-id="' . $employee->id . '"
-    data-employee-hour="' . $employeeHour . '"
-    data-date="' . $date->format('Y-m-d') . '"
-    id="' . $date->format('Y-m-d') . '-' . $employee->id . '">' . $employeeHour . '</td>';
-  }
-
-  $table .= '<td><span style="color:red">'.$total.'</span>/'.$daysOff.'/'.$sick.'</td>';
+  $table .= '<td class="text-center">'.count($newsCount).'</td>';
+}
   $table .= '</tr>';
 }
 $table .= '</tbody>';
