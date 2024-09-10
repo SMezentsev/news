@@ -77,7 +77,7 @@ class NewsController extends Controller {
       $this->view->registerMetaTag(['name' => 'description', 'content' => $model->keywords->meta_tag_keywords??'']);
 
       $this->view->registerMetaTag(['name' => 'og:title', 'content' => $model->title??'']);
-      $this->view->registerMetaTag(['name' => 'og:description', 'content' => $model->meta_tag_keywords??'']);
+      $this->view->registerMetaTag(['name' => 'og:description', 'content' => $model->keywords->meta_tag_keywords??'']);
       $this->view->registerMetaTag(['name' => 'og:image', 'content' => Yii::$app->params['site'].$model->mainFile->thumbnail??'']);
       $this->view->registerMetaTag(['name' => 'og:type', 'content' => 'article']);
 
