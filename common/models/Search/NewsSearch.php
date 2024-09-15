@@ -82,6 +82,8 @@ class NewsSearch extends ActiveRecord
 
       $query->andWhere(new Expression('title LIKE \'%' . mb_convert_case(mb_lcfirst($title), MB_CASE_TITLE, "UTF-8") . '%\''));
       $query->orWhere(new Expression('title LIKE \'%' . mb_convert_case($title, MB_CASE_LOWER, "UTF-8"). '%\''));
+      $query->orWhere(new Expression('text LIKE \'%' . mb_convert_case(mb_lcfirst($title), MB_CASE_TITLE, "UTF-8") . '%\''));
+      $query->orWhere(new Expression('text LIKE \'%' . mb_convert_case($title, MB_CASE_LOWER, "UTF-8"). '%\''));
     }
 
     //$query->andWhere(['<=', 'date', Carbon::now()->format('Y-m-d H:i:s')]);
