@@ -55,7 +55,7 @@ $relatedIds[] = $model->id;
           <?= \yii\helpers\Html::a(yii\helpers\Html::img($model->mainFile->resize_image2), $model->mainFile->original ?? '', ['rel' => 'fancybox', 'class' => 'news-gallery']); ?>
 
           <?php if ($model->mainFile->source->name??false) { ?>
-            <div class="credit mt-15 font-small color-grey">
+            <div class="credit mt-15 font-small color-grey" style="width:340px">
               <i class="ti-credit-card mr-5"></i><span><?= $model->mainFile->source->name ?></span>
             </div>
           <?php } ?>
