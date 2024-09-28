@@ -52,7 +52,7 @@ $relatedIds[] = $model->id;
 
       <div class="wp-block-image">
         <figure class="alignright is-resized">
-          <?= \yii\helpers\Html::a(yii\helpers\Html::img($model->mainFile->resize_image2), $model->mainFile->original ?? '', ['rel' => 'fancybox', 'class' => 'news-gallery']); ?>
+          <?= \yii\helpers\Html::a(yii\helpers\Html::img($model->mainFile->resize_image2), $model->mainFile->original ?? '', ['rel' => 'fancybox', 'data-fancybox-title' => $model->mainFile->source->name??'', 'class' => 'news-gallery']); ?>
 
           <?php if ($model->mainFile->source->name??false) { ?>
             <div class="credit mt-15 font-small color-grey" style="width:340px">
@@ -68,7 +68,7 @@ $relatedIds[] = $model->id;
         <hr class="wp-block-separator is-style-wide">
         <?php foreach ($gallery as $item) { ?>
 
-          <?= \yii\helpers\Html::a(yii\helpers\Html::img($item->resize_image1, ['width' => '120px']), $item->original, ['rel' => 'fancybox', 'class' => 'news-gallery']); ?>
+          <?= \yii\helpers\Html::a(yii\helpers\Html::img($item->resize_image1, ['width' => '120px']), $item->original, ['rel' => 'fancybox', 'data-fancybox-title' => $model->mainFile->source->name??'', 'class' => 'news-gallery']); ?>
 
         <?php } ?>
       <?php } ?>
