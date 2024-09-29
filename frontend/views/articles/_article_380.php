@@ -12,7 +12,7 @@ use common\Helper\DateHelper;
     </a>
   </div>
   <div class="pl-10 pr-10">
-    <h5 class="post-title mb-15"><a href="/news/<?= $news->category_id.'/'. $news->id; ?>"><?= $news->announce??'' ?></a></h5>
+    <h5 class="post-title mb-15"><a href="/news/<?= $news->category_id.'/'. $news->id; ?>"><?= $news->title??'' ?></a></h5>
     <div class="entry-meta meta-1 font-x-small color-grey float-left mb-10">
       <span class="post-on">
         <?= Carbon::parse($news->date)->format('H:i, '); ?>

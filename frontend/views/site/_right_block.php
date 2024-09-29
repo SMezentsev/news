@@ -50,11 +50,11 @@ $health = News::find()->show()->current()->where(['category_id' => $healthCatego
   <div class="post-aside-style-3">
 
     <?php
-      $populars = \common\models\News::find()->show()->current()->orderBy('views DESC')->limit(10)->all();
+      $populars = \common\models\News::find()->show()->current()->orderBy('views DESC')->limit(20)->all();
     ?>
-    <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 5)]) ?>
+    <?= $this->render('@frontend/views/articles/_article_without_background', ['news' => array_slice($populars, 0, 10)]) ?>
 
-    <?php foreach (array_slice($populars, 5) as $item) { ?>
+    <?php foreach (array_slice($populars, 10) as $item) { ?>
 
       <?= $this->render('@frontend/views/articles/_article_380.php', [
         'news' => $item
