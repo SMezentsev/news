@@ -57,6 +57,13 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
         <!--</div>-->
 
         <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <?= Html::submitButton($model->isNewRecord ? 'Сохранить' : 'Редактировать', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-md-6">
             <?php
 
@@ -137,6 +144,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
           </div>
         </div>
 
+        <?php if(0)  { ?>
         <div class="row">
           <div class="col-md-12">
             <?= $form->field($model, 'kw_title')->textarea(['rows' => '2']); ?>
@@ -147,6 +155,7 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'kw_keywords')->textarea(['rows' => '2']); ?>
           </div>
         </div>
+        <?php } ?>
         <div class="row">
           <div class="col-md-12">
             <?= $form->field($model, 'kw_description')->textarea(['rows' => '2']); ?>
@@ -182,7 +191,9 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
         </div>
 
         <?= $form->field($model, 'show')->widget(CheckboxX::classname(), [
+          'initInputType' => CheckboxX::INPUT_CHECKBOX,
           'autoLabel' => true,
+          'options' => ['checked' => true,],
           'pluginOptions' => [
             'threeState' => false,
             'size' => 'md',
