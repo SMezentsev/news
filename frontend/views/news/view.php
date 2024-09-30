@@ -56,7 +56,7 @@ $relatedIds[] = $model->id;
 
           <?php if ($model->mainFile->source->name??false) { ?>
             <div class="credit mt-15 font-small color-grey" style="width:340px">
-              <i class="ti-credit-card mr-5"></i><span><?= $model->mainFile->source->name ?></span>
+              Источник фото: <span><?= $model->mainFile->source->name ?></span>
             </div>
           <?php } ?>
         </figure>
@@ -78,7 +78,7 @@ $relatedIds[] = $model->id;
     <?php if ($model->source ?? false) { ?>
       <div class="entry-bottom mt-30 mb-0">
         <div class="font-weight-100 entry-meta meta-1 color-grey">
-          <span class="update-on">Источник:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>
+          <span class="update-on">Источник новости:  <a href="<?= $model->source->link ?>"><?= $model->source->name ?></a></span>
         </div>
       </div>
     <?php } ?>
