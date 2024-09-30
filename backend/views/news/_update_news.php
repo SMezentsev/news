@@ -143,8 +143,6 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'source_link'); ?>
           </div>
         </div>
-
-        <?php if(0)  { ?>
         <div class="row">
           <div class="col-md-12">
             <?= $form->field($model, 'kw_title')->textarea(['rows' => '2']); ?>
@@ -155,7 +153,6 @@ $menu = Menu::findOne(['url' => Yii::$app->controller->id]);
             <?= $form->field($model, 'kw_keywords')->textarea(['rows' => '2']); ?>
           </div>
         </div>
-        <?php } ?>
         <div class="row">
           <div class="col-md-12">
             <?= $form->field($model, 'kw_description')->textarea(['rows' => '2']); ?>
